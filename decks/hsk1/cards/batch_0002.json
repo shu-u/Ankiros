@@ -1,0 +1,652 @@
+[
+  {
+    "id": "hsk1_0051",
+    "hanzi": "水",
+    "pinyin_accepted": ["shuǐ", "shui3"],
+    "meaning": "水",
+    "example_sentences": [
+      { "text": "我喝水。", "pinyin": "Wǒ hē shuǐ.", "translation": "私は水を飲みます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "第3声。飲み物の基本語彙。"
+  },
+  {
+    "id": "hsk1_0052",
+    "hanzi": "咖啡",
+    "pinyin_accepted": ["kāfēi", "ka1fei1"],
+    "meaning": "コーヒー",
+    "example_sentences": [
+      { "text": "我喝咖啡。", "pinyin": "Wǒ hē kāfēi.", "translation": "私はコーヒーを飲みます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "外来語。どちらも第1声で平ら。"
+  },
+  {
+    "id": "hsk1_0053",
+    "hanzi": "米饭",
+    "pinyin_accepted": ["mǐfàn", "mi3fan4"],
+    "meaning": "ご飯（白米）",
+    "example_sentences": [
+      { "text": "我吃米饭。", "pinyin": "Wǒ chī mǐfàn.", "translation": "私はご飯を食べます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「饭」単体でも「ご飯・食事」。"
+  },
+  {
+    "id": "hsk1_0054",
+    "hanzi": "苹果",
+    "pinyin_accepted": ["píngguǒ", "ping2guo3"],
+    "meaning": "りんご",
+    "example_sentences": [
+      { "text": "这个苹果很好吃。", "pinyin": "Zhè ge píngguǒ hěn hǎochī.", "translation": "このりんごはとてもおいしいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "2音節目「guǒ」は第3声。会話では前が第2声なので流れで覚える。"
+  },
+  {
+    "id": "hsk1_0055",
+    "hanzi": "书",
+    "pinyin_accepted": ["shū", "shu1"],
+    "meaning": "本",
+    "example_sentences": [
+      { "text": "这是一本书。", "pinyin": "Zhè shì yì běn shū.", "translation": "これは1冊の本です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "数えるときは量詞「本(běn)」を使う。"
+  },
+  {
+    "id": "hsk1_0056",
+    "hanzi": "汉语",
+    "pinyin_accepted": ["Hànyǔ", "Han4yu3"],
+    "meaning": "中国語",
+    "example_sentences": [
+      { "text": "我学汉语。", "pinyin": "Wǒ xué Hànyǔ.", "translation": "私は中国語を学びます。" }
+    ],
+    "synonyms": ["中文"],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "同じ「中国語」でも「汉语」「中文」など言い方がある。"
+  },
+  {
+    "id": "hsk1_0057",
+    "hanzi": "中文",
+    "pinyin_accepted": ["Zhōngwén", "Zhong1wen2"],
+    "meaning": "中国語（書き言葉含む）",
+    "example_sentences": [
+      { "text": "他会说中文。", "pinyin": "Tā huì shuō Zhōngwén.", "translation": "彼は中国語を話せます。" }
+    ],
+    "synonyms": ["汉语"],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「文」は第2声。言語名としてとてもよく使う。"
+  },
+  {
+    "id": "hsk1_0058",
+    "hanzi": "字",
+    "pinyin_accepted": ["zì", "zi4"],
+    "meaning": "字（漢字・文字）",
+    "example_sentences": [
+      { "text": "这个字怎么写？", "pinyin": "Zhè ge zì zěnme xiě?", "translation": "この字はどう書きますか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「写字」で「字を書く」。"
+  },
+  {
+    "id": "hsk1_0059",
+    "hanzi": "钱",
+    "pinyin_accepted": ["qián", "qian2"],
+    "meaning": "お金",
+    "example_sentences": [
+      { "text": "我没有钱。", "pinyin": "Wǒ méi yǒu qián.", "translation": "私はお金がありません。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "値段を聞く「多少钱？」で頻出。"
+  },
+  {
+    "id": "hsk1_0060",
+    "hanzi": "飞机",
+    "pinyin_accepted": ["fēijī", "fei1ji1"],
+    "meaning": "飛行機",
+    "example_sentences": [
+      { "text": "我坐飞机去北京。", "pinyin": "Wǒ zuò fēijī qù Běijīng.", "translation": "私は飛行機に乗って北京へ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "2音節とも第1声で平ら。"
+  },
+  {
+    "id": "hsk1_0061",
+    "hanzi": "电视",
+    "pinyin_accepted": ["diànshì", "dian4shi4"],
+    "meaning": "テレビ",
+    "example_sentences": [
+      { "text": "我看电视。", "pinyin": "Wǒ kàn diànshì.", "translation": "私はテレビを見ます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「看电视」で定型的に覚える。"
+  },
+  {
+    "id": "hsk1_0062",
+    "hanzi": "电脑",
+    "pinyin_accepted": ["diànnǎo", "dian4nao3"],
+    "meaning": "パソコン",
+    "example_sentences": [
+      { "text": "我有电脑。", "pinyin": "Wǒ yǒu diànnǎo.", "translation": "私はパソコンを持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「脑」は第3声。発音は「diàn-nǎo」。"
+  },
+  {
+    "id": "hsk1_0063",
+    "hanzi": "电影",
+    "pinyin_accepted": ["diànyǐng", "dian4ying3"],
+    "meaning": "映画",
+    "example_sentences": [
+      { "text": "我们看电影。", "pinyin": "Wǒmen kàn diànyǐng.", "translation": "私たちは映画を見ます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「影」は第3声。映画館は「电影院」。"
+  },
+  {
+    "id": "hsk1_0064",
+    "hanzi": "天气",
+    "pinyin_accepted": ["tiānqì", "tian1qi4"],
+    "meaning": "天気",
+    "example_sentences": [
+      { "text": "今天天气很好。", "pinyin": "Jīntiān tiānqì hěn hǎo.", "translation": "今日の天気はとてもいいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "会話の話題の入口。"
+  },
+  {
+    "id": "hsk1_0065",
+    "hanzi": "大",
+    "pinyin_accepted": ["dà", "da4"],
+    "meaning": "大きい",
+    "example_sentences": [
+      { "text": "这个很大。", "pinyin": "Zhè ge hěn dà.", "translation": "これはとても大きいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["小"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "比較は「比(bǐ)」もあるが、HSK1ではまず形容詞として覚える。"
+  },
+  {
+    "id": "hsk1_0066",
+    "hanzi": "小",
+    "pinyin_accepted": ["xiǎo", "xiao3"],
+    "meaning": "小さい",
+    "example_sentences": [
+      { "text": "这个很小。", "pinyin": "Zhè ge hěn xiǎo.", "translation": "これはとても小さいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["大"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "第3声。サイズの基本対義語（大/小）。"
+  },
+  {
+    "id": "hsk1_0067",
+    "hanzi": "多",
+    "pinyin_accepted": ["duō", "duo1"],
+    "meaning": "多い",
+    "example_sentences": [
+      { "text": "这里人很多。", "pinyin": "Zhèlǐ rén hěn duō.", "translation": "ここは人が多いです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["少"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "「多少」の「多」。量の話で頻出。"
+  },
+  {
+    "id": "hsk1_0068",
+    "hanzi": "少",
+    "pinyin_accepted": ["shǎo", "shao3"],
+    "meaning": "少ない",
+    "example_sentences": [
+      { "text": "水很少。", "pinyin": "Shuǐ hěn shǎo.", "translation": "水が少ないです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["多"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "第3声。"
+  },
+  {
+    "id": "hsk1_0069",
+    "hanzi": "好",
+    "pinyin_accepted": ["hǎo", "hao3"],
+    "meaning": "よい",
+    "example_sentences": [
+      { "text": "这个很好。", "pinyin": "Zhè ge hěn hǎo.", "translation": "これはとてもいいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["不好"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "「你好」の「好」。単独では「良い」の意味。"
+  },
+  {
+    "id": "hsk1_0070",
+    "hanzi": "不好",
+    "pinyin_accepted": ["bù hǎo", "bu4 hao3"],
+    "meaning": "よくない",
+    "example_sentences": [
+      { "text": "天气不好。", "pinyin": "Tiānqì bù hǎo.", "translation": "天気がよくないです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["好"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "「不」は後ろが第3声でも変化しない（ここはそのまま bù）。"
+  },
+  {
+    "id": "hsk1_0071",
+    "hanzi": "热",
+    "pinyin_accepted": ["rè", "re4"],
+    "meaning": "暑い／熱い",
+    "example_sentences": [
+      { "text": "今天很热。", "pinyin": "Jīntiān hěn rè.", "translation": "今日は暑いです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["冷"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "人・天気は「暑い」、飲食物は「熱い」どちらも「热」。"
+  },
+  {
+    "id": "hsk1_0072",
+    "hanzi": "冷",
+    "pinyin_accepted": ["lěng", "leng3"],
+    "meaning": "寒い／冷たい",
+    "example_sentences": [
+      { "text": "水很冷。", "pinyin": "Shuǐ hěn lěng.", "translation": "水が冷たいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["热"],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "第3声。天気にも飲み物にも使える。"
+  },
+  {
+    "id": "hsk1_0073",
+    "hanzi": "人",
+    "pinyin_accepted": ["rén", "ren2"],
+    "meaning": "人",
+    "example_sentences": [
+      { "text": "他是中国人。", "pinyin": "Tā shì Zhōngguó rén.", "translation": "彼は中国人です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "国名＋人で国籍を言える（中国人、日本人など）。"
+  },
+  {
+    "id": "hsk1_0074",
+    "hanzi": "中国",
+    "pinyin_accepted": ["Zhōngguó", "Zhong1guo2"],
+    "meaning": "中国",
+    "example_sentences": [
+      { "text": "我去中国。", "pinyin": "Wǒ qù Zhōngguó.", "translation": "私は中国へ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "国名の基本。"
+  },
+  {
+    "id": "hsk1_0075",
+    "hanzi": "北京",
+    "pinyin_accepted": ["Běijīng", "Bei3jing1"],
+    "meaning": "北京",
+    "example_sentences": [
+      { "text": "北京很大。", "pinyin": "Běijīng hěn dà.", "translation": "北京はとても大きいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "地名。第3声＋第1声。"
+  },
+  {
+    "id": "hsk1_0076",
+    "hanzi": "上",
+    "pinyin_accepted": ["shàng", "shang4"],
+    "meaning": "上",
+    "example_sentences": [
+      { "text": "书在桌子上。", "pinyin": "Shū zài zhuōzi shàng.", "translation": "本は机の上にあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["下"],
+    "tags": ["HSK1", "方位詞"],
+    "notes": "場所表現「在 + 場所 + 上/下/里」。"
+  },
+  {
+    "id": "hsk1_0077",
+    "hanzi": "下",
+    "pinyin_accepted": ["xià", "xia4"],
+    "meaning": "下",
+    "example_sentences": [
+      { "text": "猫在桌子下。", "pinyin": "Māo zài zhuōzi xià.", "translation": "猫は机の下にいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["上"],
+    "tags": ["HSK1", "方位詞"],
+    "notes": "「下」は第4声。"
+  },
+  {
+    "id": "hsk1_0078",
+    "hanzi": "里",
+    "pinyin_accepted": ["lǐ", "li3"],
+    "meaning": "中、内側",
+    "example_sentences": [
+      { "text": "手机在包里。", "pinyin": "Shǒujī zài bāo lǐ.", "translation": "携帯はかばんの中にあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["外"],
+    "tags": ["HSK1", "方位詞"],
+    "notes": "位置を言う「在…里」。"
+  },
+  {
+    "id": "hsk1_0079",
+    "hanzi": "前面",
+    "pinyin_accepted": ["qiánmiàn", "qian2mian4"],
+    "meaning": "前（前方）",
+    "example_sentences": [
+      { "text": "老师在前面。", "pinyin": "Lǎoshī zài qiánmiàn.", "translation": "先生は前にいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["后面"],
+    "tags": ["HSK1", "方位詞"],
+    "notes": "「前/后」だけより「前面/后面」の方が口語で自然なことが多い。"
+  },
+  {
+    "id": "hsk1_0080",
+    "hanzi": "后面",
+    "pinyin_accepted": ["hòumiàn", "hou4mian4"],
+    "meaning": "後ろ（後方）",
+    "example_sentences": [
+      { "text": "我在你后面。", "pinyin": "Wǒ zài nǐ hòumiàn.", "translation": "私はあなたの後ろにいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["前面"],
+    "tags": ["HSK1", "方位詞"],
+    "notes": "「后(hòu)」は第4声。"
+  },
+  {
+    "id": "hsk1_0081",
+    "hanzi": "今天",
+    "pinyin_accepted": ["jīntiān", "jin1tian1"],
+    "meaning": "今日",
+    "example_sentences": [
+      { "text": "今天你忙吗？", "pinyin": "Jīntiān nǐ máng ma?", "translation": "今日あなたは忙しいですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": ["明天", "昨天"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "日付を言う語の基本セット（今天/明天/昨天）。"
+  },
+  {
+    "id": "hsk1_0082",
+    "hanzi": "明天",
+    "pinyin_accepted": ["míngtiān", "ming2tian1"],
+    "meaning": "明日",
+    "example_sentences": [
+      { "text": "明天我们去看电影。", "pinyin": "Míngtiān wǒmen qù kàn diànyǐng.", "translation": "明日私たちは映画を見に行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["今天", "昨天"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「明」は第2声。"
+  },
+  {
+    "id": "hsk1_0083",
+    "hanzi": "昨天",
+    "pinyin_accepted": ["zuótiān", "zuo2tian1"],
+    "meaning": "昨日",
+    "example_sentences": [
+      { "text": "昨天很冷。", "pinyin": "Zuótiān hěn lěng.", "translation": "昨日はとても寒かったです。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["今天", "明天"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「昨」は第2声。"
+  },
+  {
+    "id": "hsk1_0084",
+    "hanzi": "现在",
+    "pinyin_accepted": ["xiànzài", "xian4zai4"],
+    "meaning": "今",
+    "example_sentences": [
+      { "text": "我现在很忙。", "pinyin": "Wǒ xiànzài hěn máng.", "translation": "私は今とても忙しいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "時間を言う副詞的にも使える（今〜している）。"
+  },
+  {
+    "id": "hsk1_0085",
+    "hanzi": "时候",
+    "pinyin_accepted": ["shíhou", "shi2hou0"],
+    "meaning": "とき（時間）",
+    "example_sentences": [
+      { "text": "你什么时候去？", "pinyin": "Nǐ shénme shíhou qù?", "translation": "あなたはいつ行きますか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「候(hou)」は軽い（無声調）。「什么时候」で“いつ”。"
+  },
+  {
+    "id": "hsk1_0086",
+    "hanzi": "年",
+    "pinyin_accepted": ["nián", "nian2"],
+    "meaning": "年",
+    "example_sentences": [
+      { "text": "今年我学中文。", "pinyin": "Jīnnián wǒ xué Zhōngwén.", "translation": "今年私は中国語を学びます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "年月日の「年」。"
+  },
+  {
+    "id": "hsk1_0087",
+    "hanzi": "月",
+    "pinyin_accepted": ["yuè", "yue4"],
+    "meaning": "月",
+    "example_sentences": [
+      { "text": "这个月我很忙。", "pinyin": "Zhè ge yuè wǒ hěn máng.", "translation": "今月私はとても忙しいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「月」は第4声。"
+  },
+  {
+    "id": "hsk1_0088",
+    "hanzi": "日",
+    "pinyin_accepted": ["rì", "ri4"],
+    "meaning": "日（〜日）",
+    "example_sentences": [
+      { "text": "今天几月几日？", "pinyin": "Jīntiān jǐ yuè jǐ rì?", "translation": "今日は何月何日ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "日付を言うときは「号(hào)」もよく使うが、まず「日(rì)」も押さえる。"
+  },
+  {
+    "id": "hsk1_0089",
+    "hanzi": "星期",
+    "pinyin_accepted": ["xīngqī", "xing1qi1"],
+    "meaning": "週／星期〜（曜日）",
+    "example_sentences": [
+      { "text": "今天星期几？", "pinyin": "Jīntiān xīngqī jǐ?", "translation": "今日は何曜日ですか？" }
+    ],
+    "synonyms": ["礼拜"],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "曜日は「星期一、星期二…」。"
+  },
+  {
+    "id": "hsk1_0090",
+    "hanzi": "点",
+    "pinyin_accepted": ["diǎn", "dian3"],
+    "meaning": "〜時（時刻）",
+    "example_sentences": [
+      { "text": "现在三点。", "pinyin": "Xiànzài sān diǎn.", "translation": "今は3時です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "時刻「〜点」。30分は「半(bàn)」。"
+  },
+  {
+    "id": "hsk1_0091",
+    "hanzi": "分钟",
+    "pinyin_accepted": ["fēnzhōng", "fen1zhong1"],
+    "meaning": "分（〜分）",
+    "example_sentences": [
+      { "text": "现在三点五分钟。", "pinyin": "Xiànzài sān diǎn wǔ fēnzhōng.", "translation": "今は3時5分です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "時間単位。どちらも第1声で平らに。"
+  },
+  {
+    "id": "hsk1_0092",
+    "hanzi": "分",
+    "pinyin_accepted": ["fēn", "fen1"],
+    "meaning": "分（分ける／分）",
+    "example_sentences": [
+      { "text": "现在三点十分。", "pinyin": "Xiànzài sān diǎn shí fēn.", "translation": "今は3時10分です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "時刻では「分钟」を省略して「分」だけでも言える。"
+  },
+  {
+    "id": "hsk1_0093",
+    "hanzi": "开",
+    "pinyin_accepted": ["kāi", "kai1"],
+    "meaning": "開ける／つける（電気など）",
+    "example_sentences": [
+      { "text": "请开门。", "pinyin": "Qǐng kāi mén.", "translation": "ドアを開けてください。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["关"],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「开门（ドアを開ける）」「开灯（電気をつける）」など。"
+  },
+  {
+    "id": "hsk1_0094",
+    "hanzi": "关",
+    "pinyin_accepted": ["guān", "guan1"],
+    "meaning": "閉める／消す",
+    "example_sentences": [
+      { "text": "请关灯。", "pinyin": "Qǐng guān dēng.", "translation": "電気を消してください。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["开"],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「关门（ドアを閉める）」「关灯（電気を消す）」。"
+  },
+  {
+    "id": "hsk1_0095",
+    "hanzi": "买",
+    "pinyin_accepted": ["mǎi", "mai3"],
+    "meaning": "買う",
+    "example_sentences": [
+      { "text": "我买苹果。", "pinyin": "Wǒ mǎi píngguǒ.", "translation": "私はりんごを買います。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["卖"],
+    "tags": ["HSK1", "動詞"],
+    "notes": "買う＝买、売る＝卖。セットで覚えると混乱しにくい。"
+  },
+  {
+    "id": "hsk1_0096",
+    "hanzi": "卖",
+    "pinyin_accepted": ["mài", "mai4"],
+    "meaning": "売る",
+    "example_sentences": [
+      { "text": "他卖咖啡。", "pinyin": "Tā mài kāfēi.", "translation": "彼はコーヒーを売っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["买"],
+    "tags": ["HSK1", "動詞"],
+    "notes": "買（mǎi）と声調が違うだけ。発音で区別。"
+  },
+  {
+    "id": "hsk1_0097",
+    "hanzi": "爱",
+    "pinyin_accepted": ["ài", "ai4"],
+    "meaning": "愛する／大好き",
+    "example_sentences": [
+      { "text": "我爱我的家。", "pinyin": "Wǒ ài wǒ de jiā.", "translation": "私は自分の家が大好きです。" }
+    ],
+    "synonyms": ["喜欢"],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「喜欢」より強い“愛”。使いどころは文脈に注意。"
+  },
+  {
+    "id": "hsk1_0098",
+    "hanzi": "想",
+    "pinyin_accepted": ["xiǎng", "xiang3"],
+    "meaning": "〜したい／思う／恋しい",
+    "example_sentences": [
+      { "text": "我想喝水。", "pinyin": "Wǒ xiǎng hē shuǐ.", "translation": "私は水を飲みたいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「想 + 動詞」で“〜したい”。「想你」で“会いたい/恋しい”。"
+  },
+  {
+    "id": "hsk1_0099",
+    "hanzi": "会",
+    "pinyin_accepted": ["huì", "hui4"],
+    "meaning": "できる（技能）／〜する予定",
+    "example_sentences": [
+      { "text": "我会说中文。", "pinyin": "Wǒ huì shuō Zhōngwén.", "translation": "私は中国語を話せます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["不会"],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "技能の「会」と、未来・予定の「会」がある。HSK1では技能で覚えると便利。"
+  },
+  {
+    "id": "hsk1_0100",
+    "hanzi": "可以",
+    "pinyin_accepted": ["kěyǐ", "ke3yi3"],
+    "meaning": "〜してよい／可能だ",
+    "example_sentences": [
+      { "text": "我可以进去吗？", "pinyin": "Wǒ kěyǐ jìnqù ma?", "translation": "入ってもいいですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": ["不可以"],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "許可を求める定番。「可以吗？」で“いいですか？”。"
+  }
+]

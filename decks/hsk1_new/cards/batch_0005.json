@@ -1,0 +1,1286 @@
+[
+  {
+    "id": "hsk1_new_0201",
+    "hanzi": "鸡蛋",
+    "pinyin_accepted": [
+      "jīdàn",
+      "ji1dan4"
+    ],
+    "meaning": "卵、鶏卵",
+    "example_sentences": [
+      {
+        "text": "我每天吃一个鸡蛋。",
+        "pinyin": "wǒ měi tiān chī yí ge jīdàn.",
+        "translation": "私は毎日卵を一個食べます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「鸡」(にわとり)＋「蛋」(たまご)の複合語。"
+  },
+  {
+    "id": "hsk1_new_0202",
+    "hanzi": "记",
+    "pinyin_accepted": [
+      "jì",
+      "ji4"
+    ],
+    "meaning": "覚える、記す、書き留める",
+    "example_sentences": [
+      {
+        "text": "请记一下我的电话号码。",
+        "pinyin": "qǐng jì yíxià wǒ de diànhuà hàomǎ.",
+        "translation": "私の電話番号を書き留めてください。"
+      },
+      {
+        "text": "这件事我记得很清楚。",
+        "pinyin": "zhè jiàn shì wǒ jìde hěn qīngchu.",
+        "translation": "この件を私ははっきり覚えています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「记住」「记得」など複合動詞の核となる語。"
+  },
+  {
+    "id": "hsk1_new_0203",
+    "hanzi": "记得",
+    "pinyin_accepted": [
+      "jìde",
+      "ji4de0"
+    ],
+    "meaning": "覚えている",
+    "example_sentences": [
+      {
+        "text": "你还记得我吗？",
+        "pinyin": "nǐ hái jìde wǒ ma?",
+        "translation": "あなたはまだ私のことを覚えていますか。"
+      },
+      {
+        "text": "我不记得他的名字了。",
+        "pinyin": "wǒ bú jìde tā de míngzi le.",
+        "translation": "私は彼の名前を覚えていません。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "忘记"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「得」は軽声で数字表記は de0。"
+  },
+  {
+    "id": "hsk1_new_0204",
+    "hanzi": "记住",
+    "pinyin_accepted": [
+      "jìzhu",
+      "ji4zhu0"
+    ],
+    "meaning": "しっかり覚える、記憶にとどめる",
+    "example_sentences": [
+      {
+        "text": "请记住这个生词。",
+        "pinyin": "qǐng jìzhu zhège shēngcí.",
+        "translation": "この新出単語をしっかり覚えてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「住」は結果補語で軽声。記憶を「定着させる」意味。"
+  },
+  {
+    "id": "hsk1_new_0205",
+    "hanzi": "家里",
+    "pinyin_accepted": [
+      "jiāli",
+      "jia1li0"
+    ],
+    "meaning": "家の中、自宅",
+    "example_sentences": [
+      {
+        "text": "我现在在家里。",
+        "pinyin": "wǒ xiànzài zài jiāli.",
+        "translation": "私は今家にいます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「家」＋方位詞「里」。場所を表す。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0206",
+    "hanzi": "家人",
+    "pinyin_accepted": [
+      "jiārén",
+      "jia1ren2"
+    ],
+    "meaning": "家族、家の者",
+    "example_sentences": [
+      {
+        "text": "我很爱我的家人。",
+        "pinyin": "wǒ hěn ài wǒ de jiārén.",
+        "translation": "私は家族をとても愛しています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「家庭の人々」を指す総称。"
+  },
+  {
+    "id": "hsk1_new_0207",
+    "hanzi": "间",
+    "pinyin_accepted": [
+      "jiān",
+      "jian1"
+    ],
+    "meaning": "（部屋を数える）室；〜の間",
+    "example_sentences": [
+      {
+        "text": "这是一间教室。",
+        "pinyin": "zhè shì yì jiān jiàoshì.",
+        "translation": "これは一つの教室です。"
+      },
+      {
+        "text": "我们的房子有三间房间。",
+        "pinyin": "wǒmen de fángzi yǒu sān jiān fángjiān.",
+        "translation": "私たちの家には部屋が三つあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "部屋を数える量詞。「房间」「时间」などにも用いられる。"
+  },
+  {
+    "id": "hsk1_new_0208",
+    "hanzi": "见",
+    "pinyin_accepted": [
+      "jiàn",
+      "jian4"
+    ],
+    "meaning": "会う、見る、目にする",
+    "example_sentences": [
+      {
+        "text": "明天见！",
+        "pinyin": "míngtiān jiàn!",
+        "translation": "また明日！"
+      },
+      {
+        "text": "我想见你。",
+        "pinyin": "wǒ xiǎng jiàn nǐ.",
+        "translation": "あなたに会いたいです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「看见」「见面」など複合語の核。別れの挨拶にも使う。"
+  },
+  {
+    "id": "hsk1_new_0209",
+    "hanzi": "见面",
+    "pinyin_accepted": [
+      "jiànmiàn",
+      "jian4mian4"
+    ],
+    "meaning": "会う、対面する",
+    "example_sentences": [
+      {
+        "text": "我们明天在学校见面。",
+        "pinyin": "wǒmen míngtiān zài xuéxiào jiànmiàn.",
+        "translation": "私たちは明日学校で会います。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「和……见面」の形で使う。「见面他」とは言えない。"
+  },
+  {
+    "id": "hsk1_new_0210",
+    "hanzi": "叫",
+    "pinyin_accepted": [
+      "jiào",
+      "jiao4"
+    ],
+    "meaning": "（名前が）〜という；呼ぶ、叫ぶ",
+    "example_sentences": [
+      {
+        "text": "我叫王明。",
+        "pinyin": "wǒ jiào Wáng Míng.",
+        "translation": "私は王明といいます。"
+      },
+      {
+        "text": "妈妈叫我回家。",
+        "pinyin": "māma jiào wǒ huí jiā.",
+        "translation": "母は私に家に帰るよう呼びました。"
+      },
+      {
+        "text": "他大声叫了一下。",
+        "pinyin": "tā dàshēng jiào le yíxià.",
+        "translation": "彼は大きな声で叫びました。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "名前を名乗る用法と、呼ぶ・叫ぶ用法がある。"
+  },
+  {
+    "id": "hsk1_new_0211",
+    "hanzi": "教",
+    "pinyin_accepted": [
+      "jiāo",
+      "jiao1"
+    ],
+    "meaning": "教える",
+    "example_sentences": [
+      {
+        "text": "老师教我们汉语。",
+        "pinyin": "lǎoshī jiāo wǒmen Hànyǔ.",
+        "translation": "先生は私たちに中国語を教えます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "学"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "多音字。「教える」の動詞は第1声 jiāo。第4声 jiào は「教育」など名詞的用法。出典の Jiào は誤りに近く、動詞義は jiāo。"
+  },
+  {
+    "id": "hsk1_new_0212",
+    "hanzi": "教学楼",
+    "pinyin_accepted": [
+      "jiàoxuélóu",
+      "jiao4xue2lou2"
+    ],
+    "meaning": "校舎、教室棟",
+    "example_sentences": [
+      {
+        "text": "我们的教学楼很大。",
+        "pinyin": "wǒmen de jiàoxuélóu hěn dà.",
+        "translation": "私たちの校舎はとても大きいです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「教学」(第4声 jiào)＋「楼」。授業を行う建物を指す。"
+  },
+  {
+    "id": "hsk1_new_0213",
+    "hanzi": "介绍",
+    "pinyin_accepted": [
+      "jièshào",
+      "jie4shao4"
+    ],
+    "meaning": "紹介する",
+    "example_sentences": [
+      {
+        "text": "我来介绍一下我的朋友。",
+        "pinyin": "wǒ lái jièshào yíxià wǒ de péngyou.",
+        "translation": "私の友人を紹介させてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「自我介绍」(自己紹介)もよく使う。"
+  },
+  {
+    "id": "hsk1_new_0214",
+    "hanzi": "姐",
+    "pinyin_accepted": [
+      "jiě",
+      "jie3"
+    ],
+    "meaning": "姉、お姉さん",
+    "example_sentences": [
+      {
+        "text": "她是我姐。",
+        "pinyin": "tā shì wǒ jiě.",
+        "translation": "彼女は私の姉です。"
+      }
+    ],
+    "synonyms": [
+      "姐姐"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "口語では「姐姐」とすることが多い。"
+  },
+  {
+    "id": "hsk1_new_0215",
+    "hanzi": "姐姐",
+    "pinyin_accepted": [
+      "jiějie",
+      "jie3jie0"
+    ],
+    "meaning": "姉、お姉さん",
+    "example_sentences": [
+      {
+        "text": "我姐姐是医生。",
+        "pinyin": "wǒ jiějie shì yīshēng.",
+        "translation": "私の姉は医者です。"
+      }
+    ],
+    "synonyms": [
+      "姐"
+    ],
+    "antonyms": [
+      "妹妹"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "二つ目の「姐」は軽声で数字表記は jie0。"
+  },
+  {
+    "id": "hsk1_new_0216",
+    "hanzi": "今年",
+    "pinyin_accepted": [
+      "jīnnián",
+      "jin1nian2"
+    ],
+    "meaning": "今年",
+    "example_sentences": [
+      {
+        "text": "我今年二十岁。",
+        "pinyin": "wǒ jīnnián èrshí suì.",
+        "translation": "私は今年二十歳です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時を表す名詞。文中で主語や状語になる。"
+  },
+  {
+    "id": "hsk1_new_0217",
+    "hanzi": "今天",
+    "pinyin_accepted": [
+      "jīntiān",
+      "jin1tian1"
+    ],
+    "meaning": "今日、本日",
+    "example_sentences": [
+      {
+        "text": "今天天气很好。",
+        "pinyin": "jīntiān tiānqì hěn hǎo.",
+        "translation": "今日は天気がとても良いです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「明天」(明日)・「昨天」(昨日)と対で覚える。"
+  },
+  {
+    "id": "hsk1_new_0218",
+    "hanzi": "进",
+    "pinyin_accepted": [
+      "jìn",
+      "jin4"
+    ],
+    "meaning": "入る、進む",
+    "example_sentences": [
+      {
+        "text": "请进！",
+        "pinyin": "qǐng jìn!",
+        "translation": "どうぞお入りください。"
+      },
+      {
+        "text": "他进了教室。",
+        "pinyin": "tā jìn le jiàoshì.",
+        "translation": "彼は教室に入りました。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "出"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「进来」「进去」の形で方向を表す。"
+  },
+  {
+    "id": "hsk1_new_0219",
+    "hanzi": "进来",
+    "pinyin_accepted": [
+      "jìnlái",
+      "jin4lai2"
+    ],
+    "meaning": "入ってくる",
+    "example_sentences": [
+      {
+        "text": "请进来坐。",
+        "pinyin": "qǐng jìnlái zuò.",
+        "translation": "入って座ってください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "出去"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "話し手の方へ「入ってくる」。「进去」は離れる方向。"
+  },
+  {
+    "id": "hsk1_new_0220",
+    "hanzi": "进去",
+    "pinyin_accepted": [
+      "jìnqù",
+      "jin4qu4"
+    ],
+    "meaning": "入っていく",
+    "example_sentences": [
+      {
+        "text": "门开了，我们进去吧。",
+        "pinyin": "mén kāi le, wǒmen jìnqù ba.",
+        "translation": "ドアが開いたので、入っていきましょう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "进来"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "話し手から離れる方向へ「入っていく」。"
+  },
+  {
+    "id": "hsk1_new_0221",
+    "hanzi": "九",
+    "pinyin_accepted": [
+      "jiǔ",
+      "jiu3"
+    ],
+    "meaning": "九、9",
+    "example_sentences": [
+      {
+        "text": "现在是九点。",
+        "pinyin": "xiànzài shì jiǔ diǎn.",
+        "translation": "今は九時です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "数字の9。"
+  },
+  {
+    "id": "hsk1_new_0222",
+    "hanzi": "就",
+    "pinyin_accepted": [
+      "jiù",
+      "jiu4"
+    ],
+    "meaning": "すぐに；ほかでもなく；〜なら…だ（条件の帰結）",
+    "example_sentences": [
+      {
+        "text": "我马上就来。",
+        "pinyin": "wǒ mǎshàng jiù lái.",
+        "translation": "私はすぐに来ます。"
+      },
+      {
+        "text": "他就是我的老师。",
+        "pinyin": "tā jiù shì wǒ de lǎoshī.",
+        "translation": "彼こそが私の先生です。"
+      },
+      {
+        "text": "你不去，我就去。",
+        "pinyin": "nǐ bú qù, wǒ jiù qù.",
+        "translation": "あなたが行かないなら、私が行きます。"
+      },
+      {
+        "text": "我家就在学校旁边。",
+        "pinyin": "wǒ jiā jiù zài xuéxiào pángbiān.",
+        "translation": "私の家はまさに学校の隣にあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "多義の機能語。「すぐ」「まさに」「それなら」など文脈で意味が変わる。"
+  },
+  {
+    "id": "hsk1_new_0223",
+    "hanzi": "觉得",
+    "pinyin_accepted": [
+      "juéde",
+      "jue2de0"
+    ],
+    "meaning": "〜と思う、〜と感じる",
+    "example_sentences": [
+      {
+        "text": "我觉得这本书很好。",
+        "pinyin": "wǒ juéde zhè běn shū hěn hǎo.",
+        "translation": "私はこの本がとても良いと思います。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "多音字「觉」は jué (感じる)。「得」は軽声で de0。"
+  },
+  {
+    "id": "hsk1_new_0224",
+    "hanzi": "开",
+    "pinyin_accepted": [
+      "kāi",
+      "kai1"
+    ],
+    "meaning": "開ける、開く；（車などを）運転する；（電源を）入れる",
+    "example_sentences": [
+      {
+        "text": "请开门。",
+        "pinyin": "qǐng kāi mén.",
+        "translation": "ドアを開けてください。"
+      },
+      {
+        "text": "他会开车。",
+        "pinyin": "tā huì kāi chē.",
+        "translation": "彼は車を運転できます。"
+      },
+      {
+        "text": "请开一下灯。",
+        "pinyin": "qǐng kāi yíxià dēng.",
+        "translation": "ちょっと電気をつけてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "关"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「開ける」「運転する」「（電源を）つける」など多義。反義語は「关」。"
+  },
+  {
+    "id": "hsk1_new_0225",
+    "hanzi": "开车",
+    "pinyin_accepted": [
+      "kāichē",
+      "kai1che1"
+    ],
+    "meaning": "車を運転する",
+    "example_sentences": [
+      {
+        "text": "我每天开车去上班。",
+        "pinyin": "wǒ měi tiān kāichē qù shàngbān.",
+        "translation": "私は毎日車を運転して出勤します。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「开他的车」のように間に語を挟める。"
+  },
+  {
+    "id": "hsk1_new_0226",
+    "hanzi": "开会",
+    "pinyin_accepted": [
+      "kāihuì",
+      "kai1hui4"
+    ],
+    "meaning": "会議をする、会議に出る",
+    "example_sentences": [
+      {
+        "text": "我们下午开会。",
+        "pinyin": "wǒmen xiàwǔ kāihuì.",
+        "translation": "私たちは午後に会議をします。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「开一个会」のように使える。"
+  },
+  {
+    "id": "hsk1_new_0227",
+    "hanzi": "开玩笑",
+    "pinyin_accepted": [
+      "kāi wánxiào",
+      "kai1 wan2xiao4"
+    ],
+    "meaning": "冗談を言う、からかう",
+    "example_sentences": [
+      {
+        "text": "别开玩笑了。",
+        "pinyin": "bié kāi wánxiào le.",
+        "translation": "冗談はやめてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "フレーズ"
+    ],
+    "notes": "「开」＋「玩笑」の慣用句。離合的に「开一个玩笑」とも言う。"
+  },
+  {
+    "id": "hsk1_new_0228",
+    "hanzi": "看病",
+    "pinyin_accepted": [
+      "kànbìng",
+      "kan4bing4"
+    ],
+    "meaning": "（患者が）診察を受ける；（医者が）診察する",
+    "example_sentences": [
+      {
+        "text": "我明天去医院看病。",
+        "pinyin": "wǒ míngtiān qù yīyuàn kànbìng.",
+        "translation": "私は明日病院へ診てもらいに行きます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。患者側・医者側どちらの動作も表せる。"
+  },
+  {
+    "id": "hsk1_new_0229",
+    "hanzi": "看到",
+    "pinyin_accepted": [
+      "kàndào",
+      "kan4dao4"
+    ],
+    "meaning": "見える、目にする、見つける",
+    "example_sentences": [
+      {
+        "text": "我看到他了。",
+        "pinyin": "wǒ kàndào tā le.",
+        "translation": "私は彼を見かけました。"
+      }
+    ],
+    "synonyms": [
+      "看见"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「到」は結果補語で「見る動作が成立した」ことを表す。"
+  },
+  {
+    "id": "hsk1_new_0230",
+    "hanzi": "看见",
+    "pinyin_accepted": [
+      "kànjiàn",
+      "kan4jian4"
+    ],
+    "meaning": "見える、目に入る",
+    "example_sentences": [
+      {
+        "text": "我看见一只猫。",
+        "pinyin": "wǒ kànjiàn yì zhī māo.",
+        "translation": "私は一匹の猫を見ました。"
+      }
+    ],
+    "synonyms": [
+      "看到"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「见」は結果補語。意識的に見る「看」と区別する。"
+  },
+  {
+    "id": "hsk1_new_0231",
+    "hanzi": "考",
+    "pinyin_accepted": [
+      "kǎo",
+      "kao3"
+    ],
+    "meaning": "試験する、受験する",
+    "example_sentences": [
+      {
+        "text": "明天我们要考汉语。",
+        "pinyin": "míngtiān wǒmen yào kǎo Hànyǔ.",
+        "translation": "明日私たちは中国語の試験を受けます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「考试」の核となる語。"
+  },
+  {
+    "id": "hsk1_new_0232",
+    "hanzi": "考试",
+    "pinyin_accepted": [
+      "kǎoshì",
+      "kao3shi4"
+    ],
+    "meaning": "試験、試験を受ける",
+    "example_sentences": [
+      {
+        "text": "今天有汉语考试。",
+        "pinyin": "jīntiān yǒu Hànyǔ kǎoshì.",
+        "translation": "今日は中国語の試験があります。"
+      },
+      {
+        "text": "我们明天考试。",
+        "pinyin": "wǒmen míngtiān kǎoshì.",
+        "translation": "私たちは明日試験を受けます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "名詞(試験)・動詞(試験を受ける)の両用法がある。"
+  },
+  {
+    "id": "hsk1_new_0233",
+    "hanzi": "渴",
+    "pinyin_accepted": [
+      "kě",
+      "ke3"
+    ],
+    "meaning": "のどが渇いている",
+    "example_sentences": [
+      {
+        "text": "我很渴，想喝水。",
+        "pinyin": "wǒ hěn kě, xiǎng hē shuǐ.",
+        "translation": "私はのどが渇いていて、水を飲みたいです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「饿」(お腹がすく)と並べて覚えると良い。"
+  },
+  {
+    "id": "hsk1_new_0234",
+    "hanzi": "课",
+    "pinyin_accepted": [
+      "kè",
+      "ke4"
+    ],
+    "meaning": "授業、課",
+    "example_sentences": [
+      {
+        "text": "今天我有三节课。",
+        "pinyin": "jīntiān wǒ yǒu sān jié kè.",
+        "translation": "今日私は授業が三コマあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "授業を数える量詞は「节」。「上课」「下课」も覚える。"
+  },
+  {
+    "id": "hsk1_new_0235",
+    "hanzi": "课本",
+    "pinyin_accepted": [
+      "kèběn",
+      "ke4ben3"
+    ],
+    "meaning": "教科書、テキスト",
+    "example_sentences": [
+      {
+        "text": "请打开课本。",
+        "pinyin": "qǐng dǎkāi kèběn.",
+        "translation": "教科書を開いてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「课」＋「本」。"
+  },
+  {
+    "id": "hsk1_new_0236",
+    "hanzi": "课文",
+    "pinyin_accepted": [
+      "kèwén",
+      "ke4wen2"
+    ],
+    "meaning": "本文、（教科書の）テキスト",
+    "example_sentences": [
+      {
+        "text": "请读一下课文。",
+        "pinyin": "qǐng dú yíxià kèwén.",
+        "translation": "本文を読んでください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "教科書の各課の文章を指す。"
+  },
+  {
+    "id": "hsk1_new_0237",
+    "hanzi": "口",
+    "pinyin_accepted": [
+      "kǒu",
+      "kou3"
+    ],
+    "meaning": "口；（家族・人数を数える）人；ひと口",
+    "example_sentences": [
+      {
+        "text": "我家有五口人。",
+        "pinyin": "wǒ jiā yǒu wǔ kǒu rén.",
+        "translation": "私の家は五人家族です。"
+      },
+      {
+        "text": "他喝了一口水。",
+        "pinyin": "tā hē le yì kǒu shuǐ.",
+        "translation": "彼は水をひと口飲みました。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "家族の人数を数える量詞、また「ひと口」の量詞として使う。"
+  },
+  {
+    "id": "hsk1_new_0238",
+    "hanzi": "块",
+    "pinyin_accepted": [
+      "kuài",
+      "kuai4"
+    ],
+    "meaning": "（貨幣の）元；かたまりを数える量詞",
+    "example_sentences": [
+      {
+        "text": "这个苹果三块钱。",
+        "pinyin": "zhège píngguǒ sān kuài qián.",
+        "translation": "このリンゴは三元です。"
+      },
+      {
+        "text": "我想吃一块蛋糕。",
+        "pinyin": "wǒ xiǎng chī yí kuài dàngāo.",
+        "translation": "私はケーキを一切れ食べたいです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "口語で「元(钱)」の意味、また塊状のものを数える量詞。"
+  },
+  {
+    "id": "hsk1_new_0239",
+    "hanzi": "快",
+    "pinyin_accepted": [
+      "kuài",
+      "kuai4"
+    ],
+    "meaning": "速い；早く；もうすぐ",
+    "example_sentences": [
+      {
+        "text": "他跑得很快。",
+        "pinyin": "tā pǎo de hěn kuài.",
+        "translation": "彼は走るのがとても速いです。"
+      },
+      {
+        "text": "快来！",
+        "pinyin": "kuài lái!",
+        "translation": "早く来て！"
+      },
+      {
+        "text": "火车快到了。",
+        "pinyin": "huǒchē kuài dào le.",
+        "translation": "列車はもうすぐ着きます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "慢"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞(速い)・副詞(早く)・「快……了」(もうすぐ)の用法がある。"
+  },
+  {
+    "id": "hsk1_new_0240",
+    "hanzi": "来",
+    "pinyin_accepted": [
+      "lái",
+      "lai2"
+    ],
+    "meaning": "来る；（動作を申し出る）〜しよう",
+    "example_sentences": [
+      {
+        "text": "他明天来。",
+        "pinyin": "tā míngtiān lái.",
+        "translation": "彼は明日来ます。"
+      },
+      {
+        "text": "我来介绍一下。",
+        "pinyin": "wǒ lái jièshào yíxià.",
+        "translation": "私が紹介しましょう。"
+      },
+      {
+        "text": "你过来一下。",
+        "pinyin": "nǐ guòlái yíxià.",
+        "translation": "ちょっとこちらへ来てください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "去"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「来る」のほか、進んで何かをする意志を表す用法、方向補語としての用法がある。"
+  },
+  {
+    "id": "hsk1_new_0241",
+    "hanzi": "来到",
+    "pinyin_accepted": [
+      "láidào",
+      "lai2dao4"
+    ],
+    "meaning": "やって来る、到着する",
+    "example_sentences": [
+      {
+        "text": "我们来到了北京。",
+        "pinyin": "wǒmen láidào le Běijīng.",
+        "translation": "私たちは北京にやって来ました。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「到」は結果補語で到達を表す。後ろに場所の目的語を取る。"
+  },
+  {
+    "id": "hsk1_new_0242",
+    "hanzi": "老",
+    "pinyin_accepted": [
+      "lǎo",
+      "lao3"
+    ],
+    "meaning": "年老いた；（接頭辞）〜さん；いつも",
+    "example_sentences": [
+      {
+        "text": "他是一位老人。",
+        "pinyin": "tā shì yí wèi lǎorén.",
+        "translation": "彼は一人の老人です。"
+      },
+      {
+        "text": "他姓王，我们都叫他老王。",
+        "pinyin": "tā xìng Wáng, wǒmen dōu jiào tā Lǎo Wáng.",
+        "translation": "彼は王さんなので、みんな彼を老王と呼びます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "年轻"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「年老いた」のほか、人を親しく呼ぶ接頭辞「老～」の用法もある。"
+  },
+  {
+    "id": "hsk1_new_0243",
+    "hanzi": "老人",
+    "pinyin_accepted": [
+      "lǎorén",
+      "lao3ren2"
+    ],
+    "meaning": "老人、お年寄り",
+    "example_sentences": [
+      {
+        "text": "我们要帮助老人。",
+        "pinyin": "wǒmen yào bāngzhù lǎorén.",
+        "translation": "私たちはお年寄りを助けるべきです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「老」＋「人」。"
+  },
+  {
+    "id": "hsk1_new_0244",
+    "hanzi": "累",
+    "pinyin_accepted": [
+      "lèi",
+      "lei4"
+    ],
+    "meaning": "疲れている、疲れる",
+    "example_sentences": [
+      {
+        "text": "我今天很累。",
+        "pinyin": "wǒ jīntiān hěn lèi.",
+        "translation": "私は今日とても疲れています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "多音字。「疲れる」の意味では第4声 lèi（出典の lěi は別義 lěi=積み重なる）。"
+  },
+  {
+    "id": "hsk1_new_0245",
+    "hanzi": "冷",
+    "pinyin_accepted": [
+      "lěng",
+      "leng3"
+    ],
+    "meaning": "寒い、冷たい",
+    "example_sentences": [
+      {
+        "text": "今天天气很冷。",
+        "pinyin": "jīntiān tiānqì hěn lěng.",
+        "translation": "今日は天気がとても寒いです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "热"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "反義語は「热」(暑い・熱い)。"
+  },
+  {
+    "id": "hsk1_new_0246",
+    "hanzi": "里",
+    "pinyin_accepted": [
+      "lǐ",
+      "li3"
+    ],
+    "meaning": "（〜の）中、内側",
+    "example_sentences": [
+      {
+        "text": "书在包里。",
+        "pinyin": "shū zài bāo lǐ.",
+        "translation": "本はかばんの中にあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "外"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "名詞の後ろに付いて「〜の中」を表す方位詞。"
+  },
+  {
+    "id": "hsk1_new_0247",
+    "hanzi": "里边",
+    "pinyin_accepted": [
+      "lǐbian",
+      "li3bian0"
+    ],
+    "meaning": "中、内側",
+    "example_sentences": [
+      {
+        "text": "请到里边坐。",
+        "pinyin": "qǐng dào lǐbian zuò.",
+        "translation": "中へ入って座ってください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "外边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「边」は軽声で数字表記は bian0。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0248",
+    "hanzi": "两",
+    "pinyin_accepted": [
+      "liǎng",
+      "liang3"
+    ],
+    "meaning": "二、2つ（量詞の前で使う）",
+    "example_sentences": [
+      {
+        "text": "我有两个哥哥。",
+        "pinyin": "wǒ yǒu liǎng ge gēge.",
+        "translation": "私には兄が二人います。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "量詞の前では「二」ではなく「两」を使う(两个/两本)。"
+  },
+  {
+    "id": "hsk1_new_0249",
+    "hanzi": "零",
+    "pinyin_accepted": [
+      "líng",
+      "ling2"
+    ],
+    "meaning": "ゼロ、0",
+    "example_sentences": [
+      {
+        "text": "现在是十点零五分。",
+        "pinyin": "xiànzài shì shí diǎn líng wǔ fēn.",
+        "translation": "今は十時五分です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "数字の0。時刻で「十点零五分」のように使う。"
+  },
+  {
+    "id": "hsk1_new_0250",
+    "hanzi": "六",
+    "pinyin_accepted": [
+      "liù",
+      "liu4"
+    ],
+    "meaning": "六、6",
+    "example_sentences": [
+      {
+        "text": "我六点起床。",
+        "pinyin": "wǒ liù diǎn qǐchuáng.",
+        "translation": "私は六時に起きます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "数字の6。"
+  }
+]

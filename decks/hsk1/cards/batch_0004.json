@@ -1,0 +1,249 @@
+[
+  {
+    "id": "hsk1_0151",
+    "hanzi": "杯子",
+    "pinyin_accepted": ["bēizi", "bei1zi0"],
+    "meaning": "コップ、カップ",
+    "example_sentences": [
+      { "text": "这是我的杯子。", "pinyin": "Zhè shì wǒ de bēizi.", "translation": "これは私のコップです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「zi」は軽声になりやすい（bēizi）。飲み物（水・茶）と一緒に覚えると定着しやすい。"
+  },
+  {
+    "id": "hsk1_0152",
+    "hanzi": "零",
+    "pinyin_accepted": ["líng", "ling2"],
+    "meaning": "0（ゼロ）",
+    "example_sentences": [
+      { "text": "现在零点。", "pinyin": "Xiànzài líng diǎn.", "translation": "今は0時です（真夜中です）。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "数字の0。電話番号・時刻・値段などでよく出る。"
+  },
+  {
+    "id": "hsk1_0153",
+    "hanzi": "些",
+    "pinyin_accepted": ["xiē", "xie1"],
+    "meaning": "いくらか、少し（量を表す）",
+    "example_sentences": [
+      { "text": "我有一些水。", "pinyin": "Wǒ yǒu yìxiē shuǐ.", "translation": "私は少し水を持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "「一些(yìxiē)＝少し/いくらか」の形で頻出。"
+  },
+  {
+    "id": "hsk1_0154",
+    "hanzi": "太",
+    "pinyin_accepted": ["tài", "tai4"],
+    "meaning": "〜すぎる、とても（強調）",
+    "example_sentences": [
+      { "text": "这个太大了。", "pinyin": "Zhè ge tài dà le.", "translation": "これは大きすぎます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "「太 + 形容詞 + 了」で“〜すぎる/すごく〜だ”の定番。"
+  },
+  {
+    "id": "hsk1_0155",
+    "hanzi": "喂",
+    "pinyin_accepted": ["wèi", "wei4"],
+    "meaning": "もしもし（電話の呼びかけ）",
+    "example_sentences": [
+      { "text": "喂，你好！", "pinyin": "Wèi, nǐ hǎo!", "translation": "もしもし、こんにちは！" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "感嘆詞"],
+    "notes": "電話に出るときの最重要語。「喂(wei4)」は第4声で短く下げる。"
+  },
+  {
+    "id": "hsk1_0156",
+    "hanzi": "你们",
+    "pinyin_accepted": ["nǐmen", "ni3men0"],
+    "meaning": "あなたたち",
+    "example_sentences": [
+      { "text": "你们是学生吗？", "pinyin": "Nǐmen shì xuésheng ma?", "translation": "あなたたちは学生ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "「你＋们」で複数。「men」は軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_0157",
+    "hanzi": "他们",
+    "pinyin_accepted": ["tāmen", "ta1men0"],
+    "meaning": "彼ら（男女混合 or 男性の複数）",
+    "example_sentences": [
+      { "text": "他们是同学。", "pinyin": "Tāmen shì tóngxué.", "translation": "彼らは同級生です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "会話では性別の区別は文脈頼み（発音は tāmen）。"
+  },
+  {
+    "id": "hsk1_0158",
+    "hanzi": "她们",
+    "pinyin_accepted": ["tāmen", "ta1men0"],
+    "meaning": "彼女たち（女性の複数）",
+    "example_sentences": [
+      { "text": "她们在学校。", "pinyin": "Tāmen zài xuéxiào.", "translation": "彼女たちは学校にいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "文字で女性複数を明示。発音は「他们」と同じ。"
+  },
+  {
+    "id": "hsk1_0159",
+    "hanzi": "儿子",
+    "pinyin_accepted": ["érzi", "er2zi0"],
+    "meaning": "息子",
+    "example_sentences": [
+      { "text": "他有儿子。", "pinyin": "Tā yǒu érzi.", "translation": "彼には息子がいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["女儿"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「zi」は軽声になりやすい。家族語彙（爸爸/妈妈/儿子/女儿）。"
+  },
+  {
+    "id": "hsk1_0160",
+    "hanzi": "女儿",
+    "pinyin_accepted": ["nǚ'ér", "nv3 er2"],
+    "meaning": "娘（むすめ）",
+    "example_sentences": [
+      { "text": "我有女儿。", "pinyin": "Wǒ yǒu nǚ'ér.", "translation": "私には娘がいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["儿子"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「女(nǚ)」は ü の発音。数字表記では nv を使うことがある。"
+  },
+  {
+    "id": "hsk1_0161",
+    "hanzi": "水果",
+    "pinyin_accepted": ["shuǐguǒ", "shui3guo3"],
+    "meaning": "果物",
+    "example_sentences": [
+      { "text": "我喜欢吃水果。", "pinyin": "Wǒ xǐhuan chī shuǐguǒ.", "translation": "私は果物を食べるのが好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「苹果」は水果の一種。カテゴリー語として便利。"
+  },
+  {
+    "id": "hsk1_0162",
+    "hanzi": "说话",
+    "pinyin_accepted": ["shuōhuà", "shuo1hua4"],
+    "meaning": "話す（発話する）",
+    "example_sentences": [
+      { "text": "他会说话吗？", "pinyin": "Tā huì shuōhuà ma?", "translation": "彼は話せますか？" }
+    ],
+    "synonyms": ["说"],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "HSK1（2.0）の語彙リストでは「说」ではなく「说话」が載っている版が多い。"
+  },
+  {
+    "id": "hsk1_0163",
+    "hanzi": "上午",
+    "pinyin_accepted": ["shàngwǔ", "shang4wu3"],
+    "meaning": "午前",
+    "example_sentences": [
+      { "text": "我上午学习。", "pinyin": "Wǒ shàngwǔ xuéxí.", "translation": "私は午前に勉強します。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["下午"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "時間帯：上午（午前）/ 中午（昼）/ 下午（午後）。"
+  },
+  {
+    "id": "hsk1_0164",
+    "hanzi": "中午",
+    "pinyin_accepted": ["zhōngwǔ", "zhong1wu3"],
+    "meaning": "昼、正午",
+    "example_sentences": [
+      { "text": "中午我吃饭。", "pinyin": "Zhōngwǔ wǒ chī fàn.", "translation": "昼に私はご飯を食べます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「中午」は“お昼（時間帯）”としても“正午”としても使う。"
+  },
+  {
+    "id": "hsk1_0165",
+    "hanzi": "下午",
+    "pinyin_accepted": ["xiàwǔ", "xia4wu3"],
+    "meaning": "午後",
+    "example_sentences": [
+      { "text": "下午我们去商店。", "pinyin": "Xiàwǔ wǒmen qù shāngdiàn.", "translation": "午後、私たちはお店へ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["上午"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「下午」は第4声＋第3声。"
+  },
+  {
+    "id": "hsk1_0166",
+    "hanzi": "下雨",
+    "pinyin_accepted": ["xiàyǔ", "xia4yu3"],
+    "meaning": "雨が降る",
+    "example_sentences": [
+      { "text": "今天下雨。", "pinyin": "Jīntiān xiàyǔ.", "translation": "今日は雨が降ります／降っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "天気表現の基本。「下＋天気」で“〜が降る”（下雨＝雨が降る）。"
+  },
+  {
+    "id": "hsk1_0167",
+    "hanzi": "坐",
+    "pinyin_accepted": ["zuò", "zuo4"],
+    "meaning": "座る／（乗り物に）乗る",
+    "example_sentences": [
+      { "text": "请坐。", "pinyin": "Qǐng zuò.", "translation": "どうぞお座りください。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「坐车」「坐飞机」など“乗る”でも使える。"
+  },
+  {
+    "id": "hsk1_0168",
+    "hanzi": "没",
+    "pinyin_accepted": ["méi", "mei2"],
+    "meaning": "〜ない（有・完了の否定でよく使う）",
+    "example_sentences": [
+      { "text": "我没钱。", "pinyin": "Wǒ méi qián.", "translation": "私はお金がありません。" }
+    ],
+    "synonyms": ["没有"],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "「没 + 名詞/動詞」で否定。「没有」は「没＋有」。"
+  },
+  {
+    "id": "hsk1_0169",
+    "hanzi": "漂亮",
+    "pinyin_accepted": ["piàoliang", "piao4liang0"],
+    "meaning": "きれい（美しい）",
+    "example_sentences": [
+      { "text": "她很漂亮。", "pinyin": "Tā hěn piàoliang.", "translation": "彼女はとてもきれいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "形容詞"],
+    "notes": "2音節目「liang」は軽声っぽく弱くなることが多い（piàoliang）。"
+  }
+]

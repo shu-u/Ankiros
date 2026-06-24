@@ -1,0 +1,652 @@
+[
+  {
+    "id": "hsk1_0101",
+    "hanzi": "不",
+    "pinyin_accepted": ["bù", "bu4"],
+    "meaning": "〜ない（否定）",
+    "example_sentences": [
+      { "text": "我不喝咖啡。", "pinyin": "Wǒ bù hē kāfēi.", "translation": "私はコーヒーを飲みません。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "後ろが第4声のとき「bú」に変化（例：不是 bú shì）。"
+  },
+  {
+    "id": "hsk1_0102",
+    "hanzi": "吗",
+    "pinyin_accepted": ["ma0", "ma"],
+    "meaning": "〜ですか（疑問を作る助詞）",
+    "example_sentences": [
+      { "text": "你是学生吗？", "pinyin": "Nǐ shì xuésheng ma?", "translation": "あなたは学生ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "声調なし（軽声）。文末につけてYes/No疑問を作る。"
+  },
+  {
+    "id": "hsk1_0103",
+    "hanzi": "呢",
+    "pinyin_accepted": ["ne0", "ne"],
+    "meaning": "〜は？／〜しているところ（文末助詞）",
+    "example_sentences": [
+      { "text": "你呢？", "pinyin": "Nǐ ne?", "translation": "あなたは？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "声調なし（軽声）。話題を返すときに便利。"
+  },
+  {
+    "id": "hsk1_0104",
+    "hanzi": "很",
+    "pinyin_accepted": ["hěn", "hen3"],
+    "meaning": "とても（程度）",
+    "example_sentences": [
+      { "text": "今天很热。", "pinyin": "Jīntiān hěn rè.", "translation": "今日はとても暑いです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "形容詞の前でよく使う（我很好／很大 など）。"
+  },
+  {
+    "id": "hsk1_0105",
+    "hanzi": "也",
+    "pinyin_accepted": ["yě", "ye3"],
+    "meaning": "〜も",
+    "example_sentences": [
+      { "text": "我也喜欢茶。", "pinyin": "Wǒ yě xǐhuan chá.", "translation": "私もお茶が好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "「主語＋也＋動詞/形容詞」で“〜も〜だ”。"
+  },
+  {
+    "id": "hsk1_0106",
+    "hanzi": "都",
+    "pinyin_accepted": ["dōu", "dou1"],
+    "meaning": "みんな／全部",
+    "example_sentences": [
+      { "text": "我们都去。", "pinyin": "Wǒmen dōu qù.", "translation": "私たちはみんな行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "「都」は主語（複数）にかかることが多い。"
+  },
+  {
+    "id": "hsk1_0107",
+    "hanzi": "和",
+    "pinyin_accepted": ["hé", "he2"],
+    "meaning": "〜と（並列）",
+    "example_sentences": [
+      { "text": "我和他是朋友。", "pinyin": "Wǒ hé tā shì péngyou.", "translation": "私と彼は友だちです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "連詞"],
+    "notes": "名詞をつなぐ「A和B」。英語のandに近い。"
+  },
+  {
+    "id": "hsk1_0108",
+    "hanzi": "能",
+    "pinyin_accepted": ["néng", "neng2"],
+    "meaning": "できる（能力・可能）",
+    "example_sentences": [
+      { "text": "你能来吗？", "pinyin": "Nǐ néng lái ma?", "translation": "来られますか？" }
+    ],
+    "synonyms": ["可以"],
+    "antonyms": [],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "「能」は能力・状況的に可能、「可以」は許可・可能のニュアンスが出やすい。"
+  },
+  {
+    "id": "hsk1_0109",
+    "hanzi": "怎么",
+    "pinyin_accepted": ["zěnme", "zen3me0"],
+    "meaning": "どう／どのように",
+    "example_sentences": [
+      { "text": "这个字怎么写？", "pinyin": "Zhè ge zì zěnme xiě?", "translation": "この字はどう書きますか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "「me」は軽声。方法・やり方を聞く。"
+  },
+  {
+    "id": "hsk1_0110",
+    "hanzi": "怎么样",
+    "pinyin_accepted": ["zěnmeyàng", "zen3me0yang4"],
+    "meaning": "どうですか（状態・評価）",
+    "example_sentences": [
+      { "text": "这个菜怎么样？", "pinyin": "Zhè ge cài zěnmeyàng?", "translation": "この料理はどうですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "「怎么样？」だけで「どう？」と聞ける万能表現。"
+  },
+  {
+    "id": "hsk1_0111",
+    "hanzi": "这儿",
+    "pinyin_accepted": ["zhèr", "zhe4r"],
+    "meaning": "ここ",
+    "example_sentences": [
+      { "text": "我在这儿。", "pinyin": "Wǒ zài zhèr.", "translation": "私はここにいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["那儿"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「这儿」は会話でよく使う口語（儿化）。"
+  },
+  {
+    "id": "hsk1_0112",
+    "hanzi": "那儿",
+    "pinyin_accepted": ["nàr", "na4r"],
+    "meaning": "あそこ",
+    "example_sentences": [
+      { "text": "他在那儿。", "pinyin": "Tā zài nàr.", "translation": "彼はあそこにいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["这儿"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「那儿」も口語の儿化。"
+  },
+  {
+    "id": "hsk1_0113",
+    "hanzi": "哪儿",
+    "pinyin_accepted": ["nǎr", "na3r"],
+    "meaning": "どこ",
+    "example_sentences": [
+      { "text": "商店在哪儿？", "pinyin": "Shāngdiàn zài nǎr?", "translation": "お店はどこですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "場所を聞く定番。書き言葉では「哪里(nǎlǐ)」もある。"
+  },
+  {
+    "id": "hsk1_0114",
+    "hanzi": "本",
+    "pinyin_accepted": ["běn", "ben3"],
+    "meaning": "（量詞）〜冊",
+    "example_sentences": [
+      { "text": "我有三本书。", "pinyin": "Wǒ yǒu sān běn shū.", "translation": "私は本を3冊持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "本・ノートなど冊子に使う量詞。"
+  },
+  {
+    "id": "hsk1_0115",
+    "hanzi": "个",
+    "pinyin_accepted": ["gè", "ge4"],
+    "meaning": "（量詞）〜個／〜人（汎用）",
+    "example_sentences": [
+      { "text": "这是一个苹果。", "pinyin": "Zhè shì yí ge píngguǒ.", "translation": "これは1個のりんごです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "最も汎用的な量詞。ここでは「一(yī)」が後ろの第4声に引っ張られて「yí」になりやすい。"
+  },
+  {
+    "id": "hsk1_0116",
+    "hanzi": "块",
+    "pinyin_accepted": ["kuài", "kuai4"],
+    "meaning": "（量詞）元（口語の通貨単位）／かたまり",
+    "example_sentences": [
+      { "text": "这个十块。", "pinyin": "Zhè ge shí kuài.", "translation": "これは10元です。" }
+    ],
+    "synonyms": ["元"],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "値段でよく使う口語。「十块」＝10元。"
+  },
+  {
+    "id": "hsk1_0117",
+    "hanzi": "号",
+    "pinyin_accepted": ["hào", "hao4"],
+    "meaning": "〜日（日期）／番号",
+    "example_sentences": [
+      { "text": "今天几号？", "pinyin": "Jīntiān jǐ hào?", "translation": "今日は何日ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "日付は「六月二十三号」のように言う（〜号）。"
+  },
+  {
+    "id": "hsk1_0118",
+    "hanzi": "岁",
+    "pinyin_accepted": ["suì", "sui4"],
+    "meaning": "〜歳",
+    "example_sentences": [
+      { "text": "他八岁。", "pinyin": "Tā bā suì.", "translation": "彼は8歳です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "年齢を言う単位。「你几岁？」が定番。"
+  },
+  {
+    "id": "hsk1_0119",
+    "hanzi": "一",
+    "pinyin_accepted": ["yī", "yi1"],
+    "meaning": "1",
+    "example_sentences": [
+      { "text": "我有一本书。", "pinyin": "Wǒ yǒu yì běn shū.", "translation": "私は本を1冊持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "声調変化：後ろが第4声だと「yì」、第1/2/3声だと「yí」になりやすい。"
+  },
+  {
+    "id": "hsk1_0120",
+    "hanzi": "二",
+    "pinyin_accepted": ["èr", "er4"],
+    "meaning": "2",
+    "example_sentences": [
+      { "text": "我有二个苹果。", "pinyin": "Wǒ yǒu èr ge píngguǒ.", "translation": "私はりんごを2個持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "会話では「两个(liǎng ge)」も非常によく使う。"
+  },
+  {
+    "id": "hsk1_0121",
+    "hanzi": "三",
+    "pinyin_accepted": ["sān", "san1"],
+    "meaning": "3",
+    "example_sentences": [
+      { "text": "现在三点。", "pinyin": "Xiànzài sān diǎn.", "translation": "今は3時です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第1声で平ら。"
+  },
+  {
+    "id": "hsk1_0122",
+    "hanzi": "四",
+    "pinyin_accepted": ["sì", "si4"],
+    "meaning": "4",
+    "example_sentences": [
+      { "text": "我四岁。", "pinyin": "Wǒ sì suì.", "translation": "私は4歳です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第4声で強く下げる。"
+  },
+  {
+    "id": "hsk1_0123",
+    "hanzi": "五",
+    "pinyin_accepted": ["wǔ", "wu3"],
+    "meaning": "5",
+    "example_sentences": [
+      { "text": "今天五号。", "pinyin": "Jīntiān wǔ hào.", "translation": "今日は5日です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第3声。"
+  },
+  {
+    "id": "hsk1_0124",
+    "hanzi": "六",
+    "pinyin_accepted": ["liù", "liu4"],
+    "meaning": "6",
+    "example_sentences": [
+      { "text": "我六点去学校。", "pinyin": "Wǒ liù diǎn qù xuéxiào.", "translation": "私は6時に学校へ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第4声。"
+  },
+  {
+    "id": "hsk1_0125",
+    "hanzi": "七",
+    "pinyin_accepted": ["qī", "qi1"],
+    "meaning": "7",
+    "example_sentences": [
+      { "text": "我有七本书。", "pinyin": "Wǒ yǒu qī běn shū.", "translation": "私は本を7冊持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第1声。"
+  },
+  {
+    "id": "hsk1_0126",
+    "hanzi": "八",
+    "pinyin_accepted": ["bā", "ba1"],
+    "meaning": "8",
+    "example_sentences": [
+      { "text": "他八岁。", "pinyin": "Tā bā suì.", "translation": "彼は8歳です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第1声。"
+  },
+  {
+    "id": "hsk1_0127",
+    "hanzi": "九",
+    "pinyin_accepted": ["jiǔ", "jiu3"],
+    "meaning": "9",
+    "example_sentences": [
+      { "text": "现在九点。", "pinyin": "Xiànzài jiǔ diǎn.", "translation": "今は9時です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第3声。"
+  },
+  {
+    "id": "hsk1_0128",
+    "hanzi": "十",
+    "pinyin_accepted": ["shí", "shi2"],
+    "meaning": "10",
+    "example_sentences": [
+      { "text": "这个十块。", "pinyin": "Zhè ge shí kuài.", "translation": "これは10元です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第2声。"
+  },
+  {
+    "id": "hsk1_0129",
+    "hanzi": "菜",
+    "pinyin_accepted": ["cài", "cai4"],
+    "meaning": "料理／おかず／野菜",
+    "example_sentences": [
+      { "text": "我喜欢吃菜。", "pinyin": "Wǒ xǐhuan chī cài.", "translation": "私は料理（おかず）を食べるのが好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "文脈で「料理」も「野菜」も表す。"
+  },
+  {
+    "id": "hsk1_0130",
+    "hanzi": "东西",
+    "pinyin_accepted": ["dōngxi", "dong1xi0"],
+    "meaning": "もの",
+    "example_sentences": [
+      { "text": "这是什么东西？", "pinyin": "Zhè shì shénme dōngxi?", "translation": "これは何ですか？（これは何というものですか？）" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「xi」は軽声。とてもよく使う「もの」。"
+  },
+  {
+    "id": "hsk1_0131",
+    "hanzi": "饭店",
+    "pinyin_accepted": ["fàndiàn", "fan4dian4"],
+    "meaning": "レストラン／食堂",
+    "example_sentences": [
+      { "text": "我们去饭店。", "pinyin": "Wǒmen qù fàndiàn.", "translation": "私たちはレストランへ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「餐厅」より口語でよく出ることがある。"
+  },
+  {
+    "id": "hsk1_0132",
+    "hanzi": "商店",
+    "pinyin_accepted": ["shāngdiàn", "shang1dian4"],
+    "meaning": "店",
+    "example_sentences": [
+      { "text": "商店在哪儿？", "pinyin": "Shāngdiàn zài nǎr?", "translation": "お店はどこですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "買い物の場面で頻出。"
+  },
+  {
+    "id": "hsk1_0133",
+    "hanzi": "医院",
+    "pinyin_accepted": ["yīyuàn", "yi1yuan4"],
+    "meaning": "病院",
+    "example_sentences": [
+      { "text": "他在医院。", "pinyin": "Tā zài yīyuàn.", "translation": "彼は病院にいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「院」は第4声。"
+  },
+  {
+    "id": "hsk1_0134",
+    "hanzi": "医生",
+    "pinyin_accepted": ["yīshēng", "yi1sheng1"],
+    "meaning": "医者",
+    "example_sentences": [
+      { "text": "她是医生。", "pinyin": "Tā shì yīshēng.", "translation": "彼女は医者です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「生」はここでは第1声。"
+  },
+  {
+    "id": "hsk1_0135",
+    "hanzi": "学校",
+    "pinyin_accepted": ["xuéxiào", "xue2xiao4"],
+    "meaning": "学校",
+    "example_sentences": [
+      { "text": "我在学校。", "pinyin": "Wǒ zài xuéxiào.", "translation": "私は学校にいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「在学校」「去学校」などで頻出。"
+  },
+  {
+    "id": "hsk1_0136",
+    "hanzi": "学习",
+    "pinyin_accepted": ["xuéxí", "xue2xi2"],
+    "meaning": "勉強する／学習する",
+    "example_sentences": [
+      { "text": "我学习汉语。", "pinyin": "Wǒ xuéxí Hànyǔ.", "translation": "私は中国語を勉強します。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「学」単体より「学习」の方が“勉強する”として自然なことが多い。"
+  },
+  {
+    "id": "hsk1_0137",
+    "hanzi": "同学",
+    "pinyin_accepted": ["tóngxué", "tong2xue2"],
+    "meaning": "クラスメート／同級生",
+    "example_sentences": [
+      { "text": "他是我的同学。", "pinyin": "Tā shì wǒ de tóngxué.", "translation": "彼は私のクラスメートです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "学校の人間関係の基本語彙。"
+  },
+  {
+    "id": "hsk1_0138",
+    "hanzi": "桌子",
+    "pinyin_accepted": ["zhuōzi", "zhuo1zi0"],
+    "meaning": "机／テーブル",
+    "example_sentences": [
+      { "text": "书在桌子上。", "pinyin": "Shū zài zhuōzi shàng.", "translation": "本は机の上にあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「zi」は軽声。家具の定番語彙。"
+  },
+  {
+    "id": "hsk1_0139",
+    "hanzi": "椅子",
+    "pinyin_accepted": ["yǐzi", "yi3zi0"],
+    "meaning": "いす",
+    "example_sentences": [
+      { "text": "这里有椅子。", "pinyin": "Zhèr yǒu yǐzi.", "translation": "ここにいすがあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「zi」は軽声。"
+  },
+  {
+    "id": "hsk1_0140",
+    "hanzi": "衣服",
+    "pinyin_accepted": ["yīfu", "yi1fu0"],
+    "meaning": "服",
+    "example_sentences": [
+      { "text": "我买衣服。", "pinyin": "Wǒ mǎi yīfu.", "translation": "私は服を買います。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "2音節目は軽声になりやすい（yīfu）。"
+  },
+  {
+    "id": "hsk1_0141",
+    "hanzi": "狗",
+    "pinyin_accepted": ["gǒu", "gou3"],
+    "meaning": "犬",
+    "example_sentences": [
+      { "text": "我家有狗。", "pinyin": "Wǒ jiā yǒu gǒu.", "translation": "私の家には犬がいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "ペットの基本語彙。"
+  },
+  {
+    "id": "hsk1_0142",
+    "hanzi": "猫",
+    "pinyin_accepted": ["māo", "mao1"],
+    "meaning": "猫",
+    "example_sentences": [
+      { "text": "我喜欢猫。", "pinyin": "Wǒ xǐhuan māo.", "translation": "私は猫が好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "第1声で平らに。"
+  },
+  {
+    "id": "hsk1_0143",
+    "hanzi": "火车站",
+    "pinyin_accepted": ["huǒchēzhàn", "huo3che1zhan4"],
+    "meaning": "駅（鉄道駅）",
+    "example_sentences": [
+      { "text": "我去火车站。", "pinyin": "Wǒ qù huǒchēzhàn.", "translation": "私は駅へ行きます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "移動系の定番単語。「火车」＋「站」。"
+  },
+  {
+    "id": "hsk1_0144",
+    "hanzi": "出租车",
+    "pinyin_accepted": ["chūzūchē", "chu1zu1che1"],
+    "meaning": "タクシー",
+    "example_sentences": [
+      { "text": "我坐出租车。", "pinyin": "Wǒ zuò chūzūchē.", "translation": "私はタクシーに乗ります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「坐(zuò)」＝（乗り物に）乗る。"
+  },
+  {
+    "id": "hsk1_0145",
+    "hanzi": "打电话",
+    "pinyin_accepted": ["dǎ diànhuà", "da3 dian4hua4"],
+    "meaning": "電話をかける",
+    "example_sentences": [
+      { "text": "我给妈妈打电话。", "pinyin": "Wǒ gěi māma dǎ diànhuà.", "translation": "私はお母さんに電話をかけます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「打＋電話」＝“電話する”の言い方として丸ごと暗記が楽。"
+  },
+  {
+    "id": "hsk1_0146",
+    "hanzi": "睡觉",
+    "pinyin_accepted": ["shuìjiào", "shui4jiao4"],
+    "meaning": "寝る",
+    "example_sentences": [
+      { "text": "我睡觉了。", "pinyin": "Wǒ shuìjiào le.", "translation": "寝ます。/ もう寝ました。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "文末の「了」は状況次第で「もう〜した」「これから〜する」のように聞こえることがある。"
+  },
+  {
+    "id": "hsk1_0147",
+    "hanzi": "看见",
+    "pinyin_accepted": ["kànjiàn", "kan4jian4"],
+    "meaning": "見える／見かける",
+    "example_sentences": [
+      { "text": "我看见他了。", "pinyin": "Wǒ kànjiàn tā le.", "translation": "私は彼を見かけました。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「看」より“見えて認識した”感じが出る。"
+  },
+  {
+    "id": "hsk1_0148",
+    "hanzi": "回",
+    "pinyin_accepted": ["huí", "hui2"],
+    "meaning": "帰る",
+    "example_sentences": [
+      { "text": "我回家。", "pinyin": "Wǒ huí jiā.", "translation": "私は家に帰ります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「回＋場所」で“〜に帰る”。"
+  },
+  {
+    "id": "hsk1_0149",
+    "hanzi": "住",
+    "pinyin_accepted": ["zhù", "zhu4"],
+    "meaning": "住む",
+    "example_sentences": [
+      { "text": "我住在北京。", "pinyin": "Wǒ zhù zài Běijīng.", "translation": "私は北京に住んでいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「住在＋場所」で“〜に住む”。"
+  },
+  {
+    "id": "hsk1_0150",
+    "hanzi": "做",
+    "pinyin_accepted": ["zuò", "zuo4"],
+    "meaning": "する／作る",
+    "example_sentences": [
+      { "text": "我做饭。", "pinyin": "Wǒ zuò fàn.", "translation": "私はご飯を作ります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「做＋名詞」で“〜をする/作る”（做饭＝料理する）。"
+  }
+]

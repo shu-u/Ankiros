@@ -1,0 +1,1308 @@
+[
+  {
+    "id": "hsk1_new_0101",
+    "hanzi": "次",
+    "pinyin_accepted": [
+      "cì",
+      "ci4"
+    ],
+    "meaning": "回（動作の回数を数える量詞）",
+    "example_sentences": [
+      {
+        "text": "我去过一次中国。",
+        "pinyin": "wǒ qù guo yí cì Zhōngguó.",
+        "translation": "私は一度中国に行ったことがある。"
+      },
+      {
+        "text": "这是第三次了。",
+        "pinyin": "zhè shì dì sān cì le.",
+        "translation": "これで三回目だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "動作の回数を数える量詞。「一」は第4声の前で yí に変調する（一次 yí cì）。"
+  },
+  {
+    "id": "hsk1_new_0102",
+    "hanzi": "从",
+    "pinyin_accepted": [
+      "cóng",
+      "cong2"
+    ],
+    "meaning": "～から（起点を表す介詞）",
+    "example_sentences": [
+      {
+        "text": "我从北京来。",
+        "pinyin": "wǒ cóng Běijīng lái.",
+        "translation": "私は北京から来た。"
+      },
+      {
+        "text": "从这儿到学校很近。",
+        "pinyin": "cóng zhèr dào xuéxiào hěn jìn.",
+        "translation": "ここから学校までは近い。"
+      },
+      {
+        "text": "我从早上工作到晚上。",
+        "pinyin": "wǒ cóng zǎoshang gōngzuò dào wǎnshang.",
+        "translation": "私は朝から晩まで働く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "介詞"
+    ],
+    "notes": "場所・時間の起点を表す。「从…到…」で「～から～まで」。"
+  },
+  {
+    "id": "hsk1_new_0103",
+    "hanzi": "错",
+    "pinyin_accepted": [
+      "cuò",
+      "cuo4"
+    ],
+    "meaning": "間違っている、誤り",
+    "example_sentences": [
+      {
+        "text": "这个字写错了。",
+        "pinyin": "zhège zì xiě cuò le.",
+        "translation": "この字は書き間違えた。"
+      },
+      {
+        "text": "对不起，是我的错。",
+        "pinyin": "duìbuqǐ, shì wǒ de cuò.",
+        "translation": "ごめんなさい、私の間違いです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "对"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「間違っている」、名詞「誤り」の両方。出典の頭大文字は誤りで、一般語なので小文字 cuò。"
+  },
+  {
+    "id": "hsk1_new_0104",
+    "hanzi": "打",
+    "pinyin_accepted": [
+      "dǎ",
+      "da3"
+    ],
+    "meaning": "（手で）たたく、（電話・球技などを）する",
+    "example_sentences": [
+      {
+        "text": "我喜欢打篮球。",
+        "pinyin": "wǒ xǐhuan dǎ lánqiú.",
+        "translation": "私はバスケットボールをするのが好きだ。"
+      },
+      {
+        "text": "请给我打电话。",
+        "pinyin": "qǐng gěi wǒ dǎ diànhuà.",
+        "translation": "私に電話をかけてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "正しい読みは dǎ（出典の dá は誤り）。手を使う動作全般に広く使う多用途の動詞。"
+  },
+  {
+    "id": "hsk1_new_0105",
+    "hanzi": "打车",
+    "pinyin_accepted": [
+      "dǎ chē",
+      "da3che1"
+    ],
+    "meaning": "タクシーに乗る、タクシーを拾う",
+    "example_sentences": [
+      {
+        "text": "我们打车去吧。",
+        "pinyin": "wǒmen dǎ chē qù ba.",
+        "translation": "タクシーで行こう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「打个车」のように間に語を入れられる。"
+  },
+  {
+    "id": "hsk1_new_0106",
+    "hanzi": "打电话",
+    "pinyin_accepted": [
+      "dǎ diànhuà",
+      "da3dianhua4"
+    ],
+    "meaning": "電話をかける",
+    "example_sentences": [
+      {
+        "text": "我给妈妈打电话。",
+        "pinyin": "wǒ gěi māma dǎ diànhuà.",
+        "translation": "私はお母さんに電話をかける。"
+      },
+      {
+        "text": "他正在打电话。",
+        "pinyin": "tā zhèngzài dǎ diànhuà.",
+        "translation": "彼は電話をかけているところだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「给＋人＋打电话」で「～に電話する」。中の diàn は軽声化せず第4声。"
+  },
+  {
+    "id": "hsk1_new_0107",
+    "hanzi": "打开",
+    "pinyin_accepted": [
+      "dǎ kāi",
+      "da3kai1"
+    ],
+    "meaning": "（ドア・本・電源などを）開ける、つける",
+    "example_sentences": [
+      {
+        "text": "请打开窗户。",
+        "pinyin": "qǐng dǎ kāi chuānghu.",
+        "translation": "窓を開けてください。"
+      },
+      {
+        "text": "他打开了电脑。",
+        "pinyin": "tā dǎ kāi le diànnǎo.",
+        "translation": "彼はパソコンを起動した。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「打＋方向補語开」の構造。物理的に開ける意味と、電源を入れる意味の両方。"
+  },
+  {
+    "id": "hsk1_new_0108",
+    "hanzi": "打球",
+    "pinyin_accepted": [
+      "dǎ qiú",
+      "da3qiu2"
+    ],
+    "meaning": "球技をする（球を打つ・球技で遊ぶ）",
+    "example_sentences": [
+      {
+        "text": "他们在打球。",
+        "pinyin": "tāmen zài dǎ qiú.",
+        "translation": "彼らは球技をしている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。手で扱う球技（バスケ・卓球など）に使う。足を使うサッカーは「踢球」。"
+  },
+  {
+    "id": "hsk1_new_0109",
+    "hanzi": "大",
+    "pinyin_accepted": [
+      "dà",
+      "da4"
+    ],
+    "meaning": "大きい、（年齢が）上である",
+    "example_sentences": [
+      {
+        "text": "这个房间很大。",
+        "pinyin": "zhège fángjiān hěn dà.",
+        "translation": "この部屋はとても大きい。"
+      },
+      {
+        "text": "他比我大两岁。",
+        "pinyin": "tā bǐ wǒ dà liǎng suì.",
+        "translation": "彼は私より二歳年上だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "小"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "サイズの「大きい」と年齢の「年上」の両方。反対語は「小」。"
+  },
+  {
+    "id": "hsk1_new_0110",
+    "hanzi": "大学",
+    "pinyin_accepted": [
+      "dàxué",
+      "da4xue2"
+    ],
+    "meaning": "大学",
+    "example_sentences": [
+      {
+        "text": "我在北京上大学。",
+        "pinyin": "wǒ zài Běijīng shàng dàxué.",
+        "translation": "私は北京で大学に通っている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "一般名詞なので小文字 dàxué（出典の頭大文字は誤り）。"
+  },
+  {
+    "id": "hsk1_new_0111",
+    "hanzi": "大学生",
+    "pinyin_accepted": [
+      "dàxuéshēng",
+      "da4xue2sheng1"
+    ],
+    "meaning": "大学生",
+    "example_sentences": [
+      {
+        "text": "我哥哥是大学生。",
+        "pinyin": "wǒ gēge shì dàxuéshēng.",
+        "translation": "私の兄は大学生だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「大学＋生」。中学生は「中学生」、小学生は「小学生」。"
+  },
+  {
+    "id": "hsk1_new_0112",
+    "hanzi": "到",
+    "pinyin_accepted": [
+      "dào",
+      "dao4"
+    ],
+    "meaning": "着く、到着する；（動作の達成を表す結果補語）～し終える",
+    "example_sentences": [
+      {
+        "text": "火车到了。",
+        "pinyin": "huǒchē dào le.",
+        "translation": "電車が着いた。"
+      },
+      {
+        "text": "我从家到学校要十分钟。",
+        "pinyin": "wǒ cóng jiā dào xuéxiào yào shí fēnzhōng.",
+        "translation": "家から学校まで十分かかる。"
+      },
+      {
+        "text": "我没买到票。",
+        "pinyin": "wǒ méi mǎi dào piào.",
+        "translation": "私は切符を買えなかった（手に入れられなかった）。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "動詞「到着する」、介詞的に「～まで」、結果補語として動詞の後ろで達成を表す（买到＝買えた）。"
+  },
+  {
+    "id": "hsk1_new_0113",
+    "hanzi": "地",
+    "pinyin_accepted": [
+      "de",
+      "de0"
+    ],
+    "meaning": "（連用修飾語をつくる構造助詞）～に、～と",
+    "example_sentences": [
+      {
+        "text": "他高兴地说。",
+        "pinyin": "tā gāoxìng de shuō.",
+        "translation": "彼は嬉しそうに言った。"
+      },
+      {
+        "text": "请慢慢地走。",
+        "pinyin": "qǐng mànmàn de zǒu.",
+        "translation": "ゆっくり歩いてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "助詞"
+    ],
+    "notes": "助詞の読みは軽声 de。形容詞などに付いて動詞を修飾する。多音字で「土地」の意味では dì（hsk1_new_0114以降参照）。"
+  },
+  {
+    "id": "hsk1_new_0114",
+    "hanzi": "地点",
+    "pinyin_accepted": [
+      "dìdiǎn",
+      "di4dian3"
+    ],
+    "meaning": "場所、地点",
+    "example_sentences": [
+      {
+        "text": "请告诉我见面的地点。",
+        "pinyin": "qǐng gàosu wǒ jiànmiàn de dìdiǎn.",
+        "translation": "待ち合わせの場所を教えてください。"
+      }
+    ],
+    "synonyms": [
+      "地方"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "ある特定の地点を指す。ここでの「地」は dì。"
+  },
+  {
+    "id": "hsk1_new_0115",
+    "hanzi": "地方",
+    "pinyin_accepted": [
+      "dìfang",
+      "di4fang0"
+    ],
+    "meaning": "場所、ところ",
+    "example_sentences": [
+      {
+        "text": "这个地方很漂亮。",
+        "pinyin": "zhège dìfang hěn piàoliang.",
+        "translation": "この場所はとてもきれいだ。"
+      },
+      {
+        "text": "你住在什么地方？",
+        "pinyin": "nǐ zhù zài shénme dìfang?",
+        "translation": "あなたはどこに住んでいますか。"
+      }
+    ],
+    "synonyms": [
+      "地点"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「方」は軽声 fang（di4fang0）。広く「場所・ところ」を指す日常語。"
+  },
+  {
+    "id": "hsk1_new_0116",
+    "hanzi": "地上",
+    "pinyin_accepted": [
+      "dìshang",
+      "di4shang0"
+    ],
+    "meaning": "地面、床の上",
+    "example_sentences": [
+      {
+        "text": "书在地上。",
+        "pinyin": "shū zài dìshang.",
+        "translation": "本が床の上にある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「上」は方位を表すとき軽声 shang（di4shang0）。地面・床面を指す。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0117",
+    "hanzi": "地图",
+    "pinyin_accepted": [
+      "dìtú",
+      "di4tu2"
+    ],
+    "meaning": "地図",
+    "example_sentences": [
+      {
+        "text": "我看着地图找路。",
+        "pinyin": "wǒ kàn zhe dìtú zhǎo lù.",
+        "translation": "私は地図を見ながら道を探す。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「地」は dì。地図を表す基本名詞。"
+  },
+  {
+    "id": "hsk1_new_0118",
+    "hanzi": "得到",
+    "pinyin_accepted": [
+      "dédào",
+      "de2dao4"
+    ],
+    "meaning": "手に入れる、得る",
+    "example_sentences": [
+      {
+        "text": "他得到了大家的帮助。",
+        "pinyin": "tā dédào le dàjiā de bāngzhù.",
+        "translation": "彼はみんなの助けを得た。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「得」はここでは dé（第2声）。抽象的・具体的なものを「得る」両方に使う。"
+  },
+  {
+    "id": "hsk1_new_0119",
+    "hanzi": "等",
+    "pinyin_accepted": [
+      "děng",
+      "deng3"
+    ],
+    "meaning": "待つ；～など",
+    "example_sentences": [
+      {
+        "text": "请等一下。",
+        "pinyin": "qǐng děng yíxià.",
+        "translation": "ちょっと待ってください。"
+      },
+      {
+        "text": "我在门口等你。",
+        "pinyin": "wǒ zài ménkǒu děng nǐ.",
+        "translation": "私は入口であなたを待っている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "動詞「待つ」が中心。「等一下」で「ちょっと待って」。「一」は第4声 xià の前で yí に変調。"
+  },
+  {
+    "id": "hsk1_new_0120",
+    "hanzi": "弟",
+    "pinyin_accepted": [
+      "dì",
+      "di4"
+    ],
+    "meaning": "弟",
+    "example_sentences": [
+      {
+        "text": "他是我的小弟。",
+        "pinyin": "tā shì wǒ de xiǎo dì.",
+        "translation": "彼は私の末の弟だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "兄"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "単独では文語的。口語では普通「弟弟」を使う。"
+  },
+  {
+    "id": "hsk1_new_0121",
+    "hanzi": "弟弟",
+    "pinyin_accepted": [
+      "dìdi",
+      "di4di0"
+    ],
+    "meaning": "弟",
+    "example_sentences": [
+      {
+        "text": "我有一个弟弟。",
+        "pinyin": "wǒ yǒu yí ge dìdi.",
+        "translation": "私には弟が一人いる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "哥哥"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "二つ目の「弟」は軽声（di4di0）。反対は「哥哥（兄）」。「一」は量詞 ge の前で yí。"
+  },
+  {
+    "id": "hsk1_new_0122",
+    "hanzi": "第",
+    "pinyin_accepted": [
+      "dì",
+      "di4"
+    ],
+    "meaning": "第～（序数をつくる接頭辞）",
+    "example_sentences": [
+      {
+        "text": "这是我第一次来这里。",
+        "pinyin": "zhè shì wǒ dì yī cì lái zhèlǐ.",
+        "translation": "ここに来るのはこれが初めてだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "数の前に付けて序数をつくる。「第一」では「一」は本来 yī のまま（序数では変調しないのが標準）。"
+  },
+  {
+    "id": "hsk1_new_0123",
+    "hanzi": "第二",
+    "pinyin_accepted": [
+      "dì'èr",
+      "di4er4"
+    ],
+    "meaning": "二番目、第二の",
+    "example_sentences": [
+      {
+        "text": "我坐第二个座位。",
+        "pinyin": "wǒ zuò dì'èr ge zuòwèi.",
+        "translation": "私は二番目の席に座る。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "声調記号表記では母音始まりの音節の前に隔音符号「'」を付ける（dì'èr）。"
+  },
+  {
+    "id": "hsk1_new_0124",
+    "hanzi": "点",
+    "pinyin_accepted": [
+      "diǎn",
+      "dian3"
+    ],
+    "meaning": "（時刻の）～時；少し；（料理を）注文する；点",
+    "example_sentences": [
+      {
+        "text": "现在三点。",
+        "pinyin": "xiànzài sān diǎn.",
+        "translation": "今は三時だ。"
+      },
+      {
+        "text": "我想吃一点。",
+        "pinyin": "wǒ xiǎng chī yìdiǎn.",
+        "translation": "私は少し食べたい。"
+      },
+      {
+        "text": "我们点菜吧。",
+        "pinyin": "wǒmen diǎn cài ba.",
+        "translation": "料理を注文しよう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "時刻の量詞「～時」、数量の「一点（少し）」、動詞「注文する」など多義。一点の「一」は yì（一+第3声 → yì）。"
+  },
+  {
+    "id": "hsk1_new_0125",
+    "hanzi": "电",
+    "pinyin_accepted": [
+      "diàn",
+      "dian4"
+    ],
+    "meaning": "電気",
+    "example_sentences": [
+      {
+        "text": "这里没有电。",
+        "pinyin": "zhèlǐ méiyǒu diàn.",
+        "translation": "ここは電気が通っていない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「電気」を表す基本字。多くの語の構成要素（电话・电脑・电视など）。"
+  },
+  {
+    "id": "hsk1_new_0126",
+    "hanzi": "电话",
+    "pinyin_accepted": [
+      "diànhuà",
+      "dian4hua4"
+    ],
+    "meaning": "電話",
+    "example_sentences": [
+      {
+        "text": "你的电话号码是多少？",
+        "pinyin": "nǐ de diànhuà hàomǎ shì duōshao?",
+        "translation": "あなたの電話番号は何番ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "名詞「電話」。電話をかける動作は「打电话」。"
+  },
+  {
+    "id": "hsk1_new_0127",
+    "hanzi": "电脑",
+    "pinyin_accepted": [
+      "diànnǎo",
+      "dian4nao3"
+    ],
+    "meaning": "コンピューター、パソコン",
+    "example_sentences": [
+      {
+        "text": "我用电脑工作。",
+        "pinyin": "wǒ yòng diànnǎo gōngzuò.",
+        "translation": "私はパソコンで仕事をする。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「电（電気）＋脑（脳）」。ノートパソコンは「笔记本电脑」。"
+  },
+  {
+    "id": "hsk1_new_0128",
+    "hanzi": "电视",
+    "pinyin_accepted": [
+      "diànshì",
+      "dian4shi4"
+    ],
+    "meaning": "テレビ（放送・番組）",
+    "example_sentences": [
+      {
+        "text": "我晚上看电视。",
+        "pinyin": "wǒ wǎnshang kàn diànshì.",
+        "translation": "私は夜にテレビを見る。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "テレビ放送・番組を指す。機器そのものは「电视机」。"
+  },
+  {
+    "id": "hsk1_new_0129",
+    "hanzi": "电视机",
+    "pinyin_accepted": [
+      "diànshìjī",
+      "dian4shi4ji1"
+    ],
+    "meaning": "テレビ（受像機）",
+    "example_sentences": [
+      {
+        "text": "客厅里有一台电视机。",
+        "pinyin": "kètīng lǐ yǒu yì tái diànshìjī.",
+        "translation": "リビングにテレビが一台ある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「机」が付いて機器そのものを指す。量詞は「台」。一台の「一」は第2声 tái の前で yì。"
+  },
+  {
+    "id": "hsk1_new_0130",
+    "hanzi": "电影",
+    "pinyin_accepted": [
+      "diànyǐng",
+      "dian4ying3"
+    ],
+    "meaning": "映画",
+    "example_sentences": [
+      {
+        "text": "我们去看电影吧。",
+        "pinyin": "wǒmen qù kàn diànyǐng ba.",
+        "translation": "映画を見に行こう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "映画を見るは「看电影」。映画館は「电影院」。"
+  },
+  {
+    "id": "hsk1_new_0131",
+    "hanzi": "电影院",
+    "pinyin_accepted": [
+      "diànyǐngyuàn",
+      "dian4ying3yuan4"
+    ],
+    "meaning": "映画館",
+    "example_sentences": [
+      {
+        "text": "电影院离这儿不远。",
+        "pinyin": "diànyǐngyuàn lí zhèr bù yuǎn.",
+        "translation": "映画館はここから遠くない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「电影＋院」。不远の「不」は第3声 yuǎn の前なので bù のまま（変調なし）。"
+  },
+  {
+    "id": "hsk1_new_0132",
+    "hanzi": "东",
+    "pinyin_accepted": [
+      "dōng",
+      "dong1"
+    ],
+    "meaning": "東",
+    "example_sentences": [
+      {
+        "text": "太阳从东边出来。",
+        "pinyin": "tàiyáng cóng dōngbian chūlái.",
+        "translation": "太陽は東から昇る。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "西"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "方位詞なので一般語として小文字 dōng（出典の頭大文字は誤り）。反対は「西」。"
+  },
+  {
+    "id": "hsk1_new_0133",
+    "hanzi": "东边",
+    "pinyin_accepted": [
+      "dōngbian",
+      "dong1bian0"
+    ],
+    "meaning": "東側、東のほう",
+    "example_sentences": [
+      {
+        "text": "银行在学校的东边。",
+        "pinyin": "yínháng zài xuéxiào de dōngbian.",
+        "translation": "銀行は学校の東側にある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "西边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "方位詞の「边」は軽声 bian（dong1bian0）。反対は「西边」。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0134",
+    "hanzi": "东西",
+    "pinyin_accepted": [
+      "dōngxi",
+      "dong1xi0"
+    ],
+    "meaning": "物、もの",
+    "example_sentences": [
+      {
+        "text": "我去买东西。",
+        "pinyin": "wǒ qù mǎi dōngxi.",
+        "translation": "私は買い物に行く。"
+      },
+      {
+        "text": "桌子上有很多东西。",
+        "pinyin": "zhuōzi shàng yǒu hěn duō dōngxi.",
+        "translation": "机の上にたくさんの物がある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「物」の意味では「西」は軽声 xi（dong1xi0）。方位の「東西」（dōngxī、第1声）とは読みが異なる多音語。"
+  },
+  {
+    "id": "hsk1_new_0135",
+    "hanzi": "动",
+    "pinyin_accepted": [
+      "dòng",
+      "dong4"
+    ],
+    "meaning": "動く、動かす",
+    "example_sentences": [
+      {
+        "text": "别动！",
+        "pinyin": "bié dòng!",
+        "translation": "動くな。"
+      },
+      {
+        "text": "这个箱子太重了，我动不了。",
+        "pinyin": "zhège xiāngzi tài zhòng le, wǒ dòng bu liǎo.",
+        "translation": "この箱は重すぎて、私は動かせない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "自動詞「動く」と他動詞「動かす」の両方。可能補語「动不了（動かせない）」の形も頻出。"
+  },
+  {
+    "id": "hsk1_new_0136",
+    "hanzi": "动作",
+    "pinyin_accepted": [
+      "dòngzuò",
+      "dong4zuo4"
+    ],
+    "meaning": "動作、動き",
+    "example_sentences": [
+      {
+        "text": "他的动作很快。",
+        "pinyin": "tā de dòngzuò hěn kuài.",
+        "translation": "彼の動作はとても速い。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "体の動き・所作を指す名詞。"
+  },
+  {
+    "id": "hsk1_new_0137",
+    "hanzi": "读",
+    "pinyin_accepted": [
+      "dú",
+      "du2"
+    ],
+    "meaning": "読む、（学校に）通う",
+    "example_sentences": [
+      {
+        "text": "请读这个句子。",
+        "pinyin": "qǐng dú zhège jùzi.",
+        "translation": "この文を読んでください。"
+      },
+      {
+        "text": "他在大学读书。",
+        "pinyin": "tā zài dàxué dú shū.",
+        "translation": "彼は大学で学んでいる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "正しい読みは dú（出典の dòu は誤り）。「声に出して読む」「学校に通う・学ぶ」の両方。"
+  },
+  {
+    "id": "hsk1_new_0138",
+    "hanzi": "读书",
+    "pinyin_accepted": [
+      "dúshū",
+      "du2shu1"
+    ],
+    "meaning": "本を読む、勉強する、学校に通う",
+    "example_sentences": [
+      {
+        "text": "我喜欢读书。",
+        "pinyin": "wǒ xǐhuan dúshū.",
+        "translation": "私は読書が好きだ。"
+      },
+      {
+        "text": "他在北京读书。",
+        "pinyin": "tā zài Běijīng dúshū.",
+        "translation": "彼は北京で学んでいる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「本を読む」のほか「学校で学ぶ」の意味でも使う。"
+  },
+  {
+    "id": "hsk1_new_0139",
+    "hanzi": "对",
+    "pinyin_accepted": [
+      "duì",
+      "dui4"
+    ],
+    "meaning": "正しい；～に対して；（はい）そのとおり",
+    "example_sentences": [
+      {
+        "text": "你说得对。",
+        "pinyin": "nǐ shuō de duì.",
+        "translation": "あなたの言うとおりだ。"
+      },
+      {
+        "text": "他对我很好。",
+        "pinyin": "tā duì wǒ hěn hǎo.",
+        "translation": "彼は私にとても親切だ。"
+      },
+      {
+        "text": "对，就是这样。",
+        "pinyin": "duì, jiùshì zhèyàng.",
+        "translation": "そう、そのとおりだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "错"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「正しい」、介詞「～に対して」、応答の「そう」など多機能。反対は「错」。"
+  },
+  {
+    "id": "hsk1_new_0140",
+    "hanzi": "多",
+    "pinyin_accepted": [
+      "duō",
+      "duo1"
+    ],
+    "meaning": "多い；どれくらい（疑問）；～あまり",
+    "example_sentences": [
+      {
+        "text": "今天作业很多。",
+        "pinyin": "jīntiān zuòyè hěn duō.",
+        "translation": "今日は宿題が多い。"
+      },
+      {
+        "text": "你多大了？",
+        "pinyin": "nǐ duō dà le?",
+        "translation": "あなたは何歳ですか。"
+      },
+      {
+        "text": "这本书三十多块钱。",
+        "pinyin": "zhè běn shū sānshí duō kuài qián.",
+        "translation": "この本は三十数元する。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "少"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「多い」、程度を尋ねる「多＋形容詞（多大＝どれくらいの大きさ・年齢）」、概数の「～あまり」。反対は「少」。"
+  },
+  {
+    "id": "hsk1_new_0141",
+    "hanzi": "饿",
+    "pinyin_accepted": [
+      "è",
+      "e4"
+    ],
+    "meaning": "お腹がすいている",
+    "example_sentences": [
+      {
+        "text": "我饿了。",
+        "pinyin": "wǒ è le.",
+        "translation": "お腹がすいた。"
+      },
+      {
+        "text": "你饿不饿？",
+        "pinyin": "nǐ è bu è?",
+        "translation": "お腹すいてる？"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "饱"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「空腹だ」。反対は「饱（満腹だ）」。「饿了」で「お腹がすいた」状態の変化を表す。"
+  },
+  {
+    "id": "hsk1_new_0142",
+    "hanzi": "儿子",
+    "pinyin_accepted": [
+      "érzi",
+      "er2zi0"
+    ],
+    "meaning": "息子",
+    "example_sentences": [
+      {
+        "text": "他有两个儿子。",
+        "pinyin": "tā yǒu liǎng ge érzi.",
+        "translation": "彼には息子が二人いる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女儿"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「子」は軽声（er2zi0）。反対は「女儿（娘）」。"
+  },
+  {
+    "id": "hsk1_new_0143",
+    "hanzi": "饭",
+    "pinyin_accepted": [
+      "fàn",
+      "fan4"
+    ],
+    "meaning": "ご飯、食事",
+    "example_sentences": [
+      {
+        "text": "我们一起吃饭吧。",
+        "pinyin": "wǒmen yìqǐ chī fàn ba.",
+        "translation": "一緒にご飯を食べよう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "ご飯・食事一般を指す。一起の「一」は第3声 qǐ の前で yì に変調。"
+  },
+  {
+    "id": "hsk1_new_0144",
+    "hanzi": "饭店",
+    "pinyin_accepted": [
+      "fàndiàn",
+      "fan4dian4"
+    ],
+    "meaning": "レストラン；ホテル",
+    "example_sentences": [
+      {
+        "text": "我们在饭店吃饭。",
+        "pinyin": "wǒmen zài fàndiàn chī fàn.",
+        "translation": "私たちはレストランで食事をする。"
+      },
+      {
+        "text": "他住在那家饭店。",
+        "pinyin": "tā zhù zài nà jiā fàndiàn.",
+        "translation": "彼はあのホテルに泊まっている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「レストラン」のほか、大型ホテルの名にも使う（北京饭店など）。"
+  },
+  {
+    "id": "hsk1_new_0145",
+    "hanzi": "房间",
+    "pinyin_accepted": [
+      "fángjiān",
+      "fang2jian1"
+    ],
+    "meaning": "部屋",
+    "example_sentences": [
+      {
+        "text": "我的房间很干净。",
+        "pinyin": "wǒ de fángjiān hěn gānjìng.",
+        "translation": "私の部屋はとてもきれいだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "建物内の一室を指す。量詞は「个/间」。"
+  },
+  {
+    "id": "hsk1_new_0146",
+    "hanzi": "房子",
+    "pinyin_accepted": [
+      "fángzi",
+      "fang2zi0"
+    ],
+    "meaning": "家、家屋、建物",
+    "example_sentences": [
+      {
+        "text": "他买了一所新房子。",
+        "pinyin": "tā mǎi le yì suǒ xīn fángzi.",
+        "translation": "彼は新しい家を一軒買った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「子」は軽声（fang2zi0）。建物としての「家」。家庭としての「家」は「家」。一所の「一」は第3声 suǒ の前で yì。"
+  },
+  {
+    "id": "hsk1_new_0147",
+    "hanzi": "放",
+    "pinyin_accepted": [
+      "fàng",
+      "fang4"
+    ],
+    "meaning": "置く；（休みに）入る",
+    "example_sentences": [
+      {
+        "text": "请把书放在桌子上。",
+        "pinyin": "qǐng bǎ shū fàng zài zhuōzi shàng.",
+        "translation": "本を机の上に置いてください。"
+      },
+      {
+        "text": "学校放假了。",
+        "pinyin": "xuéxiào fàng jià le.",
+        "translation": "学校が休みに入った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「置く」が基本。「放假（休みに入る）」「放学（下校する）」など派生も多い。"
+  },
+  {
+    "id": "hsk1_new_0148",
+    "hanzi": "放假",
+    "pinyin_accepted": [
+      "fàngjià",
+      "fang4jia4"
+    ],
+    "meaning": "休みになる、休暇に入る",
+    "example_sentences": [
+      {
+        "text": "我们明天放假。",
+        "pinyin": "wǒmen míngtiān fàng jià.",
+        "translation": "私たちは明日から休みだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。「放三天假（三日休む）」のように間に語を入れられる。"
+  },
+  {
+    "id": "hsk1_new_0149",
+    "hanzi": "放学",
+    "pinyin_accepted": [
+      "fàngxué",
+      "fang4xue2"
+    ],
+    "meaning": "下校する、学校が引ける",
+    "example_sentences": [
+      {
+        "text": "我们下午四点放学。",
+        "pinyin": "wǒmen xiàwǔ sì diǎn fàng xué.",
+        "translation": "私たちは午後四時に下校する。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上学"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "離合詞。反対は「上学（登校する）」。"
+  },
+  {
+    "id": "hsk1_new_0150",
+    "hanzi": "飞",
+    "pinyin_accepted": [
+      "fēi",
+      "fei1"
+    ],
+    "meaning": "飛ぶ",
+    "example_sentences": [
+      {
+        "text": "鸟在天上飞。",
+        "pinyin": "niǎo zài tiān shàng fēi.",
+        "translation": "鳥が空を飛んでいる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「飛ぶ」を表す動詞。飛行機は「飞机」。"
+  }
+]

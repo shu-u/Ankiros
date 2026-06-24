@@ -1,0 +1,1300 @@
+[
+  {
+    "id": "hsk1_new_0151",
+    "hanzi": "飞机",
+    "pinyin_accepted": [
+      "fēijī",
+      "fei1ji1"
+    ],
+    "meaning": "飛行機",
+    "example_sentences": [
+      {
+        "text": "我坐飞机去北京。",
+        "pinyin": "wǒ zuò fēijī qù Běijīng.",
+        "translation": "私は飛行機で北京へ行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「飞（飛ぶ）」＋「机（機械）」。乗り物の量詞は「架」を使う。"
+  },
+  {
+    "id": "hsk1_new_0152",
+    "hanzi": "非常",
+    "pinyin_accepted": [
+      "fēicháng",
+      "fei1chang2"
+    ],
+    "meaning": "非常に、とても",
+    "example_sentences": [
+      {
+        "text": "今天非常热。",
+        "pinyin": "jīntiān fēicháng rè.",
+        "translation": "今日はとても暑い。"
+      },
+      {
+        "text": "这本书非常好。",
+        "pinyin": "zhè běn shū fēicháng hǎo.",
+        "translation": "この本はとても良い。"
+      }
+    ],
+    "synonyms": [
+      "很"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "程度を強調する副詞で「很」より強い。形容詞・心理動詞の前に置く。"
+  },
+  {
+    "id": "hsk1_new_0153",
+    "hanzi": "分",
+    "pinyin_accepted": [
+      "fēn",
+      "fen1"
+    ],
+    "meaning": "（時間の）分、（点数・貨幣の）単位、分ける",
+    "example_sentences": [
+      {
+        "text": "现在八点十分。",
+        "pinyin": "xiànzài bā diǎn shí fēn.",
+        "translation": "今は8時10分です。"
+      },
+      {
+        "text": "我们把蛋糕分一下。",
+        "pinyin": "wǒmen bǎ dàngāo fēn yíxià.",
+        "translation": "私たちでケーキを分けましょう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時間の「分」、得点・貨幣の単位、また動詞「分ける」など多用途。"
+  },
+  {
+    "id": "hsk1_new_0154",
+    "hanzi": "风",
+    "pinyin_accepted": [
+      "fēng",
+      "feng1"
+    ],
+    "meaning": "風",
+    "example_sentences": [
+      {
+        "text": "今天风很大。",
+        "pinyin": "jīntiān fēng hěn dà.",
+        "translation": "今日は風が強い。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "風が強いことは「风很大」と言う。"
+  },
+  {
+    "id": "hsk1_new_0155",
+    "hanzi": "干",
+    "pinyin_accepted": [
+      "gàn",
+      "gan4"
+    ],
+    "meaning": "（仕事などを）する、やる",
+    "example_sentences": [
+      {
+        "text": "你在干什么？",
+        "pinyin": "nǐ zài gàn shénme?",
+        "translation": "あなたは何をしているの？"
+      },
+      {
+        "text": "他干得很好。",
+        "pinyin": "tā gàn de hěn hǎo.",
+        "translation": "彼はよくやっている。"
+      }
+    ],
+    "synonyms": [
+      "做"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "多音字。動詞「やる・する」は gàn。形容詞「乾いた」の意味では gān（干净 など）と読む。"
+  },
+  {
+    "id": "hsk1_new_0156",
+    "hanzi": "干净",
+    "pinyin_accepted": [
+      "gānjìng",
+      "gan1jing4"
+    ],
+    "meaning": "清潔だ、きれいだ",
+    "example_sentences": [
+      {
+        "text": "房间很干净。",
+        "pinyin": "fángjiān hěn gānjìng.",
+        "translation": "部屋はとてもきれいだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "脏"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "ここの「干」は gān（乾いた・清潔）と読む。汚いは「脏 zāng」。"
+  },
+  {
+    "id": "hsk1_new_0157",
+    "hanzi": "干什么",
+    "pinyin_accepted": [
+      "gàn shénme",
+      "gan4 shen2me0"
+    ],
+    "meaning": "何をするのか、何のために",
+    "example_sentences": [
+      {
+        "text": "你来这儿干什么？",
+        "pinyin": "nǐ lái zhèr gàn shénme?",
+        "translation": "あなたはここへ何をしに来たの？"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "フレーズ"
+    ],
+    "notes": "「干 gàn（する）」＋疑問詞「什么」。「什么」の「么」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0158",
+    "hanzi": "高",
+    "pinyin_accepted": [
+      "gāo",
+      "gao1"
+    ],
+    "meaning": "（背・高さが）高い",
+    "example_sentences": [
+      {
+        "text": "他个子很高。",
+        "pinyin": "tā gèzi hěn gāo.",
+        "translation": "彼は背が高い。"
+      },
+      {
+        "text": "这座山很高。",
+        "pinyin": "zhè zuò shān hěn gāo.",
+        "translation": "この山は高い。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "矮",
+      "低"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "背の高さは「高」、反対は「矮 ǎi」。高さ・位置は「低 dī」が反対。"
+  },
+  {
+    "id": "hsk1_new_0159",
+    "hanzi": "高兴",
+    "pinyin_accepted": [
+      "gāoxìng",
+      "gao1xing4"
+    ],
+    "meaning": "うれしい、楽しい",
+    "example_sentences": [
+      {
+        "text": "认识你我很高兴。",
+        "pinyin": "rènshi nǐ wǒ hěn gāoxìng.",
+        "translation": "あなたに会えてうれしいです。"
+      }
+    ],
+    "synonyms": [
+      "快乐"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「高兴」は一時的なうれしい気持ちを表す。"
+  },
+  {
+    "id": "hsk1_new_0160",
+    "hanzi": "告诉",
+    "pinyin_accepted": [
+      "gàosu",
+      "gao4su0"
+    ],
+    "meaning": "告げる、知らせる",
+    "example_sentences": [
+      {
+        "text": "请告诉我你的名字。",
+        "pinyin": "qǐng gàosu wǒ nǐ de míngzi.",
+        "translation": "あなたの名前を教えてください。"
+      },
+      {
+        "text": "他告诉我明天有考试。",
+        "pinyin": "tā gàosu wǒ míngtiān yǒu kǎoshì.",
+        "translation": "彼は私に明日試験があると教えてくれた。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「诉」は軽声。二重目的語をとる（告诉＋人＋事）。"
+  },
+  {
+    "id": "hsk1_new_0161",
+    "hanzi": "哥",
+    "pinyin_accepted": [
+      "gē",
+      "ge1"
+    ],
+    "meaning": "兄、お兄さん（呼びかけ）",
+    "example_sentences": [
+      {
+        "text": "李哥，你好！",
+        "pinyin": "Lǐ gē, nǐ hǎo!",
+        "translation": "李兄さん、こんにちは！"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "単独や姓の後につけて年上の男性への呼びかけに使う。重ねた「哥哥」が一般的。"
+  },
+  {
+    "id": "hsk1_new_0162",
+    "hanzi": "哥哥",
+    "pinyin_accepted": [
+      "gēge",
+      "ge1ge0"
+    ],
+    "meaning": "兄、お兄さん",
+    "example_sentences": [
+      {
+        "text": "我哥哥是医生。",
+        "pinyin": "wǒ gēge shì yīshēng.",
+        "translation": "私の兄は医者だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "弟弟"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "2音節目の「哥」は軽声。弟は「弟弟 dìdi」。"
+  },
+  {
+    "id": "hsk1_new_0163",
+    "hanzi": "歌",
+    "pinyin_accepted": [
+      "gē",
+      "ge1"
+    ],
+    "meaning": "歌",
+    "example_sentences": [
+      {
+        "text": "她唱歌很好听。",
+        "pinyin": "tā chàng gē hěn hǎotīng.",
+        "translation": "彼女の歌はとても上手だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「歌を歌う」は「唱歌 chàng gē」。"
+  },
+  {
+    "id": "hsk1_new_0164",
+    "hanzi": "给",
+    "pinyin_accepted": [
+      "gěi",
+      "gei3"
+    ],
+    "meaning": "（人に）あげる、〜に、〜に対して",
+    "example_sentences": [
+      {
+        "text": "我给你一本书。",
+        "pinyin": "wǒ gěi nǐ yì běn shū.",
+        "translation": "私はあなたに本を一冊あげる。"
+      },
+      {
+        "text": "请给我打电话。",
+        "pinyin": "qǐng gěi wǒ dǎ diànhuà.",
+        "translation": "私に電話してください。"
+      },
+      {
+        "text": "他给妈妈写了一封信。",
+        "pinyin": "tā gěi māma xiě le yì fēng xìn.",
+        "translation": "彼は母に手紙を一通書いた。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "動詞「あげる」と、介詞「〜に（対象）」の両用法がある。「一本」の「一」は第3声の前で yì。"
+  },
+  {
+    "id": "hsk1_new_0165",
+    "hanzi": "跟",
+    "pinyin_accepted": [
+      "gēn",
+      "gen1"
+    ],
+    "meaning": "〜と（一緒に）、〜について行く",
+    "example_sentences": [
+      {
+        "text": "我跟你一起去。",
+        "pinyin": "wǒ gēn nǐ yìqǐ qù.",
+        "translation": "私はあなたと一緒に行く。"
+      },
+      {
+        "text": "小狗跟着孩子走。",
+        "pinyin": "xiǎo gǒu gēn zhe háizi zǒu.",
+        "translation": "子犬が子供についていく。"
+      }
+    ],
+    "synonyms": [
+      "和"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "介詞"
+    ],
+    "notes": "介詞「〜と」（和と近い）と動詞「ついて行く」。「一起」の「一」は yì。"
+  },
+  {
+    "id": "hsk1_new_0166",
+    "hanzi": "工人",
+    "pinyin_accepted": [
+      "gōngrén",
+      "gong1ren2"
+    ],
+    "meaning": "労働者、工員",
+    "example_sentences": [
+      {
+        "text": "他是一名工人。",
+        "pinyin": "tā shì yì míng gōngrén.",
+        "translation": "彼は労働者だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「工」は仕事、「人」は人。「一名」の「一」は第2声の前で yì。"
+  },
+  {
+    "id": "hsk1_new_0167",
+    "hanzi": "关",
+    "pinyin_accepted": [
+      "guān",
+      "guan1"
+    ],
+    "meaning": "閉める、（電源などを）切る",
+    "example_sentences": [
+      {
+        "text": "请关门。",
+        "pinyin": "qǐng guān mén.",
+        "translation": "ドアを閉めてください。"
+      },
+      {
+        "text": "他关了灯。",
+        "pinyin": "tā guān le dēng.",
+        "translation": "彼は明かりを消した。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "开"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "ドア・窓を閉める、電気・機器を切る。反対は「开 kāi」。"
+  },
+  {
+    "id": "hsk1_new_0168",
+    "hanzi": "关上",
+    "pinyin_accepted": [
+      "guānshàng",
+      "guan1shang4"
+    ],
+    "meaning": "閉める、（しっかり）閉じる",
+    "example_sentences": [
+      {
+        "text": "请把窗户关上。",
+        "pinyin": "qǐng bǎ chuānghu guānshàng.",
+        "translation": "窓を閉めてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "打开"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「关」＋結果補語「上」で、閉まり切る結果を表す。反対は「打开」。"
+  },
+  {
+    "id": "hsk1_new_0169",
+    "hanzi": "贵",
+    "pinyin_accepted": [
+      "guì",
+      "gui4"
+    ],
+    "meaning": "（値段が）高い、貴重だ",
+    "example_sentences": [
+      {
+        "text": "这件衣服太贵了。",
+        "pinyin": "zhè jiàn yīfu tài guì le.",
+        "translation": "この服は高すぎる。"
+      },
+      {
+        "text": "您贵姓？",
+        "pinyin": "nín guìxìng?",
+        "translation": "お名前（お姓）は何とおっしゃいますか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "便宜"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "値段が高い意味。反対は「便宜 piányi」。「贵姓」は相手の姓を尋ねる敬語表現。"
+  },
+  {
+    "id": "hsk1_new_0170",
+    "hanzi": "国",
+    "pinyin_accepted": [
+      "guó",
+      "guo2"
+    ],
+    "meaning": "国",
+    "example_sentences": [
+      {
+        "text": "你是哪国人？",
+        "pinyin": "nǐ shì nǎ guó rén?",
+        "translation": "あなたはどこの国の人ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「中国」「美国」など国名を作る。「哪国人」で国籍を尋ねる。"
+  },
+  {
+    "id": "hsk1_new_0171",
+    "hanzi": "国家",
+    "pinyin_accepted": [
+      "guójiā",
+      "guo2jia1"
+    ],
+    "meaning": "国家、国",
+    "example_sentences": [
+      {
+        "text": "中国是一个大国家。",
+        "pinyin": "Zhōngguó shì yí ge dà guójiā.",
+        "translation": "中国は大きな国だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「一个」の「一」は第4声（个 ge は本来 gè）の前で yí。"
+  },
+  {
+    "id": "hsk1_new_0172",
+    "hanzi": "国外",
+    "pinyin_accepted": [
+      "guówài",
+      "guo2wai4"
+    ],
+    "meaning": "国外、海外",
+    "example_sentences": [
+      {
+        "text": "他在国外工作。",
+        "pinyin": "tā zài guówài gōngzuò.",
+        "translation": "彼は海外で働いている。"
+      }
+    ],
+    "synonyms": [
+      "海外"
+    ],
+    "antonyms": [
+      "国内"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "反対は「国内 guónèi」。"
+  },
+  {
+    "id": "hsk1_new_0173",
+    "hanzi": "过",
+    "pinyin_accepted": [
+      "guo",
+      "guo0"
+    ],
+    "meaning": "（動詞の後で）〜したことがある（経験）",
+    "example_sentences": [
+      {
+        "text": "我去过北京。",
+        "pinyin": "wǒ qù guo Běijīng.",
+        "translation": "私は北京へ行ったことがある。"
+      },
+      {
+        "text": "你吃过中国菜吗？",
+        "pinyin": "nǐ chī guo Zhōngguó cài ma?",
+        "translation": "あなたは中華料理を食べたことがありますか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "助詞"
+    ],
+    "notes": "経験を表す動態助詞は軽声 guo。多音字で、動詞「通り過ぎる・過ごす」は guò（第4声）と読む。"
+  },
+  {
+    "id": "hsk1_new_0174",
+    "hanzi": "还",
+    "pinyin_accepted": [
+      "hái",
+      "hai2"
+    ],
+    "meaning": "まだ、さらに、その上",
+    "example_sentences": [
+      {
+        "text": "他还没来。",
+        "pinyin": "tā hái méi lái.",
+        "translation": "彼はまだ来ていない。"
+      },
+      {
+        "text": "我想喝水，还想吃饭。",
+        "pinyin": "wǒ xiǎng hē shuǐ, hái xiǎng chī fàn.",
+        "translation": "私は水が飲みたいし、ご飯も食べたい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "副詞「まだ・さらに」は hái。多音字で、動詞「返す」は huán（第2声）と読む。"
+  },
+  {
+    "id": "hsk1_new_0175",
+    "hanzi": "还是",
+    "pinyin_accepted": [
+      "háishi",
+      "hai2shi0"
+    ],
+    "meaning": "それとも、やはり",
+    "example_sentences": [
+      {
+        "text": "你喝茶还是喝咖啡？",
+        "pinyin": "nǐ hē chá háishi hē kāfēi?",
+        "translation": "あなたはお茶を飲みますか、それともコーヒーを飲みますか。"
+      },
+      {
+        "text": "我们还是明天去吧。",
+        "pinyin": "wǒmen háishi míngtiān qù ba.",
+        "translation": "やはり私たちは明日行きましょう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "連詞"
+    ],
+    "notes": "「是」は軽声。選択疑問「A还是B」と、副詞「やはり」の用法がある。"
+  },
+  {
+    "id": "hsk1_new_0176",
+    "hanzi": "还有",
+    "pinyin_accepted": [
+      "háiyǒu",
+      "hai2you3"
+    ],
+    "meaning": "さらに〜がある、それから",
+    "example_sentences": [
+      {
+        "text": "桌子上有书，还有笔。",
+        "pinyin": "zhuōzi shàng yǒu shū, háiyǒu bǐ.",
+        "translation": "机の上に本があり、それからペンもある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "連詞"
+    ],
+    "notes": "列挙を付け加えるときに使う。「还 hái」＋「有」。"
+  },
+  {
+    "id": "hsk1_new_0177",
+    "hanzi": "孩子",
+    "pinyin_accepted": [
+      "háizi",
+      "hai2zi0"
+    ],
+    "meaning": "子供",
+    "example_sentences": [
+      {
+        "text": "这个孩子很可爱。",
+        "pinyin": "zhè ge háizi hěn kě'ài.",
+        "translation": "この子供はとてもかわいい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「子」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0178",
+    "hanzi": "汉语",
+    "pinyin_accepted": [
+      "Hànyǔ",
+      "han4yu3"
+    ],
+    "meaning": "中国語、漢語",
+    "example_sentences": [
+      {
+        "text": "我在学汉语。",
+        "pinyin": "wǒ zài xué Hànyǔ.",
+        "translation": "私は中国語を勉強している。"
+      }
+    ],
+    "synonyms": [
+      "中文"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "漢民族の言語＝中国語。「中文」も同義。"
+  },
+  {
+    "id": "hsk1_new_0179",
+    "hanzi": "汉字",
+    "pinyin_accepted": [
+      "Hànzì",
+      "han4zi4"
+    ],
+    "meaning": "漢字",
+    "example_sentences": [
+      {
+        "text": "这个汉字怎么写？",
+        "pinyin": "zhè ge Hànzì zěnme xiě?",
+        "translation": "この漢字はどう書くのですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「字」は第4声で軽声ではない。"
+  },
+  {
+    "id": "hsk1_new_0180",
+    "hanzi": "好",
+    "pinyin_accepted": [
+      "hǎo",
+      "hao3"
+    ],
+    "meaning": "良い、（承諾して）よろしい",
+    "example_sentences": [
+      {
+        "text": "今天天气很好。",
+        "pinyin": "jīntiān tiānqì hěn hǎo.",
+        "translation": "今日は天気が良い。"
+      },
+      {
+        "text": "好，我知道了。",
+        "pinyin": "hǎo, wǒ zhīdào le.",
+        "translation": "わかりました。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "坏"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「良い」と、承諾の返事「よろしい」。反対は「坏 huài」。"
+  },
+  {
+    "id": "hsk1_new_0181",
+    "hanzi": "好吃",
+    "pinyin_accepted": [
+      "hǎochī",
+      "hao3chi1"
+    ],
+    "meaning": "（食べ物が）おいしい",
+    "example_sentences": [
+      {
+        "text": "这个菜很好吃。",
+        "pinyin": "zhè ge cài hěn hǎochī.",
+        "translation": "この料理はとてもおいしい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "难吃"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「好＋吃」で食べておいしい。飲み物は「好喝 hǎohē」。反対は「难吃」。"
+  },
+  {
+    "id": "hsk1_new_0182",
+    "hanzi": "好看",
+    "pinyin_accepted": [
+      "hǎokàn",
+      "hao3kan4"
+    ],
+    "meaning": "きれいだ、見て楽しい、おもしろい（見るもの）",
+    "example_sentences": [
+      {
+        "text": "这件衣服很好看。",
+        "pinyin": "zhè jiàn yīfu hěn hǎokàn.",
+        "translation": "この服はとてもきれいだ。"
+      }
+    ],
+    "synonyms": [
+      "漂亮"
+    ],
+    "antonyms": [
+      "难看"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「好＋看」で見て美しい・楽しい。反対は「难看」。"
+  },
+  {
+    "id": "hsk1_new_0183",
+    "hanzi": "好听",
+    "pinyin_accepted": [
+      "hǎotīng",
+      "hao3ting1"
+    ],
+    "meaning": "（音・声が）心地よい、聞いて良い",
+    "example_sentences": [
+      {
+        "text": "这首歌很好听。",
+        "pinyin": "zhè shǒu gē hěn hǎotīng.",
+        "translation": "この歌はとても良い。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "难听"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「好＋听」で聞いて心地よい。反対は「难听」。"
+  },
+  {
+    "id": "hsk1_new_0184",
+    "hanzi": "好玩儿",
+    "pinyin_accepted": [
+      "hǎowánr",
+      "hao3wan2r"
+    ],
+    "meaning": "おもしろい、楽しい（遊び・物事が）",
+    "example_sentences": [
+      {
+        "text": "这个游戏很好玩儿。",
+        "pinyin": "zhè ge yóuxì hěn hǎowánr.",
+        "translation": "このゲームはとてもおもしろい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「好＋玩」＋児化「儿」。儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0185",
+    "hanzi": "号",
+    "pinyin_accepted": [
+      "hào",
+      "hao4"
+    ],
+    "meaning": "（日付の）日、番号、サイズ",
+    "example_sentences": [
+      {
+        "text": "今天几号？",
+        "pinyin": "jīntiān jǐ hào?",
+        "translation": "今日は何日ですか。"
+      },
+      {
+        "text": "我的房间是三号。",
+        "pinyin": "wǒ de fángjiān shì sān hào.",
+        "translation": "私の部屋は3号です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "日付の「日」は会話では「号 hào」を使う。番号・サイズの意味もある。第4声。"
+  },
+  {
+    "id": "hsk1_new_0186",
+    "hanzi": "后",
+    "pinyin_accepted": [
+      "hòu",
+      "hou4"
+    ],
+    "meaning": "後ろ、（時間的に）あと",
+    "example_sentences": [
+      {
+        "text": "下课后我们去吃饭。",
+        "pinyin": "xià kè hòu wǒmen qù chī fàn.",
+        "translation": "授業のあと私たちはご飯を食べに行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "前"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "空間・時間の「後」。反対は「前 qián」。"
+  },
+  {
+    "id": "hsk1_new_0187",
+    "hanzi": "后边",
+    "pinyin_accepted": [
+      "hòubian",
+      "hou4bian0"
+    ],
+    "meaning": "後ろ、後方",
+    "example_sentences": [
+      {
+        "text": "学校在医院的后边。",
+        "pinyin": "xuéxiào zài yīyuàn de hòubian.",
+        "translation": "学校は病院の後ろにある。"
+      }
+    ],
+    "synonyms": [
+      "后面"
+    ],
+    "antonyms": [
+      "前边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「边」は軽声。反対は「前边 qiánbian」。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0188",
+    "hanzi": "后天",
+    "pinyin_accepted": [
+      "hòutiān",
+      "hou4tian1"
+    ],
+    "meaning": "あさって",
+    "example_sentences": [
+      {
+        "text": "后天是星期六。",
+        "pinyin": "hòutiān shì xīngqīliù.",
+        "translation": "あさっては土曜日だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "前天"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "反対は「前天 qiántiān（おととい）」。"
+  },
+  {
+    "id": "hsk1_new_0189",
+    "hanzi": "花",
+    "pinyin_accepted": [
+      "huā",
+      "hua1"
+    ],
+    "meaning": "花、（お金・時間を）使う",
+    "example_sentences": [
+      {
+        "text": "这些花真漂亮。",
+        "pinyin": "zhèxiē huā zhēn piàoliang.",
+        "translation": "これらの花は本当にきれいだ。"
+      },
+      {
+        "text": "我花了一百块钱。",
+        "pinyin": "wǒ huā le yìbǎi kuài qián.",
+        "translation": "私は100元使った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "名詞「花」と動詞「（金・時間を）使う」。「一百」の「一」は第3声の前で yì。"
+  },
+  {
+    "id": "hsk1_new_0190",
+    "hanzi": "话",
+    "pinyin_accepted": [
+      "huà",
+      "hua4"
+    ],
+    "meaning": "話、言葉",
+    "example_sentences": [
+      {
+        "text": "他的话我听不懂。",
+        "pinyin": "tā de huà wǒ tīng bu dǒng.",
+        "translation": "彼の話は私には聞き取れない。"
+      },
+      {
+        "text": "你说的话很对。",
+        "pinyin": "nǐ shuō de huà hěn duì.",
+        "translation": "あなたの言うことは正しい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「说话」「打电话」などに使う。「听不懂」の「不」は軽声化するが通常 bu と読む。"
+  },
+  {
+    "id": "hsk1_new_0191",
+    "hanzi": "坏",
+    "pinyin_accepted": [
+      "huài",
+      "huai4"
+    ],
+    "meaning": "悪い、壊れる",
+    "example_sentences": [
+      {
+        "text": "这个西瓜坏了。",
+        "pinyin": "zhè ge xīguā huài le.",
+        "translation": "このスイカは腐ってしまった。"
+      },
+      {
+        "text": "他不是坏人。",
+        "pinyin": "tā bú shì huài rén.",
+        "translation": "彼は悪い人ではない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "好"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「悪い」と動詞「壊れる」。反対は「好 hǎo」。「不是」の「不」は第4声の前で bú。"
+  },
+  {
+    "id": "hsk1_new_0192",
+    "hanzi": "回",
+    "pinyin_accepted": [
+      "huí",
+      "hui2"
+    ],
+    "meaning": "帰る、戻る、（回数の）回",
+    "example_sentences": [
+      {
+        "text": "我要回家。",
+        "pinyin": "wǒ yào huí jiā.",
+        "translation": "私は家に帰る。"
+      },
+      {
+        "text": "我去过两回。",
+        "pinyin": "wǒ qù guo liǎng huí.",
+        "translation": "私は2回行ったことがある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "動詞「帰る・戻る」と、回数の量詞「回」。"
+  },
+  {
+    "id": "hsk1_new_0193",
+    "hanzi": "回答",
+    "pinyin_accepted": [
+      "huídá",
+      "hui2da2"
+    ],
+    "meaning": "答える、返答（する）",
+    "example_sentences": [
+      {
+        "text": "请回答我的问题。",
+        "pinyin": "qǐng huídá wǒ de wèntí.",
+        "translation": "私の質問に答えてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "问"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "質問に対して「答える」。反対は「问 wèn（尋ねる）」。"
+  },
+  {
+    "id": "hsk1_new_0194",
+    "hanzi": "回到",
+    "pinyin_accepted": [
+      "huídào",
+      "hui2dao4"
+    ],
+    "meaning": "（ある場所へ）戻る、帰り着く",
+    "example_sentences": [
+      {
+        "text": "他回到了家里。",
+        "pinyin": "tā huídào le jiā lǐ.",
+        "translation": "彼は家に帰り着いた。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「回」＋結果補語「到」で、ある場所に到達した結果を表す。後に場所をとる。"
+  },
+  {
+    "id": "hsk1_new_0195",
+    "hanzi": "回家",
+    "pinyin_accepted": [
+      "huí jiā",
+      "hui2 jia1"
+    ],
+    "meaning": "家に帰る、帰宅する",
+    "example_sentences": [
+      {
+        "text": "我每天六点回家。",
+        "pinyin": "wǒ měi tiān liù diǎn huí jiā.",
+        "translation": "私は毎日6時に家に帰る。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "フレーズ"
+    ],
+    "notes": "「回（帰る）」＋「家」の動目構造のフレーズ。音節を空けて表記する。"
+  },
+  {
+    "id": "hsk1_new_0196",
+    "hanzi": "回来",
+    "pinyin_accepted": [
+      "huílai",
+      "hui2lai0"
+    ],
+    "meaning": "帰ってくる、戻ってくる",
+    "example_sentences": [
+      {
+        "text": "他还没回来。",
+        "pinyin": "tā hái méi huílai.",
+        "translation": "彼はまだ帰ってきていない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "回去"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "方向補語「来」は軽声。話し手の方へ戻る。反対は「回去」。"
+  },
+  {
+    "id": "hsk1_new_0197",
+    "hanzi": "回去",
+    "pinyin_accepted": [
+      "huíqu",
+      "hui2qu0"
+    ],
+    "meaning": "帰っていく、戻っていく",
+    "example_sentences": [
+      {
+        "text": "时间不早了，我们回去吧。",
+        "pinyin": "shíjiān bù zǎo le, wǒmen huíqu ba.",
+        "translation": "もう遅いので、私たちは帰りましょう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "回来"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "方向補語「去」は軽声。話し手から離れる方へ戻る。反対は「回来」。"
+  },
+  {
+    "id": "hsk1_new_0198",
+    "hanzi": "火车",
+    "pinyin_accepted": [
+      "huǒchē",
+      "huo3che1"
+    ],
+    "meaning": "汽車、列車",
+    "example_sentences": [
+      {
+        "text": "我坐火车去上海。",
+        "pinyin": "wǒ zuò huǒchē qù Shànghǎi.",
+        "translation": "私は列車で上海へ行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「火（火）」＋「车（車）」。乗り物には「坐 zuò」を使う。"
+  },
+  {
+    "id": "hsk1_new_0199",
+    "hanzi": "机场",
+    "pinyin_accepted": [
+      "jīchǎng",
+      "ji1chang3"
+    ],
+    "meaning": "空港",
+    "example_sentences": [
+      {
+        "text": "我去机场接朋友。",
+        "pinyin": "wǒ qù jīchǎng jiē péngyou.",
+        "translation": "私は空港へ友達を迎えに行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「机（飛行機）」＋「场（場所）」で飛行場・空港。"
+  },
+  {
+    "id": "hsk1_new_0200",
+    "hanzi": "机票",
+    "pinyin_accepted": [
+      "jīpiào",
+      "ji1piao4"
+    ],
+    "meaning": "航空券、飛行機のチケット",
+    "example_sentences": [
+      {
+        "text": "我买了一张机票。",
+        "pinyin": "wǒ mǎi le yì zhāng jīpiào.",
+        "translation": "私は航空券を一枚買った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「机（飞机）」＋「票（チケット）」。「一张」の「一」は第1声の前で yì。"
+  }
+]

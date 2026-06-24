@@ -1,0 +1,220 @@
+[
+  {
+    "id": "hsk1_new_0501",
+    "hanzi": "最后",
+    "pinyin_accepted": [
+      "zuìhòu",
+      "zui4hou4"
+    ],
+    "meaning": "最後、最終の",
+    "example_sentences": [
+      {
+        "text": "他最后来了。",
+        "pinyin": "tā zuìhòu lái le.",
+        "translation": "彼は最後に来た。"
+      },
+      {
+        "text": "这是最后一个问题。",
+        "pinyin": "zhè shì zuìhòu yí ge wèntí.",
+        "translation": "これは最後の問題です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "最初"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「最初」の対義語。時間・順序の最後を表す。"
+  },
+  {
+    "id": "hsk1_new_0502",
+    "hanzi": "昨天",
+    "pinyin_accepted": [
+      "zuótiān",
+      "zuo2tian1"
+    ],
+    "meaning": "昨日",
+    "example_sentences": [
+      {
+        "text": "我昨天去了商店。",
+        "pinyin": "wǒ zuótiān qù le shāngdiàn.",
+        "translation": "私は昨日お店へ行った。"
+      },
+      {
+        "text": "昨天很冷。",
+        "pinyin": "zuótiān hěn lěng.",
+        "translation": "昨日はとても寒かった。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "明天"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時間名詞。「今天（今日）」「明天（明日）」と対比して覚える。"
+  },
+  {
+    "id": "hsk1_new_0503",
+    "hanzi": "左",
+    "pinyin_accepted": [
+      "zuǒ",
+      "zuo3"
+    ],
+    "meaning": "左、左の",
+    "example_sentences": [
+      {
+        "text": "请往左走。",
+        "pinyin": "qǐng wǎng zuǒ zǒu.",
+        "translation": "左へ進んでください。"
+      },
+      {
+        "text": "他的左手受伤了。",
+        "pinyin": "tā de zuǒ shǒu shòushāng le.",
+        "translation": "彼の左手はけがをした。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "右"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「右」の対義語。一般語なので小文字表記。"
+  },
+  {
+    "id": "hsk1_new_0504",
+    "hanzi": "左边",
+    "pinyin_accepted": [
+      "zuǒbian",
+      "zuo3bian0"
+    ],
+    "meaning": "左側、左の方",
+    "example_sentences": [
+      {
+        "text": "银行在左边。",
+        "pinyin": "yínháng zài zuǒbian.",
+        "translation": "銀行は左側にある。"
+      },
+      {
+        "text": "请坐左边的椅子。",
+        "pinyin": "qǐng zuò zuǒbian de yǐzi.",
+        "translation": "左側の椅子に座ってください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "右边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「边」は軽声なので数字表記は bian0。「右边」の対義語。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0505",
+    "hanzi": "坐",
+    "pinyin_accepted": [
+      "zuò",
+      "zuo4"
+    ],
+    "meaning": "座る、（乗り物に）乗る",
+    "example_sentences": [
+      {
+        "text": "请坐。",
+        "pinyin": "qǐng zuò.",
+        "translation": "どうぞお座りください。"
+      },
+      {
+        "text": "我坐飞机去北京。",
+        "pinyin": "wǒ zuò fēijī qù Běijīng.",
+        "translation": "私は飛行機で北京へ行く。"
+      },
+      {
+        "text": "他坐在椅子上看书。",
+        "pinyin": "tā zuò zài yǐzi shàng kàn shū.",
+        "translation": "彼は椅子に座って本を読んでいる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "站"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「座る」のほか、乗り物に「乗る」の意味もある（坐飞机・坐车）。一般語なので小文字。"
+  },
+  {
+    "id": "hsk1_new_0506",
+    "hanzi": "坐下",
+    "pinyin_accepted": [
+      "zuòxia",
+      "zuo4xia0"
+    ],
+    "meaning": "座る、腰を下ろす",
+    "example_sentences": [
+      {
+        "text": "请坐下吧。",
+        "pinyin": "qǐng zuòxia ba.",
+        "translation": "どうぞ座ってください。"
+      },
+      {
+        "text": "他慢慢地坐下了。",
+        "pinyin": "tā mànmàn de zuòxia le.",
+        "translation": "彼はゆっくりと腰を下ろした。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "站起来"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「坐」に方向補語「下」が付いた形。ここの「下」は軽声で数字表記は xia0。"
+  },
+  {
+    "id": "hsk1_new_0507",
+    "hanzi": "做",
+    "pinyin_accepted": [
+      "zuò",
+      "zuo4"
+    ],
+    "meaning": "する、作る、（仕事などを）行う",
+    "example_sentences": [
+      {
+        "text": "你在做什么？",
+        "pinyin": "nǐ zài zuò shénme?",
+        "translation": "あなたは何をしていますか。"
+      },
+      {
+        "text": "妈妈做饭。",
+        "pinyin": "māma zuò fàn.",
+        "translation": "母はご飯を作る。"
+      },
+      {
+        "text": "他做了很多工作。",
+        "pinyin": "tā zuò le hěn duō gōngzuò.",
+        "translation": "彼はたくさんの仕事をした。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「する／作る／行う」など幅広く使う動詞。「坐（座る）」と同音 zuò だが意味が異なる点に注意。"
+  }
+]

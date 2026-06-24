@@ -1,0 +1,663 @@
+[
+  {
+    "id": "hsk1_new_0001",
+    "hanzi": "你好",
+    "pinyin_accepted": ["nǐ hǎo", "ni3 hao3"],
+    "meaning": "こんにちは（あいさつ）",
+    "example_sentences": [
+      { "text": "你好！", "pinyin": "Nǐ hǎo!", "translation": "こんにちは！" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "あいさつ"],
+    "notes": "「你」も「好」も第3声。続けて読むと前の第3声が半三声で軽く上がる（実際の音はní hǎoに近い）。"
+  },
+  {
+    "id": "hsk1_new_0002",
+    "hanzi": "谢谢",
+    "pinyin_accepted": ["xièxie", "xie4xie0"],
+    "meaning": "ありがとう",
+    "example_sentences": [
+      { "text": "谢谢你！", "pinyin": "Xièxie nǐ!", "translation": "ありがとう（あなたに感謝します）！" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "あいさつ"],
+    "notes": "2音節目の「xie」は軽声（無声調）。"
+  },
+  {
+    "id": "hsk1_new_0003",
+    "hanzi": "不客气",
+    "pinyin_accepted": ["bú kèqi", "bu2 ke4qi0"],
+    "meaning": "どういたしまして",
+    "example_sentences": [
+      { "text": "不客气。", "pinyin": "Bú kèqi.", "translation": "どういたしまして。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "あいさつ"],
+    "notes": "「不」は後ろが第4声（kè）なので第2声「bú」に変化。「气」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0004",
+    "hanzi": "对不起",
+    "pinyin_accepted": ["duìbuqǐ", "dui4bu0qi3"],
+    "meaning": "ごめんなさい（謝罪）",
+    "example_sentences": [
+      { "text": "对不起，我来晚了。", "pinyin": "Duìbuqǐ, wǒ lái wǎn le.", "translation": "ごめんなさい、来るのが遅くなりました。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "あいさつ"],
+    "notes": "真剣な謝罪寄り。中の「不」は軽声で「bu」。"
+  },
+  {
+    "id": "hsk1_new_0005",
+    "hanzi": "没关系",
+    "pinyin_accepted": ["méi guānxi", "mei2 guan1xi0"],
+    "meaning": "大丈夫、気にしないで",
+    "example_sentences": [
+      { "text": "没关系，别担心。", "pinyin": "Méi guānxi, bié dānxīn.", "translation": "大丈夫、心配しないで。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "フレーズ"],
+    "notes": "相手の謝罪への返答に使う。「系」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0006",
+    "hanzi": "再见",
+    "pinyin_accepted": ["zàijiàn", "zai4jian4"],
+    "meaning": "さようなら、またね",
+    "example_sentences": [
+      { "text": "老师，再见！", "pinyin": "Lǎoshī, zàijiàn!", "translation": "先生、さようなら！" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "あいさつ"],
+    "notes": "直訳は「また会う」。別れ際の定番。"
+  },
+  {
+    "id": "hsk1_new_0007",
+    "hanzi": "请",
+    "pinyin_accepted": ["qǐng", "qing3"],
+    "meaning": "どうぞ／〜してください（丁寧な依頼）",
+    "example_sentences": [
+      { "text": "请坐。", "pinyin": "Qǐng zuò.", "translation": "どうぞ座ってください。" },
+      { "text": "请问，洗手间在哪儿？", "pinyin": "Qǐngwèn, xǐshǒujiān zài nǎr?", "translation": "すみませんが、お手洗いはどこですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「请 + 動詞」で丁寧な依頼。「请问」で「お尋ねします＝すみませんが」。"
+  },
+  {
+    "id": "hsk1_new_0008",
+    "hanzi": "我",
+    "pinyin_accepted": ["wǒ", "wo3"],
+    "meaning": "私",
+    "example_sentences": [
+      { "text": "我是学生。", "pinyin": "Wǒ shì xuésheng.", "translation": "私は学生です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "第3声。「我们」で「私たち」。"
+  },
+  {
+    "id": "hsk1_new_0009",
+    "hanzi": "你",
+    "pinyin_accepted": ["nǐ", "ni3"],
+    "meaning": "あなた",
+    "example_sentences": [
+      { "text": "你是老师吗？", "pinyin": "Nǐ shì lǎoshī ma?", "translation": "あなたは先生ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "第3声。丁寧形は「您(nín)」。"
+  },
+  {
+    "id": "hsk1_new_0010",
+    "hanzi": "他",
+    "pinyin_accepted": ["tā", "ta1"],
+    "meaning": "彼",
+    "example_sentences": [
+      { "text": "他是我的朋友。", "pinyin": "Tā shì wǒ de péngyou.", "translation": "彼は私の友だちです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "「他／她／它」は発音が同じ「tā」で、文字で区別する。"
+  },
+  {
+    "id": "hsk1_new_0011",
+    "hanzi": "她",
+    "pinyin_accepted": ["tā", "ta1"],
+    "meaning": "彼女",
+    "example_sentences": [
+      { "text": "她是我妈妈。", "pinyin": "Tā shì wǒ māma.", "translation": "彼女は私の母です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "発音は「他」と同じtā。女性を指すときに使う字。"
+  },
+  {
+    "id": "hsk1_new_0012",
+    "hanzi": "我们",
+    "pinyin_accepted": ["wǒmen", "wo3men0"],
+    "meaning": "私たち",
+    "example_sentences": [
+      { "text": "我们都是中国人。", "pinyin": "Wǒmen dōu shì Zhōngguórén.", "translation": "私たちはみんな中国人です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "代名詞"],
+    "notes": "「们」は軽声で、人を表す代名詞・名詞を複数にする語尾。"
+  },
+  {
+    "id": "hsk1_new_0013",
+    "hanzi": "是",
+    "pinyin_accepted": ["shì", "shi4"],
+    "meaning": "〜です（A是B）",
+    "example_sentences": [
+      { "text": "我是日本人。", "pinyin": "Wǒ shì Rìběnrén.", "translation": "私は日本人です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "英語のbe動詞に近い。形容詞述語では使わない（×我是高 → ○我很高）。否定は「不是」。"
+  },
+  {
+    "id": "hsk1_new_0014",
+    "hanzi": "不",
+    "pinyin_accepted": ["bù", "bu4"],
+    "meaning": "〜ない（否定）",
+    "example_sentences": [
+      { "text": "我不喝咖啡。", "pinyin": "Wǒ bù hē kāfēi.", "translation": "私はコーヒーを飲みません。" },
+      { "text": "他不是医生。", "pinyin": "Tā bú shì yīshēng.", "translation": "彼は医者ではありません。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "基本は第4声「bù」。後ろが第4声の語のときだけ第2声「bú」に変調（不是 bú shì）。"
+  },
+  {
+    "id": "hsk1_new_0015",
+    "hanzi": "很",
+    "pinyin_accepted": ["hěn", "hen3"],
+    "meaning": "とても、（形容詞の前に置く）",
+    "example_sentences": [
+      { "text": "我很好。", "pinyin": "Wǒ hěn hǎo.", "translation": "私は元気です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "形容詞述語では意味が薄くても「很」を添えるのが自然（我很好）。強く言うときだけ本当の「とても」。"
+  },
+  {
+    "id": "hsk1_new_0016",
+    "hanzi": "也",
+    "pinyin_accepted": ["yě", "ye3"],
+    "meaning": "〜も",
+    "example_sentences": [
+      { "text": "我也是学生。", "pinyin": "Wǒ yě shì xuésheng.", "translation": "私も学生です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "必ず主語の後ろ・動詞の前に置く（×也我）。"
+  },
+  {
+    "id": "hsk1_new_0017",
+    "hanzi": "都",
+    "pinyin_accepted": ["dōu", "dou1"],
+    "meaning": "みんな、すべて、どちらも",
+    "example_sentences": [
+      { "text": "我们都喜欢中国菜。", "pinyin": "Wǒmen dōu xǐhuan Zhōngguó cài.", "translation": "私たちはみんな中華料理が好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "副詞"],
+    "notes": "まとめる対象は「都」より前に置く。多音字で「都(dū)＝都市」の読みもある。"
+  },
+  {
+    "id": "hsk1_new_0018",
+    "hanzi": "和",
+    "pinyin_accepted": ["hé", "he2"],
+    "meaning": "〜と（名詞をつなぐ）",
+    "example_sentences": [
+      { "text": "我和他是朋友。", "pinyin": "Wǒ hé tā shì péngyou.", "translation": "私と彼は友だちです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "連詞"],
+    "notes": "主に名詞と名詞をつなぐ。日本語の「〜と」と違い、文と文はつなげない。"
+  },
+  {
+    "id": "hsk1_new_0019",
+    "hanzi": "的",
+    "pinyin_accepted": ["de", "de0"],
+    "meaning": "〜の（所有・修飾）",
+    "example_sentences": [
+      { "text": "这是我的手机。", "pinyin": "Zhè shì wǒ de shǒujī.", "translation": "これは私の携帯です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "軽声。家族・所属など近い関係では省略されることもある（我妈妈）。"
+  },
+  {
+    "id": "hsk1_new_0020",
+    "hanzi": "了",
+    "pinyin_accepted": ["le", "le0"],
+    "meaning": "〜した（完了）／変化を表す助詞",
+    "example_sentences": [
+      { "text": "我吃饭了。", "pinyin": "Wǒ chī fàn le.", "translation": "ご飯を食べました。" },
+      { "text": "天气热了。", "pinyin": "Tiānqì rè le.", "translation": "暑くなってきた（状況の変化）。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "軽声。置く位置でニュアンスが変わるので例文ごと覚えるのが近道。多音字で「了(liǎo)」の読みもある。"
+  },
+  {
+    "id": "hsk1_new_0021",
+    "hanzi": "吗",
+    "pinyin_accepted": ["ma", "ma0"],
+    "meaning": "〜か？（文末の疑問助詞）",
+    "example_sentences": [
+      { "text": "你是中国人吗？", "pinyin": "Nǐ shì Zhōngguórén ma?", "translation": "あなたは中国人ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "軽声。平叙文の文末に付けるだけでYes/No疑問文になる。"
+  },
+  {
+    "id": "hsk1_new_0022",
+    "hanzi": "呢",
+    "pinyin_accepted": ["ne", "ne0"],
+    "meaning": "〜は？（文末の助詞・問い返し／進行）",
+    "example_sentences": [
+      { "text": "我很好，你呢？", "pinyin": "Wǒ hěn hǎo, nǐ ne?", "translation": "私は元気です、あなたは？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助詞"],
+    "notes": "軽声。「名詞＋呢？」で「〜は（どう）？」と問い返す用法が頻出。"
+  },
+  {
+    "id": "hsk1_new_0023",
+    "hanzi": "在",
+    "pinyin_accepted": ["zài", "zai4"],
+    "meaning": "〜にいる／〜にある／〜で（場所）",
+    "example_sentences": [
+      { "text": "我在家。", "pinyin": "Wǒ zài jiā.", "translation": "私は家にいます。" },
+      { "text": "他在看书。", "pinyin": "Tā zài kàn shū.", "translation": "彼は本を読んでいるところです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「在＋場所」で所在。動詞の前に置く「在＋動詞」で進行（〜している）も表す。"
+  },
+  {
+    "id": "hsk1_new_0024",
+    "hanzi": "有",
+    "pinyin_accepted": ["yǒu", "you3"],
+    "meaning": "ある／持っている",
+    "example_sentences": [
+      { "text": "我有一个妹妹。", "pinyin": "Wǒ yǒu yí ge mèimei.", "translation": "私には妹が1人います。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "存在・所有どちらにも使う。否定は「不有」ではなく「没有」。"
+  },
+  {
+    "id": "hsk1_new_0025",
+    "hanzi": "这",
+    "pinyin_accepted": ["zhè", "zhe4"],
+    "meaning": "これ、この",
+    "example_sentences": [
+      { "text": "这是我的书。", "pinyin": "Zhè shì wǒ de shū.", "translation": "これは私の本です。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["那"],
+    "tags": ["HSK1", "指示詞"],
+    "notes": "近いものを指す。「这个(zhège)」「这儿(zhèr)」の形も頻出。"
+  },
+  {
+    "id": "hsk1_new_0026",
+    "hanzi": "那",
+    "pinyin_accepted": ["nà", "na4"],
+    "meaning": "あれ、あの／それ、その",
+    "example_sentences": [
+      { "text": "那是什么？", "pinyin": "Nà shì shénme?", "translation": "あれは何ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": ["这"],
+    "tags": ["HSK1", "指示詞"],
+    "notes": "遠いものを指す。話題転換の「那…（それなら）」でも使う。"
+  },
+  {
+    "id": "hsk1_new_0027",
+    "hanzi": "什么",
+    "pinyin_accepted": ["shénme", "shen2me0"],
+    "meaning": "なに、どんな",
+    "example_sentences": [
+      { "text": "你叫什么名字？", "pinyin": "Nǐ jiào shénme míngzi?", "translation": "あなたの名前は何ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "「么」は軽声。「什么＋名詞」で「どんな〜」。"
+  },
+  {
+    "id": "hsk1_new_0028",
+    "hanzi": "谁",
+    "pinyin_accepted": ["shéi", "shei2"],
+    "meaning": "だれ",
+    "example_sentences": [
+      { "text": "他是谁？", "pinyin": "Tā shì shéi?", "translation": "彼は誰ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "「shéi」「shuí」両方あるが会話では「shéi」が多い。"
+  },
+  {
+    "id": "hsk1_new_0029",
+    "hanzi": "几",
+    "pinyin_accepted": ["jǐ", "ji3"],
+    "meaning": "いくつ（おもに少なめの数をたずねる）",
+    "example_sentences": [
+      { "text": "现在几点？", "pinyin": "Xiànzài jǐ diǎn?", "translation": "今、何時ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "後ろに量詞が必要（几个・几点）。10未満くらいを想定する場面で使われやすい。"
+  },
+  {
+    "id": "hsk1_new_0030",
+    "hanzi": "多少",
+    "pinyin_accepted": ["duōshao", "duo1shao0"],
+    "meaning": "いくら／どれくらい（数量）",
+    "example_sentences": [
+      { "text": "这个多少钱？", "pinyin": "Zhège duōshao qián?", "translation": "これはいくらですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "疑問詞"],
+    "notes": "値段や大きめの数量に。「少」はここでは軽声。量詞なしで名詞に続けられる（多少钱）。"
+  },
+  {
+    "id": "hsk1_new_0031",
+    "hanzi": "一",
+    "pinyin_accepted": ["yī", "yi1"],
+    "meaning": "1（いち）",
+    "example_sentences": [
+      { "text": "我有一个问题。", "pinyin": "Wǒ yǒu yí ge wèntí.", "translation": "私は質問が1つあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "単独・序数では第1声「yī」。後ろが第4声だと「yí」、第1〜3声だと「yì」に変調（一个 yí ge）。"
+  },
+  {
+    "id": "hsk1_new_0032",
+    "hanzi": "二",
+    "pinyin_accepted": ["èr", "er4"],
+    "meaning": "2（に）",
+    "example_sentences": [
+      { "text": "我有二十块钱。", "pinyin": "Wǒ yǒu èrshí kuài qián.", "translation": "私は20元持っています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "数を数えるときは「二」。ただし量詞の前で「2つ」は「两(liǎng)」を使う（两个）。"
+  },
+  {
+    "id": "hsk1_new_0033",
+    "hanzi": "三",
+    "pinyin_accepted": ["sān", "san1"],
+    "meaning": "3（さん）",
+    "example_sentences": [
+      { "text": "我们家有三个人。", "pinyin": "Wǒmen jiā yǒu sān ge rén.", "translation": "うちは3人家族です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "数詞"],
+    "notes": "第1声。量詞をつけて「三个・三本」のように使う。"
+  },
+  {
+    "id": "hsk1_new_0034",
+    "hanzi": "个",
+    "pinyin_accepted": ["gè", "ge4"],
+    "meaning": "〜個、〜人（最も一般的な量詞）",
+    "example_sentences": [
+      { "text": "我有两个朋友。", "pinyin": "Wǒ yǒu liǎng ge péngyou.", "translation": "私には友だちが2人います。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "迷ったらまず「个」。実際の会話では軽声「ge」で読むことが多い。"
+  },
+  {
+    "id": "hsk1_new_0035",
+    "hanzi": "岁",
+    "pinyin_accepted": ["suì", "sui4"],
+    "meaning": "〜歳（年齢の量詞）",
+    "example_sentences": [
+      { "text": "我今年二十岁。", "pinyin": "Wǒ jīnnián èrshí suì.", "translation": "私は今年20歳です。" },
+      { "text": "你今年几岁？", "pinyin": "Nǐ jīnnián jǐ suì?", "translation": "あなたは今年何歳ですか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "量詞"],
+    "notes": "年齢を言うとき動詞「是」は不要（×我是二十岁）。「几岁」は子ども向け、大人には「多大」。"
+  },
+  {
+    "id": "hsk1_new_0036",
+    "hanzi": "人",
+    "pinyin_accepted": ["rén", "ren2"],
+    "meaning": "人、人間",
+    "example_sentences": [
+      { "text": "他是中国人。", "pinyin": "Tā shì Zhōngguórén.", "translation": "彼は中国人です。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「国名＋人」で「〜人（国籍）」。"
+  },
+  {
+    "id": "hsk1_new_0037",
+    "hanzi": "家",
+    "pinyin_accepted": ["jiā", "jia1"],
+    "meaning": "家、うち",
+    "example_sentences": [
+      { "text": "我家在北京。", "pinyin": "Wǒ jiā zài Běijīng.", "translation": "私の家は北京にあります。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "場所としての「家」。家庭・家族の意味もある。"
+  },
+  {
+    "id": "hsk1_new_0038",
+    "hanzi": "中国",
+    "pinyin_accepted": ["Zhōngguó", "zhong1guo2"],
+    "meaning": "中国",
+    "example_sentences": [
+      { "text": "我想去中国。", "pinyin": "Wǒ xiǎng qù Zhōngguó.", "translation": "私は中国に行きたいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「中国人」「中国菜」のように複合語を作る。"
+  },
+  {
+    "id": "hsk1_new_0039",
+    "hanzi": "老师",
+    "pinyin_accepted": ["lǎoshī", "lao3shi1"],
+    "meaning": "先生、教師",
+    "example_sentences": [
+      { "text": "她是我的中文老师。", "pinyin": "Tā shì wǒ de Zhōngwén lǎoshī.", "translation": "彼女は私の中国語の先生です。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["学生"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "呼びかけにも使える（老师！）。"
+  },
+  {
+    "id": "hsk1_new_0040",
+    "hanzi": "学生",
+    "pinyin_accepted": ["xuésheng", "xue2sheng0"],
+    "meaning": "学生",
+    "example_sentences": [
+      { "text": "我是大学生。", "pinyin": "Wǒ shì dàxuéshēng.", "translation": "私は大学生です。" }
+    ],
+    "synonyms": [],
+    "antonyms": ["老师"],
+    "tags": ["HSK1", "名詞"],
+    "notes": "単独では「生」は軽声「xuésheng」。「大学生」など複合語では本来の第1声「shēng」で読む。"
+  },
+  {
+    "id": "hsk1_new_0041",
+    "hanzi": "朋友",
+    "pinyin_accepted": ["péngyou", "peng2you0"],
+    "meaning": "友だち",
+    "example_sentences": [
+      { "text": "我们是好朋友。", "pinyin": "Wǒmen shì hǎo péngyou.", "translation": "私たちは仲のいい友だちです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "名詞"],
+    "notes": "「友」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0042",
+    "hanzi": "学习",
+    "pinyin_accepted": ["xuéxí", "xue2xi2"],
+    "meaning": "学ぶ、勉強する",
+    "example_sentences": [
+      { "text": "我在学习汉语。", "pinyin": "Wǒ zài xuéxí Hànyǔ.", "translation": "私は中国語を勉強しています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「学习＋目的語」で「〜を学ぶ」。名詞「勉強」としても使える。"
+  },
+  {
+    "id": "hsk1_new_0043",
+    "hanzi": "工作",
+    "pinyin_accepted": ["gōngzuò", "gong1zuo4"],
+    "meaning": "仕事／働く",
+    "example_sentences": [
+      { "text": "他在医院工作。", "pinyin": "Tā zài yīyuàn gōngzuò.", "translation": "彼は病院で働いています。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "名詞「仕事」にも動詞「働く」にもなる。"
+  },
+  {
+    "id": "hsk1_new_0044",
+    "hanzi": "吃",
+    "pinyin_accepted": ["chī", "chi1"],
+    "meaning": "食べる",
+    "example_sentences": [
+      { "text": "我想吃米饭。", "pinyin": "Wǒ xiǎng chī mǐfàn.", "translation": "私はご飯が食べたいです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "第1声で平らに。「吃饭（食事をする）」も超頻出。"
+  },
+  {
+    "id": "hsk1_new_0045",
+    "hanzi": "喝",
+    "pinyin_accepted": ["hē", "he1"],
+    "meaning": "飲む",
+    "example_sentences": [
+      { "text": "你喝茶还是喝咖啡？", "pinyin": "Nǐ hē chá háishi hē kāfēi?", "translation": "お茶を飲みますか、それともコーヒーを飲みますか？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "第1声。飲み物（茶・水・咖啡など）とセットで覚える。"
+  },
+  {
+    "id": "hsk1_new_0046",
+    "hanzi": "看",
+    "pinyin_accepted": ["kàn", "kan4"],
+    "meaning": "見る／読む",
+    "example_sentences": [
+      { "text": "我喜欢看电影。", "pinyin": "Wǒ xǐhuan kàn diànyǐng.", "translation": "私は映画を見るのが好きです。" },
+      { "text": "他在看书。", "pinyin": "Tā zài kàn shū.", "translation": "彼は本を読んでいます。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「見る」も「読む」も文脈で判断（看书＝本を読む、看电影＝映画を見る）。"
+  },
+  {
+    "id": "hsk1_new_0047",
+    "hanzi": "想",
+    "pinyin_accepted": ["xiǎng", "xiang3"],
+    "meaning": "〜したい／思う、考える／恋しく思う",
+    "example_sentences": [
+      { "text": "我想喝水。", "pinyin": "Wǒ xiǎng hē shuǐ.", "translation": "私は水が飲みたいです。" },
+      { "text": "我想家。", "pinyin": "Wǒ xiǎng jiā.", "translation": "私は家が恋しいです（ホームシック）。" },
+      { "text": "你想什么呢？", "pinyin": "Nǐ xiǎng shénme ne?", "translation": "何を考えているの？" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "「想＋動詞」で願望「〜したい」。単独動詞では「思う・恋しく思う」。"
+  },
+  {
+    "id": "hsk1_new_0048",
+    "hanzi": "要",
+    "pinyin_accepted": ["yào", "yao4"],
+    "meaning": "ほしい／要る／〜するつもり・〜しなければ",
+    "example_sentences": [
+      { "text": "我要一杯咖啡。", "pinyin": "Wǒ yào yì bēi kāfēi.", "translation": "コーヒーを1杯ください（ほしい）。" },
+      { "text": "我明天要去学校。", "pinyin": "Wǒ míngtiān yào qù xuéxiào.", "translation": "私は明日学校へ行くつもりです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "動詞「ほしい・要る」と、助動詞「〜するつもり／必要がある」の両方。「想」より意志・予定が強い。"
+  },
+  {
+    "id": "hsk1_new_0049",
+    "hanzi": "会",
+    "pinyin_accepted": ["huì", "hui4"],
+    "meaning": "（習得して）〜できる／〜するだろう",
+    "example_sentences": [
+      { "text": "我会说一点儿汉语。", "pinyin": "Wǒ huì shuō yìdiǎnr Hànyǔ.", "translation": "私は中国語が少し話せます。" },
+      { "text": "明天会下雨。", "pinyin": "Míngtiān huì xià yǔ.", "translation": "明日は雨が降るでしょう。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "助動詞"],
+    "notes": "学んで身につけた能力「〜できる」と、未来の可能性「〜だろう」。多音字で「会(kuài)＝会计」の読みもある。"
+  },
+  {
+    "id": "hsk1_new_0050",
+    "hanzi": "喜欢",
+    "pinyin_accepted": ["xǐhuan", "xi3huan0"],
+    "meaning": "好む、好き",
+    "example_sentences": [
+      { "text": "我喜欢中国菜。", "pinyin": "Wǒ xǐhuan Zhōngguó cài.", "translation": "私は中華料理が好きです。" },
+      { "text": "他喜欢看电影。", "pinyin": "Tā xǐhuan kàn diànyǐng.", "translation": "彼は映画を見るのが好きです。" }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK1", "動詞"],
+    "notes": "「欢」は軽声。後ろに名詞も動詞句も取れる（喜欢茶／喜欢喝茶）。"
+  }
+]

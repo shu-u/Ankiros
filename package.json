@@ -1,0 +1,46 @@
+{
+  "name": "ankiros",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:dev:verbose": "cross-env TAURI_LOG_LEVEL=verbose tauri dev",
+    "tauri:dev:debug": "cross-env TAURI_LOG_LEVEL=debug tauri dev",
+    "tauri:dev:info": "cross-env TAURI_LOG_LEVEL=info tauri dev",
+    "tauri:dev:warn": "cross-env TAURI_LOG_LEVEL=warn tauri dev",
+    "tauri:dev:error": "cross-env TAURI_LOG_LEVEL=error tauri dev",
+    "gen:bindings": "cd src-tauri && cargo run --bin gen_bindings"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tanstack/react-router": "^1.95.0",
+    "zustand": "^5.0.2",
+    "diff": "^7.0.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0",
+    "lucide-react": "^0.469.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/diff": "^7.0.0",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4",
+    "@tauri-apps/cli": "^2",
+    "cross-env": "^10.1.0",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
+  }
+}

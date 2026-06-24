@@ -1,0 +1,87 @@
+[
+  {
+    "id": "hsk3_001",
+    "hanzi": "日本語",
+    "pinyin_accepted": ["rì běn yǔ", "ri4 ben3 yu3"],
+    "meaning": "日本語",
+    "example_sentences": [
+      {
+        "text": "我喜欢学日本语。",
+        "pinyin": "Wǒ xǐhuān xué rìběnyǔ.",
+        "translation": "私は日本語を学ぶのが好きです。"
+      }
+    ],
+    "synonyms": ["中文"],
+    "antonyms": [],
+    "tags": ["HSK3", "名詞"],
+    "notes": "「日」＝太陽、「本」＝根源。声調：4-3-3声"
+  },
+  {
+    "id": "hsk3_002",
+    "hanzi": "中国",
+    "pinyin_accepted": ["zhōng guó", "zhong1 guo2"],
+    "meaning": "中国",
+    "example_sentences": [
+      {
+        "text": "我来自中国。",
+        "pinyin": "Wǒ láizì Zhōngguó.",
+        "translation": "私は中国出身です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK3", "名詞"],
+    "notes": "「中」＝真ん中、「国」＝国。声調：1-2声"
+  },
+  {
+    "id": "hsk3_003",
+    "hanzi": "学习",
+    "pinyin_accepted": ["xué xí", "xue2 xi2"],
+    "meaning": "学ぶ、勉強する",
+    "example_sentences": [
+      {
+        "text": "我每天学习汉语。",
+        "pinyin": "Wǒ měitiān xuéxí Hànyǔ.",
+        "translation": "私は毎日中国語を勉強します。"
+      }
+    ],
+    "synonyms": ["读书"],
+    "antonyms": [],
+    "tags": ["HSK3", "動詞"],
+    "notes": "声調：2-2声"
+  },
+  {
+    "id": "hsk3_004",
+    "hanzi": "朋友",
+    "pinyin_accepted": ["péng you", "peng2 you5"],
+    "meaning": "友達",
+    "example_sentences": [
+      {
+        "text": "他是我的好朋友。",
+        "pinyin": "Tā shì wǒ de hǎo péngyou.",
+        "translation": "彼は私の良い友達です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": ["HSK3", "名詞"],
+    "notes": "「友」は軽声になりやすい。声調：2-軽声"
+  },
+  {
+    "id": "hsk3_005",
+    "hanzi": "高兴",
+    "pinyin_accepted": ["gāo xìng", "gao1 xing4"],
+    "meaning": "うれしい、楽しい",
+    "example_sentences": [
+      {
+        "text": "认识你我很高兴。",
+        "pinyin": "Rènshi nǐ wǒ hěn gāoxìng.",
+        "translation": "あなたに会えてうれしいです。"
+      }
+    ],
+    "synonyms": ["快乐"],
+    "antonyms": ["难过"],
+    "tags": ["HSK3", "形容詞"],
+    "notes": "声調：1-4声"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "deck_id": "hsk2",
+  "name": "HSK2 単語",
+  "description": "HSK2レベルの頻出単語",
+  "language": "zh",
+  "settings": {
+    "test_modes": ["recognition", "pronunciation"],
+    "daily_new_limit": 20,
+    "daily_review_limit": 100,
+    "fsrs": {
+      "target_retention": 0.9,
+      "max_interval_days": 365
+    }
+  }
+}

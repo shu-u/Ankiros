@@ -1,0 +1,1243 @@
+[
+  {
+    "id": "hsk1_new_0401",
+    "hanzi": "午饭",
+    "pinyin_accepted": [
+      "wǔfàn",
+      "wu3fan4"
+    ],
+    "meaning": "昼食、昼ごはん",
+    "example_sentences": [
+      {
+        "text": "我们一起吃午饭吧。",
+        "pinyin": "Wǒmen yìqǐ chī wǔfàn ba.",
+        "translation": "一緒に昼ごはんを食べましょう。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「午」は第3声、「饭」は第4声。朝食は早饭、夕食は晚饭。"
+  },
+  {
+    "id": "hsk1_new_0402",
+    "hanzi": "洗",
+    "pinyin_accepted": [
+      "xǐ",
+      "xi3"
+    ],
+    "meaning": "洗う",
+    "example_sentences": [
+      {
+        "text": "我去洗手。",
+        "pinyin": "Wǒ qù xǐ shǒu.",
+        "translation": "私は手を洗いに行く。"
+      },
+      {
+        "text": "妈妈在洗衣服。",
+        "pinyin": "Māma zài xǐ yīfu.",
+        "translation": "母は服を洗っている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "第3声。手・服・果物などを「洗う」。"
+  },
+  {
+    "id": "hsk1_new_0403",
+    "hanzi": "洗手间",
+    "pinyin_accepted": [
+      "xǐshǒujiān",
+      "xi3shou3jian1"
+    ],
+    "meaning": "お手洗い、トイレ",
+    "example_sentences": [
+      {
+        "text": "洗手间在哪儿？",
+        "pinyin": "Xǐshǒujiān zài nǎr?",
+        "translation": "お手洗いはどこですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「洗手」(手を洗う)+「间」(部屋)。xǐ shǒu は第3声+第3声で前が第2声に変調して聞こえる。"
+  },
+  {
+    "id": "hsk1_new_0404",
+    "hanzi": "西",
+    "pinyin_accepted": [
+      "xī",
+      "xi1"
+    ],
+    "meaning": "西、西の方角",
+    "example_sentences": [
+      {
+        "text": "太阳从西边落下。",
+        "pinyin": "Tàiyáng cóng xībiān luòxià.",
+        "translation": "太陽は西に沈む。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "东"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "第1声。方角の「西」。対義は东(東)。"
+  },
+  {
+    "id": "hsk1_new_0405",
+    "hanzi": "西边",
+    "pinyin_accepted": [
+      "xībian",
+      "xi1bian0"
+    ],
+    "meaning": "西側、西の方",
+    "example_sentences": [
+      {
+        "text": "学校在城市的西边。",
+        "pinyin": "Xuéxiào zài chéngshì de xībian.",
+        "translation": "学校は町の西側にある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "东边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「西」+方位を表す「边」。対義は东边(東側)。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0406",
+    "hanzi": "下",
+    "pinyin_accepted": [
+      "xià",
+      "xia4"
+    ],
+    "meaning": "下、下りる、（動作の回数を数える）回",
+    "example_sentences": [
+      {
+        "text": "猫在桌子下面。",
+        "pinyin": "Māo zài zhuōzi xiàmiàn.",
+        "translation": "猫は机の下にいる。"
+      },
+      {
+        "text": "请你下来。",
+        "pinyin": "Qǐng nǐ xiàlái.",
+        "translation": "下りてきてください。"
+      },
+      {
+        "text": "他敲了两下门。",
+        "pinyin": "Tā qiāo le liǎng xià mén.",
+        "translation": "彼はドアを二回ノックした。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "第4声。位置「下」、動詞「下りる・降る」、動作の回数を数える量詞としても使う。対義は上。"
+  },
+  {
+    "id": "hsk1_new_0407",
+    "hanzi": "下班",
+    "pinyin_accepted": [
+      "xiàbān",
+      "xia4ban1"
+    ],
+    "meaning": "退勤する、仕事が終わる",
+    "example_sentences": [
+      {
+        "text": "我五点下班。",
+        "pinyin": "Wǒ wǔ diǎn xiàbān.",
+        "translation": "私は5時に退勤する。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上班"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「下」+「班」(勤務)。対義は上班(出勤する)。"
+  },
+  {
+    "id": "hsk1_new_0408",
+    "hanzi": "下边",
+    "pinyin_accepted": [
+      "xiàbian",
+      "xia4bian0"
+    ],
+    "meaning": "下、下の方",
+    "example_sentences": [
+      {
+        "text": "书在桌子下边。",
+        "pinyin": "Shū zài zhuōzi xiàbian.",
+        "translation": "本は机の下にある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「边」は軽声なので数字表記でbian0。対義は上边(上の方)。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0409",
+    "hanzi": "下车",
+    "pinyin_accepted": [
+      "xiàchē",
+      "xia4che1"
+    ],
+    "meaning": "（車・電車を）降りる",
+    "example_sentences": [
+      {
+        "text": "我们在这儿下车。",
+        "pinyin": "Wǒmen zài zhèr xiàchē.",
+        "translation": "私たちはここで降りる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上车"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「下」+「车」(車)。対義は上车(乗る)。"
+  },
+  {
+    "id": "hsk1_new_0410",
+    "hanzi": "下次",
+    "pinyin_accepted": [
+      "xiàcì",
+      "xia4ci4"
+    ],
+    "meaning": "次回、今度",
+    "example_sentences": [
+      {
+        "text": "下次再见！",
+        "pinyin": "Xiàcì zàijiàn!",
+        "translation": "また今度会いましょう！"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上次"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「下」+「次」(回)。対義は上次(前回)。"
+  },
+  {
+    "id": "hsk1_new_0411",
+    "hanzi": "下课",
+    "pinyin_accepted": [
+      "xiàkè",
+      "xia4ke4"
+    ],
+    "meaning": "授業が終わる、放課になる",
+    "example_sentences": [
+      {
+        "text": "现在下课了。",
+        "pinyin": "Xiànzài xiàkè le.",
+        "translation": "今授業が終わった。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上课"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「下」+「课」(授業)。対義は上课(授業を受ける／始まる)。"
+  },
+  {
+    "id": "hsk1_new_0412",
+    "hanzi": "下午",
+    "pinyin_accepted": [
+      "xiàwǔ",
+      "xia4wu3"
+    ],
+    "meaning": "午後",
+    "example_sentences": [
+      {
+        "text": "下午我有课。",
+        "pinyin": "Xiàwǔ wǒ yǒu kè.",
+        "translation": "午後は授業がある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "上午"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「下」+「午」。対義は上午(午前)。正午は中午。"
+  },
+  {
+    "id": "hsk1_new_0413",
+    "hanzi": "下雨",
+    "pinyin_accepted": [
+      "xiàyǔ",
+      "xia4yu3"
+    ],
+    "meaning": "雨が降る",
+    "example_sentences": [
+      {
+        "text": "今天下雨了。",
+        "pinyin": "Jīntiān xiàyǔ le.",
+        "translation": "今日は雨が降った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「下」(降る)+「雨」。雪が降るは下雪。"
+  },
+  {
+    "id": "hsk1_new_0414",
+    "hanzi": "先",
+    "pinyin_accepted": [
+      "xiān",
+      "xian1"
+    ],
+    "meaning": "先に、まず",
+    "example_sentences": [
+      {
+        "text": "你先走吧。",
+        "pinyin": "Nǐ xiān zǒu ba.",
+        "translation": "あなたが先に行ってください。"
+      },
+      {
+        "text": "我们先吃饭，再去。",
+        "pinyin": "Wǒmen xiān chīfàn, zài qù.",
+        "translation": "私たちはまずご飯を食べて、それから行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "第1声。「先…再…」(まず…それから…)の形でよく使う。"
+  },
+  {
+    "id": "hsk1_new_0415",
+    "hanzi": "先生",
+    "pinyin_accepted": [
+      "xiānsheng",
+      "xian1sheng0"
+    ],
+    "meaning": "〜さん（成人男性への敬称）、夫",
+    "example_sentences": [
+      {
+        "text": "王先生是老师。",
+        "pinyin": "Wáng xiānsheng shì lǎoshī.",
+        "translation": "王さんは先生です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「生」は軽声でsheng0。日本語の「先生(教師)」とは意味が違い、男性への敬称や「夫」を指す。"
+  },
+  {
+    "id": "hsk1_new_0416",
+    "hanzi": "现在",
+    "pinyin_accepted": [
+      "xiànzài",
+      "xian4zai4"
+    ],
+    "meaning": "今、現在",
+    "example_sentences": [
+      {
+        "text": "现在几点？",
+        "pinyin": "Xiànzài jǐ diǎn?",
+        "translation": "今何時ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "両音節とも第4声。"
+  },
+  {
+    "id": "hsk1_new_0417",
+    "hanzi": "小",
+    "pinyin_accepted": [
+      "xiǎo",
+      "xiao3"
+    ],
+    "meaning": "小さい、（年が）若い",
+    "example_sentences": [
+      {
+        "text": "这个房间很小。",
+        "pinyin": "Zhège fángjiān hěn xiǎo.",
+        "translation": "この部屋はとても小さい。"
+      },
+      {
+        "text": "他比我小两岁。",
+        "pinyin": "Tā bǐ wǒ xiǎo liǎng suì.",
+        "translation": "彼は私より2歳年下だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "大"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "第3声。サイズが小さい／年齢が下。対義は大。"
+  },
+  {
+    "id": "hsk1_new_0418",
+    "hanzi": "小孩儿",
+    "pinyin_accepted": [
+      "xiǎoháir",
+      "xiao3hai2r"
+    ],
+    "meaning": "子ども",
+    "example_sentences": [
+      {
+        "text": "那个小孩儿很可爱。",
+        "pinyin": "Nàge xiǎoháir hěn kě'ài.",
+        "translation": "あの子どもはとてもかわいい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "儿化(er化)した語。儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0419",
+    "hanzi": "小姐",
+    "pinyin_accepted": [
+      "xiǎojie",
+      "xiao3jie0"
+    ],
+    "meaning": "〜さん（若い女性への呼びかけ）、お嬢さん",
+    "example_sentences": [
+      {
+        "text": "李小姐在吗？",
+        "pinyin": "Lǐ xiǎojie zài ma?",
+        "translation": "李さんはいらっしゃいますか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「姐」は軽声でjie0。"
+  },
+  {
+    "id": "hsk1_new_0420",
+    "hanzi": "小朋友",
+    "pinyin_accepted": [
+      "xiǎopéngyǒu",
+      "xiao3peng2you3"
+    ],
+    "meaning": "子ども、お子さん（子どもへの呼びかけ）",
+    "example_sentences": [
+      {
+        "text": "小朋友，你几岁了？",
+        "pinyin": "Xiǎopéngyǒu, nǐ jǐ suì le?",
+        "translation": "ぼく（おじょうちゃん）、何歳になったの？"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「小」+「朋友」(友達)。子どもに親しみを込めて呼ぶ言い方。"
+  },
+  {
+    "id": "hsk1_new_0421",
+    "hanzi": "小时",
+    "pinyin_accepted": [
+      "xiǎoshí",
+      "xiao3shi2"
+    ],
+    "meaning": "（時間の単位）時間",
+    "example_sentences": [
+      {
+        "text": "我每天学习两个小时。",
+        "pinyin": "Wǒ měitiān xuéxí liǎng ge xiǎoshí.",
+        "translation": "私は毎日2時間勉強する。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時間の長さの単位。前に量詞「个」をつけて「两个小时」のように使う。"
+  },
+  {
+    "id": "hsk1_new_0422",
+    "hanzi": "小学",
+    "pinyin_accepted": [
+      "xiǎoxué",
+      "xiao3xue2"
+    ],
+    "meaning": "小学校",
+    "example_sentences": [
+      {
+        "text": "我妹妹上小学。",
+        "pinyin": "Wǒ mèimei shàng xiǎoxué.",
+        "translation": "私の妹は小学校に通っている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「学」はxué(第2声)。"
+  },
+  {
+    "id": "hsk1_new_0423",
+    "hanzi": "小学生",
+    "pinyin_accepted": [
+      "xiǎoxuéshēng",
+      "xiao3xue2sheng1"
+    ],
+    "meaning": "小学生",
+    "example_sentences": [
+      {
+        "text": "他是小学生。",
+        "pinyin": "Tā shì xiǎoxuéshēng.",
+        "translation": "彼は小学生だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「小学」+「生」(生徒)。ここの「生」はshēng(第1声)。"
+  },
+  {
+    "id": "hsk1_new_0424",
+    "hanzi": "笑",
+    "pinyin_accepted": [
+      "xiào",
+      "xiao4"
+    ],
+    "meaning": "笑う、笑顔になる",
+    "example_sentences": [
+      {
+        "text": "他笑了。",
+        "pinyin": "Tā xiào le.",
+        "translation": "彼は笑った。"
+      },
+      {
+        "text": "大家都在笑。",
+        "pinyin": "Dàjiā dōu zài xiào.",
+        "translation": "みんなが笑っている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "哭"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "第4声。対義は哭(泣く)。"
+  },
+  {
+    "id": "hsk1_new_0425",
+    "hanzi": "写",
+    "pinyin_accepted": [
+      "xiě",
+      "xie3"
+    ],
+    "meaning": "書く",
+    "example_sentences": [
+      {
+        "text": "请写你的名字。",
+        "pinyin": "Qǐng xiě nǐ de míngzi.",
+        "translation": "あなたの名前を書いてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "第3声。字や文章を「書く」。"
+  },
+  {
+    "id": "hsk1_new_0426",
+    "hanzi": "新",
+    "pinyin_accepted": [
+      "xīn",
+      "xin1"
+    ],
+    "meaning": "新しい",
+    "example_sentences": [
+      {
+        "text": "这是我的新手机。",
+        "pinyin": "Zhè shì wǒ de xīn shǒujī.",
+        "translation": "これは私の新しい携帯電話だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "旧"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "第1声。一般的な形容詞なので小文字。対義は旧(古い)。"
+  },
+  {
+    "id": "hsk1_new_0427",
+    "hanzi": "新年",
+    "pinyin_accepted": [
+      "xīnnián",
+      "xin1nian2"
+    ],
+    "meaning": "新年、お正月",
+    "example_sentences": [
+      {
+        "text": "新年快乐！",
+        "pinyin": "Xīnnián kuàilè!",
+        "translation": "明けましておめでとう！"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「新」+「年」。新年のあいさつ「新年快乐」でよく使う。"
+  },
+  {
+    "id": "hsk1_new_0428",
+    "hanzi": "星期",
+    "pinyin_accepted": [
+      "xīngqī",
+      "xing1qi1"
+    ],
+    "meaning": "週、曜日",
+    "example_sentences": [
+      {
+        "text": "今天星期几？",
+        "pinyin": "Jīntiān xīngqī jǐ?",
+        "translation": "今日は何曜日ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "両音節とも第1声。「星期+数字」で曜日を表す(星期一=月曜)。"
+  },
+  {
+    "id": "hsk1_new_0429",
+    "hanzi": "星期日",
+    "pinyin_accepted": [
+      "xīngqīrì",
+      "xing1qi1ri4"
+    ],
+    "meaning": "日曜日",
+    "example_sentences": [
+      {
+        "text": "星期日我不上班。",
+        "pinyin": "Xīngqīrì wǒ bú shàngbān.",
+        "translation": "日曜日は仕事に行かない。"
+      }
+    ],
+    "synonyms": [
+      "星期天"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「星期」+「日」。やや書き言葉的。話し言葉では星期天。"
+  },
+  {
+    "id": "hsk1_new_0430",
+    "hanzi": "星期天",
+    "pinyin_accepted": [
+      "xīngqītiān",
+      "xing1qi1tian1"
+    ],
+    "meaning": "日曜日",
+    "example_sentences": [
+      {
+        "text": "星期天我们去公园吧。",
+        "pinyin": "Xīngqītiān wǒmen qù gōngyuán ba.",
+        "translation": "日曜日に公園へ行きましょう。"
+      }
+    ],
+    "synonyms": [
+      "星期日"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「星期」+「天」。話し言葉でよく使う。"
+  },
+  {
+    "id": "hsk1_new_0431",
+    "hanzi": "行",
+    "pinyin_accepted": [
+      "xíng",
+      "xing2"
+    ],
+    "meaning": "よろしい、できる、大丈夫だ",
+    "example_sentences": [
+      {
+        "text": "这样行吗？",
+        "pinyin": "Zhèyàng xíng ma?",
+        "translation": "こうしてもいいですか。"
+      },
+      {
+        "text": "行，没问题。",
+        "pinyin": "Xíng, méi wèntí.",
+        "translation": "いいよ、問題ない。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "多音字。「よい・できる」の意味では第2声xíngと読む(出典のháng=銀行などの読みではない)。承諾を表すときによく使う。"
+  },
+  {
+    "id": "hsk1_new_0432",
+    "hanzi": "休息",
+    "pinyin_accepted": [
+      "xiūxi",
+      "xiu1xi0"
+    ],
+    "meaning": "休む、休憩する",
+    "example_sentences": [
+      {
+        "text": "你休息一下吧。",
+        "pinyin": "Nǐ xiūxi yíxià ba.",
+        "translation": "少し休んでください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「息」は軽声でxi0。"
+  },
+  {
+    "id": "hsk1_new_0433",
+    "hanzi": "学",
+    "pinyin_accepted": [
+      "xué",
+      "xue2"
+    ],
+    "meaning": "学ぶ、習う",
+    "example_sentences": [
+      {
+        "text": "我在学汉语。",
+        "pinyin": "Wǒ zài xué Hànyǔ.",
+        "translation": "私は中国語を勉強している。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "第2声。ü→数字表記ではxue2(üeのü)。"
+  },
+  {
+    "id": "hsk1_new_0434",
+    "hanzi": "学校",
+    "pinyin_accepted": [
+      "xuéxiào",
+      "xue2xiao4"
+    ],
+    "meaning": "学校",
+    "example_sentences": [
+      {
+        "text": "我每天去学校。",
+        "pinyin": "Wǒ měitiān qù xuéxiào.",
+        "translation": "私は毎日学校へ行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「学」xué(第2声)+「校」xiào(第4声)。"
+  },
+  {
+    "id": "hsk1_new_0435",
+    "hanzi": "学院",
+    "pinyin_accepted": [
+      "xuéyuàn",
+      "xue2yuan4"
+    ],
+    "meaning": "学院、（単科の）大学・カレッジ",
+    "example_sentences": [
+      {
+        "text": "他在外语学院学习。",
+        "pinyin": "Tā zài wàiyǔ xuéyuàn xuéxí.",
+        "translation": "彼は外国語学院で学んでいる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「学」+「院」。総合大学は大学。"
+  },
+  {
+    "id": "hsk1_new_0436",
+    "hanzi": "页",
+    "pinyin_accepted": [
+      "yè",
+      "ye4"
+    ],
+    "meaning": "ページ（を数える）",
+    "example_sentences": [
+      {
+        "text": "请看第十页。",
+        "pinyin": "Qǐng kàn dì shí yè.",
+        "translation": "10ページを見てください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "正しい読みはyè(第4声)。出典のxiéは誤りと判断し修正。本のページを数える量詞。"
+  },
+  {
+    "id": "hsk1_new_0437",
+    "hanzi": "爷爷",
+    "pinyin_accepted": [
+      "yéye",
+      "ye2ye0"
+    ],
+    "meaning": "祖父、おじいさん（父方）",
+    "example_sentences": [
+      {
+        "text": "我爷爷今年八十岁。",
+        "pinyin": "Wǒ yéye jīnnián bāshí suì.",
+        "translation": "私の祖父は今年80歳だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "奶奶"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "2音節目は軽声でye0。父方の祖父。対義(対)は奶奶(父方の祖母)。"
+  },
+  {
+    "id": "hsk1_new_0438",
+    "hanzi": "一半",
+    "pinyin_accepted": [
+      "yíbàn",
+      "yi2ban4"
+    ],
+    "meaning": "半分",
+    "example_sentences": [
+      {
+        "text": "这个蛋糕我吃了一半。",
+        "pinyin": "Zhège dàngāo wǒ chī le yíbàn.",
+        "translation": "このケーキを私は半分食べた。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "数詞"
+    ],
+    "notes": "「一」の後ろが第4声(bàn)なので「一」は第2声yíに変調。"
+  },
+  {
+    "id": "hsk1_new_0439",
+    "hanzi": "一边",
+    "pinyin_accepted": [
+      "yìbiān",
+      "yi4bian1"
+    ],
+    "meaning": "一方、片側；〜しながら（一边…一边…）",
+    "example_sentences": [
+      {
+        "text": "他一边走，一边唱歌。",
+        "pinyin": "Tā yìbiān zǒu, yìbiān chànggē.",
+        "translation": "彼は歩きながら歌を歌う。"
+      },
+      {
+        "text": "街道的一边有很多树。",
+        "pinyin": "Jiēdào de yìbiān yǒu hěn duō shù.",
+        "translation": "通りの片側にはたくさんの木がある。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "「一」の後ろが第1声(biān)なので「一」は第4声yìに変調。「一边…一边…」で2つの動作の同時進行を表す。"
+  },
+  {
+    "id": "hsk1_new_0440",
+    "hanzi": "一点儿",
+    "pinyin_accepted": [
+      "yìdiǎnr",
+      "yi4dian3r"
+    ],
+    "meaning": "少し、ちょっと",
+    "example_sentences": [
+      {
+        "text": "我会说一点儿汉语。",
+        "pinyin": "Wǒ huì shuō yìdiǎnr Hànyǔ.",
+        "translation": "私は中国語が少し話せる。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "「一」の後ろが第3声(diǎn)なので「一」は第4声yìに変調。儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0441",
+    "hanzi": "一会儿",
+    "pinyin_accepted": [
+      "yíhuìr",
+      "yi2hui4r"
+    ],
+    "meaning": "しばらく、ちょっとの間",
+    "example_sentences": [
+      {
+        "text": "请等一会儿。",
+        "pinyin": "Qǐng děng yíhuìr.",
+        "translation": "少し待ってください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "「一」の後ろが第4声(huì)なので「一」は第2声yíに変調。儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0442",
+    "hanzi": "一块儿",
+    "pinyin_accepted": [
+      "yíkuàir",
+      "yi2kuai4r"
+    ],
+    "meaning": "一緒に",
+    "example_sentences": [
+      {
+        "text": "我们一块儿去吧。",
+        "pinyin": "Wǒmen yíkuàir qù ba.",
+        "translation": "一緒に行きましょう。"
+      }
+    ],
+    "synonyms": [
+      "一起"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "「一」の後ろが第4声(kuài)なので「一」は第2声yíに変調。口語で一起と同義。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0443",
+    "hanzi": "一起",
+    "pinyin_accepted": [
+      "yìqǐ",
+      "yi4qi3"
+    ],
+    "meaning": "一緒に",
+    "example_sentences": [
+      {
+        "text": "我们一起吃饭吧。",
+        "pinyin": "Wǒmen yìqǐ chīfàn ba.",
+        "translation": "一緒にご飯を食べましょう。"
+      }
+    ],
+    "synonyms": [
+      "一块儿"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "「一」の後ろが第3声(qǐ)なので「一」は第4声yìに変調。"
+  },
+  {
+    "id": "hsk1_new_0444",
+    "hanzi": "一下儿",
+    "pinyin_accepted": [
+      "yíxiàr",
+      "yi2xia4r"
+    ],
+    "meaning": "ちょっと（〜する）、少しの間",
+    "example_sentences": [
+      {
+        "text": "你看一下儿。",
+        "pinyin": "Nǐ kàn yíxiàr.",
+        "translation": "ちょっと見てください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "「一」の後ろが第4声(xià)なので「一」は第2声yíに変調。動詞の後ろにつけて「ちょっと〜する」。儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0445",
+    "hanzi": "一些",
+    "pinyin_accepted": [
+      "yìxiē",
+      "yi4xie1"
+    ],
+    "meaning": "いくつか、いくらか、少し",
+    "example_sentences": [
+      {
+        "text": "我买了一些水果。",
+        "pinyin": "Wǒ mǎi le yìxiē shuǐguǒ.",
+        "translation": "私は果物をいくつか買った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "「一」の後ろが第1声(xiē)なので「一」は第4声yìに変調。不特定の少量・複数を表す。"
+  },
+  {
+    "id": "hsk1_new_0446",
+    "hanzi": "一样",
+    "pinyin_accepted": [
+      "yíyàng",
+      "yi2yang4"
+    ],
+    "meaning": "同じである、同じだ",
+    "example_sentences": [
+      {
+        "text": "这两个一样吗？",
+        "pinyin": "Zhè liǎng ge yíyàng ma?",
+        "translation": "この二つは同じですか。"
+      },
+      {
+        "text": "我和你一样高。",
+        "pinyin": "Wǒ hé nǐ yíyàng gāo.",
+        "translation": "私はあなたと同じ背の高さだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "不一样"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「一」の後ろが第4声(yàng)なので「一」は第2声yíに変調。「A和B一样」(AとBは同じ)の形でよく使う。"
+  },
+  {
+    "id": "hsk1_new_0447",
+    "hanzi": "衣服",
+    "pinyin_accepted": [
+      "yīfu",
+      "yi1fu0"
+    ],
+    "meaning": "服、衣服",
+    "example_sentences": [
+      {
+        "text": "这件衣服很漂亮。",
+        "pinyin": "Zhè jiàn yīfu hěn piàoliang.",
+        "translation": "この服はとてもきれいだ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「服」は軽声でfu0。「一」ではなく「衣」なので単独の第1声yī。量詞は件。"
+  },
+  {
+    "id": "hsk1_new_0448",
+    "hanzi": "医生",
+    "pinyin_accepted": [
+      "yīshēng",
+      "yi1sheng1"
+    ],
+    "meaning": "医者、医師",
+    "example_sentences": [
+      {
+        "text": "我爸爸是医生。",
+        "pinyin": "Wǒ bàba shì yīshēng.",
+        "translation": "私の父は医者だ。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「医」yī(第1声)+「生」shēng(第1声)。"
+  },
+  {
+    "id": "hsk1_new_0449",
+    "hanzi": "医院",
+    "pinyin_accepted": [
+      "yīyuàn",
+      "yi1yuan4"
+    ],
+    "meaning": "病院",
+    "example_sentences": [
+      {
+        "text": "他去医院看病。",
+        "pinyin": "Tā qù yīyuàn kànbìng.",
+        "translation": "彼は病院へ診察を受けに行く。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「医」yī(第1声)+「院」yuàn(第4声)。"
+  },
+  {
+    "id": "hsk1_new_0450",
+    "hanzi": "用",
+    "pinyin_accepted": [
+      "yòng",
+      "yong4"
+    ],
+    "meaning": "使う、用いる；〜で（手段を表す）",
+    "example_sentences": [
+      {
+        "text": "我用手机看新闻。",
+        "pinyin": "Wǒ yòng shǒujī kàn xīnwén.",
+        "translation": "私は携帯でニュースを見る。"
+      },
+      {
+        "text": "这个词怎么用？",
+        "pinyin": "Zhège cí zěnme yòng?",
+        "translation": "この単語はどう使いますか。"
+      },
+      {
+        "text": "请用筷子吃。",
+        "pinyin": "Qǐng yòng kuàizi chī.",
+        "translation": "箸で食べてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "第4声。動詞「使う」のほか、「用+道具」で手段(〜で)を表す介詞的用法もある。"
+  }
+]

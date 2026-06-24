@@ -1,0 +1,50 @@
+[package]
+name = "ankiros"
+version = "0.1.0"
+description = "単語帳アプリ (FSRS flashcards)"
+authors = ["you"]
+edition = "2021"
+default-run = "ankiros"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "ankiros_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Async runtime + DB
+tokio = { version = "1", features = ["full"] }
+sqlx = { version = "0.8", features = ["runtime-tokio", "sqlite", "migrate"] }
+
+# Date / time
+chrono = { version = "0.4", features = ["serde"] }
+chrono-tz = "0.10"
+
+# SRS
+rs-fsrs = "1.2"
+
+# Misc
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+rand = "0.8"
+
+# ZIP インポート (deflate のみ・Android ビルドを軽量に保つ)
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+# IPC type generation
+specta = { version = "=2.0.0-rc.22", features = ["derive"] }
+tauri-specta = { version = "=2.0.0-rc.21", features = ["derive", "typescript"] }
+specta-typescript = "0.0.9"

@@ -1,0 +1,1307 @@
+[
+  {
+    "id": "hsk1_new_0251",
+    "hanzi": "楼",
+    "pinyin_accepted": [
+      "lóu",
+      "lou2"
+    ],
+    "meaning": "建物、ビル、（建物の）階",
+    "example_sentences": [
+      {
+        "text": "这座楼很高。",
+        "pinyin": "zhè zuò lóu hěn gāo.",
+        "translation": "このビルはとても高い。"
+      },
+      {
+        "text": "我家在三楼。",
+        "pinyin": "wǒ jiā zài sān lóu.",
+        "translation": "私の家は3階にあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「楼」は建物そのものと、建物の「階」の両方を表す。"
+  },
+  {
+    "id": "hsk1_new_0252",
+    "hanzi": "楼上",
+    "pinyin_accepted": [
+      "lóushang",
+      "lou2shang0"
+    ],
+    "meaning": "階上、上の階",
+    "example_sentences": [
+      {
+        "text": "他在楼上睡觉。",
+        "pinyin": "tā zài lóushang shuìjiào.",
+        "translation": "彼は上の階で寝ています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "楼下"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「楼下」（階下）と対になる方位詞。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0253",
+    "hanzi": "楼下",
+    "pinyin_accepted": [
+      "lóuxia",
+      "lou2xia0"
+    ],
+    "meaning": "階下、下の階",
+    "example_sentences": [
+      {
+        "text": "妈妈在楼下做饭。",
+        "pinyin": "māma zài lóuxia zuò fàn.",
+        "translation": "母は下の階で料理をしています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "楼上"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「楼上」（階上）と対になる方位詞。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0254",
+    "hanzi": "路",
+    "pinyin_accepted": [
+      "lù",
+      "lu4"
+    ],
+    "meaning": "道、道路",
+    "example_sentences": [
+      {
+        "text": "这条路很长。",
+        "pinyin": "zhè tiáo lù hěn cháng.",
+        "translation": "この道はとても長い。"
+      },
+      {
+        "text": "去车站怎么走这条路？",
+        "pinyin": "qù chēzhàn zěnme zǒu zhè tiáo lù?",
+        "translation": "駅へ行くにはこの道をどう行きますか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "量詞は「条」を使う。"
+  },
+  {
+    "id": "hsk1_new_0255",
+    "hanzi": "路口",
+    "pinyin_accepted": [
+      "lùkǒu",
+      "lu4kou3"
+    ],
+    "meaning": "交差点、道の入口、辻",
+    "example_sentences": [
+      {
+        "text": "前面的路口往右走。",
+        "pinyin": "qiánmiàn de lùkǒu wǎng yòu zǒu.",
+        "translation": "前の交差点を右へ行ってください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "道が交わる場所を指す。"
+  },
+  {
+    "id": "hsk1_new_0256",
+    "hanzi": "路上",
+    "pinyin_accepted": [
+      "lùshang",
+      "lu4shang0"
+    ],
+    "meaning": "道中、途中、道の上",
+    "example_sentences": [
+      {
+        "text": "路上小心。",
+        "pinyin": "lùshang xiǎoxīn.",
+        "translation": "道中気をつけて。"
+      },
+      {
+        "text": "我在路上买了水。",
+        "pinyin": "wǒ zài lùshang mǎi le shuǐ.",
+        "translation": "私は道中で水を買った。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「上」は軽声。移動の途中という意味でよく使う。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0257",
+    "hanzi": "妈",
+    "pinyin_accepted": [
+      "mā",
+      "ma1"
+    ],
+    "meaning": "お母さん、ママ（呼びかけ）",
+    "example_sentences": [
+      {
+        "text": "妈，我回来了。",
+        "pinyin": "mā, wǒ huílái le.",
+        "translation": "お母さん、ただいま。"
+      }
+    ],
+    "synonyms": [
+      "妈妈"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "単独では呼びかけに使い、通常は「妈妈」の形で用いる。"
+  },
+  {
+    "id": "hsk1_new_0258",
+    "hanzi": "妈妈",
+    "pinyin_accepted": [
+      "māma",
+      "ma1ma0"
+    ],
+    "meaning": "お母さん、母",
+    "example_sentences": [
+      {
+        "text": "我妈妈是老师。",
+        "pinyin": "wǒ māma shì lǎoshī.",
+        "translation": "私の母は先生です。"
+      }
+    ],
+    "synonyms": [
+      "妈"
+    ],
+    "antonyms": [
+      "爸爸"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "二つ目の「妈」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0259",
+    "hanzi": "马路",
+    "pinyin_accepted": [
+      "mǎlù",
+      "ma3lu4"
+    ],
+    "meaning": "大通り、道路（特に車道）",
+    "example_sentences": [
+      {
+        "text": "过马路要小心。",
+        "pinyin": "guò mǎlù yào xiǎoxīn.",
+        "translation": "道路を渡るときは気をつけて。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "都市部の車が通る道を指すことが多い。"
+  },
+  {
+    "id": "hsk1_new_0260",
+    "hanzi": "马上",
+    "pinyin_accepted": [
+      "mǎshàng",
+      "ma3shang4"
+    ],
+    "meaning": "すぐに、ただちに",
+    "example_sentences": [
+      {
+        "text": "我马上来。",
+        "pinyin": "wǒ mǎshàng lái.",
+        "translation": "すぐに行きます。"
+      },
+      {
+        "text": "电影马上就要开始了。",
+        "pinyin": "diànyǐng mǎshàng jiù yào kāishǐ le.",
+        "translation": "映画がもうすぐ始まります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "「就」と一緒に「马上就」の形でよく使う。"
+  },
+  {
+    "id": "hsk1_new_0261",
+    "hanzi": "买",
+    "pinyin_accepted": [
+      "mǎi",
+      "mai3"
+    ],
+    "meaning": "買う",
+    "example_sentences": [
+      {
+        "text": "我想买一本书。",
+        "pinyin": "wǒ xiǎng mǎi yì běn shū.",
+        "translation": "私は本を一冊買いたい。"
+      },
+      {
+        "text": "你买什么了？",
+        "pinyin": "nǐ mǎi shénme le?",
+        "translation": "あなたは何を買いましたか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "卖"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「卖」（売る）と字形・声調で対比して覚える。"
+  },
+  {
+    "id": "hsk1_new_0262",
+    "hanzi": "慢",
+    "pinyin_accepted": [
+      "màn",
+      "man4"
+    ],
+    "meaning": "遅い、ゆっくりだ",
+    "example_sentences": [
+      {
+        "text": "你说得太慢了。",
+        "pinyin": "nǐ shuō de tài màn le.",
+        "translation": "あなたの話し方は遅すぎる。"
+      },
+      {
+        "text": "请慢点儿走。",
+        "pinyin": "qǐng màn diǎnr zǒu.",
+        "translation": "ゆっくり歩いてください。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "快"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "「快」（速い）と対になる。"
+  },
+  {
+    "id": "hsk1_new_0263",
+    "hanzi": "忙",
+    "pinyin_accepted": [
+      "máng",
+      "mang2"
+    ],
+    "meaning": "忙しい",
+    "example_sentences": [
+      {
+        "text": "我今天很忙。",
+        "pinyin": "wǒ jīntiān hěn máng.",
+        "translation": "私は今日とても忙しい。"
+      },
+      {
+        "text": "你最近忙不忙？",
+        "pinyin": "nǐ zuìjìn máng bu máng?",
+        "translation": "最近忙しいですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "闲"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "主に形容詞として使う。"
+  },
+  {
+    "id": "hsk1_new_0264",
+    "hanzi": "毛",
+    "pinyin_accepted": [
+      "máo",
+      "mao2"
+    ],
+    "meaning": "（貨幣単位）毛、角（1元の10分の1）",
+    "example_sentences": [
+      {
+        "text": "这个三块五毛钱。",
+        "pinyin": "zhège sān kuài wǔ máo qián.",
+        "translation": "これは3元5角です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "量詞"
+    ],
+    "notes": "口語の貨幣単位。書き言葉では「角」に当たる。"
+  },
+  {
+    "id": "hsk1_new_0265",
+    "hanzi": "没",
+    "pinyin_accepted": [
+      "méi",
+      "mei2"
+    ],
+    "meaning": "…ない、…していない（否定）",
+    "example_sentences": [
+      {
+        "text": "我没去过中国。",
+        "pinyin": "wǒ méi qù guò Zhōngguó.",
+        "translation": "私は中国に行ったことがない。"
+      },
+      {
+        "text": "他还没来。",
+        "pinyin": "tā hái méi lái.",
+        "translation": "彼はまだ来ていない。"
+      }
+    ],
+    "synonyms": [
+      "没有"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "副詞"
+    ],
+    "notes": "動作・状態の発生を否定する。過去の経験・完了の否定に使う。"
+  },
+  {
+    "id": "hsk1_new_0266",
+    "hanzi": "没什么",
+    "pinyin_accepted": [
+      "méi shénme",
+      "mei2 shen2me0"
+    ],
+    "meaning": "なんでもない、たいしたことない",
+    "example_sentences": [
+      {
+        "text": "没什么，别担心。",
+        "pinyin": "méi shénme, bié dānxīn.",
+        "translation": "なんでもないよ、心配しないで。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "フレーズ"
+    ],
+    "notes": "「么」は軽声。相手を安心させる返答として使う。"
+  },
+  {
+    "id": "hsk1_new_0267",
+    "hanzi": "没事儿",
+    "pinyin_accepted": [
+      "méi shìr",
+      "mei2 shi4r"
+    ],
+    "meaning": "大丈夫、なんでもない、用事がない",
+    "example_sentences": [
+      {
+        "text": "没事儿，我自己来。",
+        "pinyin": "méi shìr, wǒ zìjǐ lái.",
+        "translation": "大丈夫、自分でやります。"
+      }
+    ],
+    "synonyms": [
+      "没什么"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "フレーズ"
+    ],
+    "notes": "儿化。お礼や謝罪への返答にも使う。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0268",
+    "hanzi": "没有",
+    "pinyin_accepted": [
+      "méiyǒu",
+      "mei2you3"
+    ],
+    "meaning": "持っていない、ない、（経験・完了の否定）…していない",
+    "example_sentences": [
+      {
+        "text": "我没有钱。",
+        "pinyin": "wǒ méiyǒu qián.",
+        "translation": "私はお金がない。"
+      },
+      {
+        "text": "他没有来。",
+        "pinyin": "tā méiyǒu lái.",
+        "translation": "彼は来なかった。"
+      },
+      {
+        "text": "桌子上没有书。",
+        "pinyin": "zhuōzi shang méiyǒu shū.",
+        "translation": "机の上に本がない。"
+      }
+    ],
+    "synonyms": [
+      "没"
+    ],
+    "antonyms": [
+      "有"
+    ],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「有」の否定形。所有・存在の否定にも、動作の未完了の否定にも使う。"
+  },
+  {
+    "id": "hsk1_new_0269",
+    "hanzi": "妹",
+    "pinyin_accepted": [
+      "mèi",
+      "mei4"
+    ],
+    "meaning": "妹",
+    "example_sentences": [
+      {
+        "text": "她是我妹。",
+        "pinyin": "tā shì wǒ mèi.",
+        "translation": "彼女は私の妹です。"
+      }
+    ],
+    "synonyms": [
+      "妹妹"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "通常は「妹妹」の形で使う。"
+  },
+  {
+    "id": "hsk1_new_0270",
+    "hanzi": "妹妹",
+    "pinyin_accepted": [
+      "mèimei",
+      "mei4mei0"
+    ],
+    "meaning": "妹",
+    "example_sentences": [
+      {
+        "text": "我妹妹今年六岁。",
+        "pinyin": "wǒ mèimei jīnnián liù suì.",
+        "translation": "私の妹は今年6歳です。"
+      }
+    ],
+    "synonyms": [
+      "妹"
+    ],
+    "antonyms": [
+      "姐姐"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "二つ目の「妹」は軽声。"
+  },
+  {
+    "id": "hsk1_new_0271",
+    "hanzi": "门",
+    "pinyin_accepted": [
+      "mén",
+      "men2"
+    ],
+    "meaning": "ドア、門",
+    "example_sentences": [
+      {
+        "text": "请关门。",
+        "pinyin": "qǐng guān mén.",
+        "translation": "ドアを閉めてください。"
+      },
+      {
+        "text": "门开着。",
+        "pinyin": "mén kāi zhe.",
+        "translation": "ドアが開いている。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「开门」開ける、「关门」閉めるでよく使う。"
+  },
+  {
+    "id": "hsk1_new_0272",
+    "hanzi": "门口",
+    "pinyin_accepted": [
+      "ménkǒu",
+      "men2kou3"
+    ],
+    "meaning": "入り口、戸口、玄関先",
+    "example_sentences": [
+      {
+        "text": "我在门口等你。",
+        "pinyin": "wǒ zài ménkǒu děng nǐ.",
+        "translation": "私は入り口であなたを待っています。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "ドアのすぐ外側の場所を指す。"
+  },
+  {
+    "id": "hsk1_new_0273",
+    "hanzi": "门票",
+    "pinyin_accepted": [
+      "ménpiào",
+      "men2piao4"
+    ],
+    "meaning": "入場券、チケット",
+    "example_sentences": [
+      {
+        "text": "门票多少钱？",
+        "pinyin": "ménpiào duōshao qián?",
+        "translation": "入場券はいくらですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "公園・博物館などの入場券を指す。"
+  },
+  {
+    "id": "hsk1_new_0274",
+    "hanzi": "们",
+    "pinyin_accepted": [
+      "men",
+      "men0"
+    ],
+    "meaning": "（人称代名詞・人を表す名詞につく）複数を表す接尾辞",
+    "example_sentences": [
+      {
+        "text": "同学们好！",
+        "pinyin": "tóngxuémen hǎo!",
+        "translation": "みなさん、こんにちは。"
+      },
+      {
+        "text": "我们是朋友。",
+        "pinyin": "wǒmen shì péngyou.",
+        "translation": "私たちは友達です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "助詞"
+    ],
+    "notes": "常に軽声。「我们・你们・他们」など人称代名詞や人を表す名詞につく。"
+  },
+  {
+    "id": "hsk1_new_0275",
+    "hanzi": "米饭",
+    "pinyin_accepted": [
+      "mǐfàn",
+      "mi3fan4"
+    ],
+    "meaning": "ご飯、白米のご飯",
+    "example_sentences": [
+      {
+        "text": "我想吃米饭。",
+        "pinyin": "wǒ xiǎng chī mǐfàn.",
+        "translation": "私はご飯が食べたい。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "炊いた米のご飯を指す。"
+  },
+  {
+    "id": "hsk1_new_0276",
+    "hanzi": "面包",
+    "pinyin_accepted": [
+      "miànbāo",
+      "mian4bao1"
+    ],
+    "meaning": "パン",
+    "example_sentences": [
+      {
+        "text": "我早上吃面包。",
+        "pinyin": "wǒ zǎoshang chī miànbāo.",
+        "translation": "私は朝にパンを食べます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "外来概念だが定着した一般名詞。"
+  },
+  {
+    "id": "hsk1_new_0277",
+    "hanzi": "面条儿",
+    "pinyin_accepted": [
+      "miàntiáor",
+      "mian4tiao2r"
+    ],
+    "meaning": "麺、麺類",
+    "example_sentences": [
+      {
+        "text": "我喜欢吃面条儿。",
+        "pinyin": "wǒ xǐhuan chī miàntiáor.",
+        "translation": "私は麺を食べるのが好きです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "儿化した名詞。「面条」とも言う。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0278",
+    "hanzi": "名字",
+    "pinyin_accepted": [
+      "míngzi",
+      "ming2zi0"
+    ],
+    "meaning": "名前",
+    "example_sentences": [
+      {
+        "text": "你叫什么名字？",
+        "pinyin": "nǐ jiào shénme míngzi?",
+        "translation": "あなたの名前は何ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「字」は軽声。自己紹介の定番表現。"
+  },
+  {
+    "id": "hsk1_new_0279",
+    "hanzi": "明白",
+    "pinyin_accepted": [
+      "míngbai",
+      "ming2bai0"
+    ],
+    "meaning": "わかる、理解する、明らかだ",
+    "example_sentences": [
+      {
+        "text": "我明白了。",
+        "pinyin": "wǒ míngbai le.",
+        "translation": "わかりました。"
+      },
+      {
+        "text": "你明白我的意思吗？",
+        "pinyin": "nǐ míngbai wǒ de yìsi ma?",
+        "translation": "私の言いたいことがわかりますか。"
+      }
+    ],
+    "synonyms": [
+      "懂"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "「白」は軽声。動詞「理解する」と形容詞「明らかだ」の両方の用法がある。"
+  },
+  {
+    "id": "hsk1_new_0280",
+    "hanzi": "明年",
+    "pinyin_accepted": [
+      "míngnián",
+      "ming2nian2"
+    ],
+    "meaning": "来年",
+    "example_sentences": [
+      {
+        "text": "明年我要去中国。",
+        "pinyin": "míngnián wǒ yào qù Zhōngguó.",
+        "translation": "来年私は中国へ行く予定です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "去年"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時間名詞。「去年」と対比して覚える。"
+  },
+  {
+    "id": "hsk1_new_0281",
+    "hanzi": "明天",
+    "pinyin_accepted": [
+      "míngtiān",
+      "ming2tian1"
+    ],
+    "meaning": "明日、あした",
+    "example_sentences": [
+      {
+        "text": "明天见！",
+        "pinyin": "míngtiān jiàn!",
+        "translation": "また明日。"
+      },
+      {
+        "text": "明天我们去公园。",
+        "pinyin": "míngtiān wǒmen qù gōngyuán.",
+        "translation": "明日私たちは公園へ行きます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "昨天"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "時間名詞。「昨天」と対比して覚える。"
+  },
+  {
+    "id": "hsk1_new_0282",
+    "hanzi": "拿",
+    "pinyin_accepted": [
+      "ná",
+      "na2"
+    ],
+    "meaning": "（手で）持つ、取る",
+    "example_sentences": [
+      {
+        "text": "请拿一下这个。",
+        "pinyin": "qǐng ná yíxià zhège.",
+        "translation": "これをちょっと持ってください。"
+      },
+      {
+        "text": "他拿走了我的书。",
+        "pinyin": "tā ná zǒu le wǒ de shū.",
+        "translation": "彼は私の本を持っていった。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "動詞"
+    ],
+    "notes": "手で物をつかむ・持つ動作を表す。"
+  },
+  {
+    "id": "hsk1_new_0283",
+    "hanzi": "哪",
+    "pinyin_accepted": [
+      "nǎ",
+      "na3"
+    ],
+    "meaning": "どの、どれ（疑問）",
+    "example_sentences": [
+      {
+        "text": "你是哪国人？",
+        "pinyin": "nǐ shì nǎ guó rén?",
+        "translation": "あなたはどこの国の人ですか。"
+      },
+      {
+        "text": "你要哪个？",
+        "pinyin": "nǐ yào nǎge?",
+        "translation": "あなたはどれが欲しいですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "疑問詞"
+    ],
+    "notes": "選択を問う疑問詞。「哪个・哪里」など組み合わせで使う。"
+  },
+  {
+    "id": "hsk1_new_0284",
+    "hanzi": "哪儿",
+    "pinyin_accepted": [
+      "nǎr",
+      "na3r"
+    ],
+    "meaning": "どこ（口語）",
+    "example_sentences": [
+      {
+        "text": "你去哪儿？",
+        "pinyin": "nǐ qù nǎr?",
+        "translation": "どこへ行くの。"
+      }
+    ],
+    "synonyms": [
+      "哪里"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "疑問詞"
+    ],
+    "notes": "儿化した口語表現。北方でよく使う。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0285",
+    "hanzi": "哪里",
+    "pinyin_accepted": [
+      "nǎli",
+      "na3li0"
+    ],
+    "meaning": "どこ",
+    "example_sentences": [
+      {
+        "text": "你住在哪里？",
+        "pinyin": "nǐ zhù zài nǎli?",
+        "translation": "あなたはどこに住んでいますか。"
+      }
+    ],
+    "synonyms": [
+      "哪儿"
+    ],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "疑問詞"
+    ],
+    "notes": "「哪儿」とほぼ同義。会話では「li」が軽く発音されることもある。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0286",
+    "hanzi": "哪些",
+    "pinyin_accepted": [
+      "nǎxiē",
+      "na3xie1"
+    ],
+    "meaning": "どれら、どの…（複数を問う）",
+    "example_sentences": [
+      {
+        "text": "你买了哪些东西？",
+        "pinyin": "nǐ mǎi le nǎxiē dōngxi?",
+        "translation": "あなたはどんな物を買いましたか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "疑問詞"
+    ],
+    "notes": "「哪」の複数形。複数の対象を問う。"
+  },
+  {
+    "id": "hsk1_new_0287",
+    "hanzi": "那边",
+    "pinyin_accepted": [
+      "nàbian",
+      "na4bian0"
+    ],
+    "meaning": "あちら、あちら側",
+    "example_sentences": [
+      {
+        "text": "厕所在那边。",
+        "pinyin": "cèsuǒ zài nàbian.",
+        "translation": "トイレはあちらにあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "这边"
+    ],
+    "tags": [
+      "HSK1",
+      "代名詞"
+    ],
+    "notes": "「边」は軽声。「这边」と対になる。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0288",
+    "hanzi": "那儿",
+    "pinyin_accepted": [
+      "nàr",
+      "na4r"
+    ],
+    "meaning": "あそこ、そこ（口語）",
+    "example_sentences": [
+      {
+        "text": "我的书在那儿。",
+        "pinyin": "wǒ de shū zài nàr.",
+        "translation": "私の本はあそこにあります。"
+      }
+    ],
+    "synonyms": [
+      "那里"
+    ],
+    "antonyms": [
+      "这儿"
+    ],
+    "tags": [
+      "HSK1",
+      "代名詞"
+    ],
+    "notes": "儿化した口語表現。「这儿」と対になる。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0289",
+    "hanzi": "那里",
+    "pinyin_accepted": [
+      "nàli",
+      "na4li0"
+    ],
+    "meaning": "あそこ、そこ",
+    "example_sentences": [
+      {
+        "text": "他在那里工作。",
+        "pinyin": "tā zài nàli gōngzuò.",
+        "translation": "彼はあそこで働いています。"
+      }
+    ],
+    "synonyms": [
+      "那儿"
+    ],
+    "antonyms": [
+      "这里"
+    ],
+    "tags": [
+      "HSK1",
+      "代名詞"
+    ],
+    "notes": "会話では「li」が軽声になることが多い。「这里」と対になる。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0290",
+    "hanzi": "那些",
+    "pinyin_accepted": [
+      "nàxiē",
+      "na4xie1"
+    ],
+    "meaning": "あれら、それら",
+    "example_sentences": [
+      {
+        "text": "那些是什么？",
+        "pinyin": "nàxiē shì shénme?",
+        "translation": "あれらは何ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "这些"
+    ],
+    "tags": [
+      "HSK1",
+      "代名詞"
+    ],
+    "notes": "「那」の複数形。「这些」と対になる。"
+  },
+  {
+    "id": "hsk1_new_0291",
+    "hanzi": "奶",
+    "pinyin_accepted": [
+      "nǎi",
+      "nai3"
+    ],
+    "meaning": "乳、ミルク、おっぱい",
+    "example_sentences": [
+      {
+        "text": "宝宝在喝奶。",
+        "pinyin": "bǎobao zài hē nǎi.",
+        "translation": "赤ちゃんがミルクを飲んでいます。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「牛奶」（牛乳）などの語の構成要素にもなる。"
+  },
+  {
+    "id": "hsk1_new_0292",
+    "hanzi": "奶奶",
+    "pinyin_accepted": [
+      "nǎinai",
+      "nai3nai0"
+    ],
+    "meaning": "（父方の）おばあさん、祖母",
+    "example_sentences": [
+      {
+        "text": "我奶奶今年八十岁。",
+        "pinyin": "wǒ nǎinai jīnnián bāshí suì.",
+        "translation": "私の祖母は今年80歳です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "爷爷"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "二つ目の「奶」は軽声。父方の祖母を指す。"
+  },
+  {
+    "id": "hsk1_new_0293",
+    "hanzi": "男",
+    "pinyin_accepted": [
+      "nán",
+      "nan2"
+    ],
+    "meaning": "男の、男性の",
+    "example_sentences": [
+      {
+        "text": "他是我的男同学。",
+        "pinyin": "tā shì wǒ de nán tóngxué.",
+        "translation": "彼は私の男のクラスメートです。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "名詞の前について性別を表す。「女」と対になる。"
+  },
+  {
+    "id": "hsk1_new_0294",
+    "hanzi": "男孩儿",
+    "pinyin_accepted": [
+      "nánháir",
+      "nan2hai2r"
+    ],
+    "meaning": "男の子",
+    "example_sentences": [
+      {
+        "text": "那个男孩儿是我弟弟。",
+        "pinyin": "nàge nánháir shì wǒ dìdi.",
+        "translation": "あの男の子は私の弟です。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女孩儿"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "儿化した名詞。「女孩儿」と対になる。 儿化（アル化）では「儿」は独立した音節ではなく前の音節に巻き舌を添えるだけなので、声調を持たない（数字表記は末尾に r のみで 0 は付けない）。"
+  },
+  {
+    "id": "hsk1_new_0295",
+    "hanzi": "男朋友",
+    "pinyin_accepted": [
+      "nánpéngyou",
+      "nan2peng2you0"
+    ],
+    "meaning": "ボーイフレンド、彼氏",
+    "example_sentences": [
+      {
+        "text": "她有男朋友了。",
+        "pinyin": "tā yǒu nánpéngyou le.",
+        "translation": "彼女は彼氏ができた。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女朋友"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "「友」は軽声。恋愛関係の相手を指す。"
+  },
+  {
+    "id": "hsk1_new_0296",
+    "hanzi": "男人",
+    "pinyin_accepted": [
+      "nánrén",
+      "nan2ren2"
+    ],
+    "meaning": "男、男性",
+    "example_sentences": [
+      {
+        "text": "那个男人是谁？",
+        "pinyin": "nàge nánrén shì shéi?",
+        "translation": "あの男性は誰ですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女人"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "成人の男性を指す。「女人」と対になる。"
+  },
+  {
+    "id": "hsk1_new_0297",
+    "hanzi": "男生",
+    "pinyin_accepted": [
+      "nánshēng",
+      "nan2sheng1"
+    ],
+    "meaning": "男子学生、男子",
+    "example_sentences": [
+      {
+        "text": "我们班有二十个男生。",
+        "pinyin": "wǒmen bān yǒu èrshí ge nánshēng.",
+        "translation": "私たちのクラスには男子が20人います。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "女生"
+    ],
+    "tags": [
+      "HSK1",
+      "名詞"
+    ],
+    "notes": "主に学生・若い男性を指す。「女生」と対になる。"
+  },
+  {
+    "id": "hsk1_new_0298",
+    "hanzi": "南",
+    "pinyin_accepted": [
+      "nán",
+      "nan2"
+    ],
+    "meaning": "南、南方",
+    "example_sentences": [
+      {
+        "text": "我家在城市的南边。",
+        "pinyin": "wǒ jiā zài chéngshì de nánbian.",
+        "translation": "私の家は町の南側にあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "北"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "方角を表す。「北」と対になる。"
+  },
+  {
+    "id": "hsk1_new_0299",
+    "hanzi": "南边",
+    "pinyin_accepted": [
+      "nánbian",
+      "nan2bian0"
+    ],
+    "meaning": "南、南側、南の方",
+    "example_sentences": [
+      {
+        "text": "学校在医院的南边。",
+        "pinyin": "xuéxiào zài yīyuàn de nánbian.",
+        "translation": "学校は病院の南側にあります。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "北边"
+    ],
+    "tags": [
+      "HSK1",
+      "方位詞"
+    ],
+    "notes": "「边」は軽声。「北边」と対になる。 方位詞（上・下・里・外・边・面 など）は名詞の後ろに付くと軽声になりやすい。"
+  },
+  {
+    "id": "hsk1_new_0300",
+    "hanzi": "难",
+    "pinyin_accepted": [
+      "nán",
+      "nan2"
+    ],
+    "meaning": "難しい",
+    "example_sentences": [
+      {
+        "text": "这个问题很难。",
+        "pinyin": "zhège wèntí hěn nán.",
+        "translation": "この問題はとても難しい。"
+      },
+      {
+        "text": "汉语难不难？",
+        "pinyin": "Hànyǔ nán bu nán?",
+        "translation": "中国語は難しいですか。"
+      }
+    ],
+    "synonyms": [],
+    "antonyms": [
+      "容易"
+    ],
+    "tags": [
+      "HSK1",
+      "形容詞"
+    ],
+    "notes": "形容詞「難しい」。「容易」（易しい）と対になる。多音字で nàn（災難）の読みもあるが、HSK1ではこの語義。"
+  }
+]
