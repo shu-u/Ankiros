@@ -71,7 +71,7 @@ keytool -genkey -v -keystore C:\Users\Kazuki\keys\my-release-key.jks -keyalg RSA
 **PATHに通っていない場合（フルパス指定）：**
 
 ```powershell
-& "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe" -genkey -v -keystore C:\Users\Kazuki\keys\my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
+& "C:\Program Files\Android\Android Studio\jbr\bin\keytool.exe" -genkey -v -keystore C:\Users\Kazuki\source\repos\shu-u\my-release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias my-key-alias
 ```
 
 **保存場所の注意：**
@@ -113,10 +113,10 @@ npm run tauri android build --target aarch64
 
 ```powershell
 # build-android.ps1 として保存
-$env:ANDROID_KEYSTORE_PATH     = "C:\Users\Kazuki\keys\my-release-key.jks"
-$env:ANDROID_KEYSTORE_PASSWORD = "パスワード"
+$env:ANDROID_KEYSTORE_PATH     = "C:\Users\Kazuki\source\repos\shu-u\my-release-key.jks"
+$env:ANDROID_KEYSTORE_PASSWORD = "kazuki1027"
 $env:ANDROID_KEY_ALIAS         = "my-key-alias"
-$env:ANDROID_KEY_PASSWORD      = "パスワード"
+$env:ANDROID_KEY_PASSWORD      = "kazuki1027"
 npm run tauri android build --target aarch64
 ```
 
