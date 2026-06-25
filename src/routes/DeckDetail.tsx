@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { open } from "@tauri-apps/plugin-dialog";
+import { readFile } from "@tauri-apps/plugin-fs";
 import { FileArchive, FolderInput, List, PlayCircle, Trash2 } from "lucide-react";
 import type { ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
@@ -31,6 +32,7 @@ export function DeckDetailPage() {
   };
 
   // ZIP からカードのみ追加取り込み（デスクトップ・Android 共通）
+  // readFile() で bytes を取得することで Android の content:// URI にも対応する (§10.2)。
   const handleImportCardsZip = async () => {
     const file = await open({
       multiple: false,
@@ -39,7 +41,8 @@ export function DeckDetailPage() {
     });
     if (!file || typeof file !== "string") return;
     try {
-      const res: ImportResult = await call(commands.importCardsZip(deckId, file));
+      const bytes = await readFile(file);
+      const res: ImportResult = await call(commands.importCardsZipBytes(deckId, Array.from(bytes)));
       setImportMsg(`インポート完了：新規 ${res.created} 件、更新 ${res.updated} 件`);
       deck.reload();
     } catch (e) {

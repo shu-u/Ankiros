@@ -109,6 +109,29 @@ async importCardsZip(deckId: string, zipPath: string) : Promise<Result<ImportRes
 }
 },
 /**
+ * ZIP バイト列からデッキまるごと取り込む（Android の content:// URI 対応版）(§5.3, §10.2)。
+ * フロントが readFile() でバイト列を読み取り、このコマンドへ渡す。
+ */
+async importDeckZipBytes(data: number[]) : Promise<Result<ImportResult, AppError>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("import_deck_zip_bytes", { data }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+/**
+ * ZIP バイト列から既存デッキへカードのみ取り込む（Android の content:// URI 対応版）(§5.3, §10.2)。
+ */
+async importCardsZipBytes(deckId: string, data: number[]) : Promise<Result<ImportResult, AppError>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("import_cards_zip_bytes", { deckId, data }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+/**
  * セッションキューを構築する (spec §6.1)。
  * daily_new_limit / daily_review_limit はモード横断の合計として適用する。
  */

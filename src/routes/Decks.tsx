@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { open } from "@tauri-apps/plugin-dialog";
+import { readFile } from "@tauri-apps/plugin-fs";
 import { FileArchive, FolderInput, Plus } from "lucide-react";
 import type { CreateDeckInput, ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
@@ -43,6 +44,7 @@ export function DecksPage() {
   };
 
   // ZIP 取り込み（デスクトップ・Android 共通）。deck.json を含む zip を選択する。
+  // readFile() で bytes を取得することで Android の content:// URI にも対応する (§10.2)。
   const handleImportDeckZip = async () => {
     const file = await open({
       multiple: false,
@@ -51,7 +53,8 @@ export function DecksPage() {
     });
     if (!file || typeof file !== "string") return;
     try {
-      const res: ImportResult = await call(commands.importDeckZip(file));
+      const bytes = await readFile(file);
+      const res: ImportResult = await call(commands.importDeckZipBytes(Array.from(bytes)));
       setImportMsg(`インポート完了：新規 ${res.created} 件、更新 ${res.updated} 件`);
       decks.reload();
     } catch (e) {

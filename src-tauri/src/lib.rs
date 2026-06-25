@@ -7,6 +7,7 @@ mod models;
 mod srs;
 mod util;
 
+#[cfg(desktop)]
 use db::Db;
 use log::LogLevel;
 use tauri::Manager;
@@ -104,6 +105,8 @@ fn make_builder() -> Builder<tauri::Wry> {
         commands::import_cards_folder,
         commands::import_deck_zip,
         commands::import_cards_zip,
+        commands::import_deck_zip_bytes,
+        commands::import_cards_zip_bytes,
         commands::get_session_queue,
         commands::preview_review,
         commands::submit_review,
@@ -148,6 +151,7 @@ pub fn run() {
     let mut tauri_builder = tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
         .plugin(tauri_plugin_dialog::init())
+        .plugin(tauri_plugin_fs::init())
         .invoke_handler(builder.invoke_handler())
         .setup(move |app| {
             builder.mount_events(app);

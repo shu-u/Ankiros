@@ -445,6 +445,81 @@ pub async fn import_cards_zip(
     Ok(res)
 }
 
+/// ZIP バイト列からデッキまるごと取り込む（Android の content:// URI 対応版）(§5.3, §10.2)。
+/// フロントが readFile() でバイト列を読み取り、このコマンドへ渡す。
+#[tauri::command]
+#[specta::specta]
+pub async fn import_deck_zip_bytes(
+    db: tauri::State<'_, Db>,
+    data: Vec<u8>,
+) -> AppResult<ImportResult> {
+    crate::log!(LogLevel::INFO, "Importing deck zip from bytes ({} bytes)", data.len());
+    let pool = db.inner();
+
+    let contents = extract_zip(&data)?;
+
+    let deck_text = contents.deck_json.ok_or_else(|| {
+        AppError::Validation("ZIP内に deck.json が見つかりません".into())
+    })?;
+    let dj: DeckJson = serde_json::from_str(&deck_text)
+        .map_err(|e| AppError::Validation(format!("deck.json の解析に失敗: {e}")))?;
+
+    validate_deck_json(&dj)?;
+    upsert_deck(pool, &dj).await?;
+
+    let res = import_card_batches(pool, &dj.deck_id, &contents.card_batches).await?;
+    crate::log!(
+        LogLevel::INFO,
+        "Deck zip bytes import done: deck={}, created={}, updated={}",
+        dj.deck_id,
+        res.created,
+        res.updated
+    );
+    Ok(res)
+}
+
+/// ZIP バイト列から既存デッキへカードのみ取り込む（Android の content:// URI 対応版）(§5.3, §10.2)。
+#[tauri::command]
+#[specta::specta]
+pub async fn import_cards_zip_bytes(
+    db: tauri::State<'_, Db>,
+    deck_id: String,
+    data: Vec<u8>,
+) -> AppResult<ImportResult> {
+    crate::log!(
+        LogLevel::INFO,
+        "Importing cards zip bytes into {}: {} bytes",
+        deck_id,
+        data.len()
+    );
+    let pool = db.inner();
+    let exists: Option<(String,)> = sqlx::query_as("SELECT id FROM decks WHERE id = ?")
+        .bind(&deck_id)
+        .fetch_optional(pool)
+        .await?;
+    if exists.is_none() {
+        return Err(AppError::NotFound(format!(
+            "デッキが見つかりません: {deck_id}"
+        )));
+    }
+
+    let contents = extract_zip(&data)?;
+    if contents.card_batches.is_empty() {
+        return Err(AppError::Validation(
+            "ZIP内にカードJSONが見つかりません".into(),
+        ));
+    }
+    let res = import_card_batches(pool, &deck_id, &contents.card_batches).await?;
+    crate::log!(
+        LogLevel::INFO,
+        "Cards zip bytes import done: deck={}, created={}, updated={}",
+        deck_id,
+        res.created,
+        res.updated
+    );
+    Ok(res)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
