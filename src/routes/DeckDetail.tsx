@@ -6,6 +6,7 @@ import { FileArchive, FolderInput, List, PlayCircle, Trash2 } from "lucide-react
 import type { ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
 import { useAsync } from "@/lib/useAsync";
+import { isAndroid } from "@/lib/platform";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -98,10 +99,13 @@ export function DeckDetailPage() {
           <FileArchive className="h-4 w-4" />
           ZIPでカード追加
         </Button>
-        <Button variant="outline" onClick={handleImportCards}>
-          <FolderInput className="h-4 w-4" />
-          フォルダでカード追加
-        </Button>
+        {/* フォルダ取り込みは Android の SAF では機能しないため非表示 (§10.2.1) */}
+        {!isAndroid() && (
+          <Button variant="outline" onClick={handleImportCards}>
+            <FolderInput className="h-4 w-4" />
+            フォルダでカード追加
+          </Button>
+        )}
       </div>
 
       {importMsg && (

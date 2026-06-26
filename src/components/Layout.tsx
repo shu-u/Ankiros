@@ -44,8 +44,13 @@ export function Layout() {
       </aside>
 
       <div className="flex flex-1 flex-col overflow-hidden">
-        {/* モバイル (< md): スリムなアプリ名ヘッダー */}
-        <header className="flex h-12 shrink-0 items-center border-b bg-card px-4 text-base font-bold tracking-tight md:hidden">
+        {/* モバイル (< md): スリムなアプリ名ヘッダー。
+            上部はステータスバーと重ならないようセーフエリア分を padding-top で確保。
+            デスクトップでは env(safe-area-inset-top) が 0 を返すため影響なし。 */}
+        <header
+          className="flex min-h-12 shrink-0 items-center border-b bg-card px-4 text-base font-bold tracking-tight md:hidden"
+          style={{ paddingTop: "env(safe-area-inset-top)" }}
+        >
           単語帳
         </header>
         <main className="flex-1 overflow-y-auto">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { open } from "@tauri-apps/plugin-dialog";
 import { readFile } from "@tauri-apps/plugin-fs";
@@ -6,6 +6,7 @@ import { FileArchive, FolderInput, Plus } from "lucide-react";
 import type { CreateDeckInput, ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
 import { useAsync } from "@/lib/useAsync";
+import { isAndroid } from "@/lib/platform";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Modal } from "@/components/ui/modal";
@@ -17,6 +18,7 @@ export function DecksPage() {
   const [showForm, setShowForm] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [importMsg, setImportMsg] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCreate = async (input: CreateDeckInput) => {
     setSubmitting(true);
@@ -64,21 +66,82 @@ export function DecksPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-2">
         <h1 className="text-2xl font-bold">デッキ一覧</h1>
-        <div className="flex gap-2">
+
+        {/* デスクトップ (md+): 従来どおりボタンを横並び（Windows 版は不変） */}
+        <div className="hidden gap-2 md:flex">
           <Button variant="outline" onClick={handleImportDeckZip}>
             <FileArchive className="h-4 w-4" />
             ZIPから取り込み
           </Button>
-          <Button variant="outline" onClick={handleImportDeck}>
-            <FolderInput className="h-4 w-4" />
-            フォルダから取り込み
-          </Button>
+          {/* フォルダ取り込みは Android の SAF では機能しないため非表示 (§10.2.1) */}
+          {!isAndroid() && (
+            <Button variant="outline" onClick={handleImportDeck}>
+              <FolderInput className="h-4 w-4" />
+              フォルダから取り込み
+            </Button>
+          )}
           <Button onClick={() => setShowForm(true)}>
             <Plus className="h-4 w-4" />
             新規デッキ作成
           </Button>
+        </div>
+
+        {/* モバイル (< md): アクションを「＋」メニューに集約 */}
+        <div className="relative md:hidden">
+          <Button
+            size="icon"
+            aria-label="操作メニュー"
+            aria-haspopup="menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            <Plus className="h-5 w-5" />
+          </Button>
+          {menuOpen && (
+            <>
+              {/* 画面外タップで閉じるためのオーバーレイ */}
+              <div
+                className="fixed inset-0 z-30"
+                onClick={() => setMenuOpen(false)}
+              />
+              <div
+                role="menu"
+                className="absolute right-0 z-40 mt-2 w-52 overflow-hidden rounded-md border bg-card py-1 shadow-lg"
+              >
+                <MenuItem
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setShowForm(true);
+                  }}
+                >
+                  <Plus className="h-4 w-4" />
+                  新規デッキ作成
+                </MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    setMenuOpen(false);
+                    void handleImportDeckZip();
+                  }}
+                >
+                  <FileArchive className="h-4 w-4" />
+                  ZIPから取り込み
+                </MenuItem>
+                {!isAndroid() && (
+                  <MenuItem
+                    onClick={() => {
+                      setMenuOpen(false);
+                      void handleImportDeck();
+                    }}
+                  >
+                    <FolderInput className="h-4 w-4" />
+                    フォルダから取り込み
+                  </MenuItem>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
 
@@ -125,5 +188,24 @@ export function DecksPage() {
         />
       </Modal>
     </div>
+  );
+}
+
+function MenuItem({
+  onClick,
+  children,
+}: {
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      role="menuitem"
+      onClick={onClick}
+      className="flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm hover:bg-accent"
+    >
+      {children}
+    </button>
   );
 }

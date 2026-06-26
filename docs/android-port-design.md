@@ -395,6 +395,41 @@ npm run tauri android dev
 初回 APK を実機で確認して判明した 3 点の UI/機能改善。**いずれも Windows 版へ影響しない**
 方針で実装（`md:` ブレークポイント分岐／`env(safe-area-*)`／プラットフォーム判定で出し分け）。
 
+### 11.1 ステータスバーとの重なり（完了）
+
+- 原因: モバイルヘッダーに上部セーフエリアの余白が無く、`viewport-fit=cover` 未指定で
+  `env(safe-area-inset-top)` が値を返していなかった。
+- 対応:
+  - [index.html](../index.html): viewport に `viewport-fit=cover` を追加。
+  - [Layout.tsx](../src/components/Layout.tsx): モバイルヘッダーを `min-h-12` + 
+    `padding-top: env(safe-area-inset-top)` に。デスクトップは inset=0 のため不変。
+
+### 11.2 デッキ一覧ヘッダーの横長前提を解消（完了）
+
+- 原因: タイトル＋取り込みボタン3つを横一列 (`justify-between`) に並べており、スマホ幅で溢れる。
+- 対応: [Decks.tsx](../src/routes/Decks.tsx)
+  - デスクトップ (md+): 従来どおりボタン横並び（**Windows 版は不変**）。
+  - モバイル (<md): アクションを右上の「＋」ボタン → ポップオーバーメニューに集約。
+  - **E-3 を実施**: Android では「フォルダから取り込み」を非表示（`isAndroid()` 判定）。
+    SAF フォルダ選択が機能しないため（§10.2.1）。デスクトップの狭ウィンドウでは表示される。
+    - 一覧 [Decks.tsx](../src/routes/Decks.tsx): デッキまるごと取り込み（`importDeckFolder`）。
+    - 詳細 [DeckDetail.tsx](../src/routes/DeckDetail.tsx): カードのみ追加（`importCardsFolder`）= **別機能**。
+      こちらも同様に Android で「フォルダでカード追加」を非表示。ZIP 取り込みは両画面で残す。
+  - 判定ヘルパー [platform.ts](../src/lib/platform.ts) を新設（userAgent ベース・依存追加なし）。
+
+### 11.2.1 ホーム画面のモバイルレイアウト調整（完了）
+
+実機で窮屈だった 3 箇所を修正（[Home.tsx](../src/routes/Home.tsx)）。いずれも `sm:` 分岐／
+`truncate`／`whitespace-nowrap` で、デスクトップ（広幅）の見た目は不変。
+
+- **最後に使ったデッキ**: 横並び固定 (`justify-between`) で左テキストが窮屈・右の「今すぐ学習」が
+  幅を占有 → モバイルは縦積み (`flex-col`) ＋ ボタン全幅 (`w-full sm:w-auto`)、sm+ で従来の横並び。
+  デッキ名は `truncate`。
+- **デッキ別 今日の進捗**: デッキ名と「完了/予定」が縦に折り返して窮屈 → デッキ名 `min-w-0 truncate`、
+  進捗 `shrink-0 whitespace-nowrap` で 1 行を維持。
+- **7日間の予定枚数**: 日付ラベル（例 `06-27`）が 2 行に折り返し、1 行項目（昨日/今日）と
+  バーの開始位置がズレていた → ラベルに `whitespace-nowrap` を付与し全列を 1 行に統一して解消。
+
 ### 11.3 TTS（読み上げ）の Android 対応（実装済み／実機ビルド・検証は要実施）
 
 - 原因: 既存 [useSpeech.ts](../src/lib/useSpeech.ts) は Web Speech API (`speechSynthesis`) 依存。

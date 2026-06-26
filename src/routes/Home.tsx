@@ -26,18 +26,19 @@ export function HomePage() {
 
       {/* 今すぐ学習 */}
       <Card>
-        <CardContent className="flex items-center justify-between p-6">
+        <CardContent className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
           {lastUsedDeckId && lastDeck ? (
             <>
-              <div>
+              <div className="min-w-0">
                 <div className="text-sm text-muted-foreground">最後に使ったデッキ</div>
-                <div className="text-xl font-semibold">{lastDeck.deck_name}</div>
+                <div className="truncate text-xl font-semibold">{lastDeck.deck_name}</div>
                 <div className="mt-1 text-sm text-muted-foreground">
                   今日の予定 {lastDeck.due_count} 枚 ・ 完了 {lastDeck.completed_today} 枚
                 </div>
               </div>
               <Button
                 size="lg"
+                className="w-full sm:w-auto sm:shrink-0"
                 onClick={() =>
                   navigate({ to: "/decks/$deckId/study", params: { deckId: lastUsedDeckId } })
                 }
@@ -99,10 +100,10 @@ export function HomePage() {
             deck_due_counts.map((d) => (
               <div
                 key={d.deck_id}
-                className="flex items-center justify-between rounded-md border px-3 py-2 text-sm"
+                className="flex items-center justify-between gap-3 rounded-md border px-3 py-2 text-sm"
               >
-                <span className="font-medium">{d.deck_name}</span>
-                <span className="text-muted-foreground">
+                <span className="min-w-0 truncate font-medium">{d.deck_name}</span>
+                <span className="shrink-0 whitespace-nowrap text-muted-foreground">
                   完了 {d.completed_today} / 予定 {d.due_count}
                 </span>
               </div>
@@ -125,7 +126,7 @@ export function HomePage() {
                   className={`w-full rounded-t ${d.is_past ? "bg-muted-foreground/40" : "bg-primary/80"}`}
                   style={{ height: `${(d.count / maxForecast) * 100}%`, minHeight: 2 }}
                 />
-                <div className="text-xs text-muted-foreground">
+                <div className="whitespace-nowrap text-xs text-muted-foreground">
                   {d.is_past ? "昨日" : i === 1 ? "今日" : d.date.slice(5)}
                 </div>
               </div>
