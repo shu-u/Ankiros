@@ -132,6 +132,30 @@ async importCardsZipBytes(deckId: string, data: number[]) : Promise<Result<Impor
 }
 },
 /**
+ * 全データ（全デッキ＋カード＋学習進捗＋履歴）を zip バイト列でエクスポートする。
+ * フロントは受け取ったバイト列を `save()` で選んだ保存先へ `writeFile()` する。
+ */
+async exportBackup() : Promise<Result<number[], AppError>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("export_backup") };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+/**
+ * バックアップ zip バイト列をマージ復元する（content:// 対応のためバイト列受け）。
+ * `deck_ids` を指定すると、そのデッキだけを選択復元する（null = 全件）。
+ */
+async importBackup(data: number[], deckIds: string[] | null) : Promise<Result<BackupImportResult, AppError>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("import_backup", { data, deckIds }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+/**
  * セッションキューを構築する (spec §6.1)。
  * daily_new_limit / daily_review_limit はモード横断の合計として適用する。
  */
@@ -210,6 +234,10 @@ async log(logLevel: LogLevel, log: string) : Promise<void> {
  */
 export type AppError = { Database: string } | { NotFound: string } | { Validation: string } | { Io: string }
 export type AppStateData = { theme: string; last_used_deck_id: string | null; window_width: number; window_height: number; window_x: number | null; window_y: number | null }
+/**
+ * バックアップ取り込み結果の集計。
+ */
+export type BackupImportResult = { decks: number; cards_created: number; cards_updated: number; srs_imported: number; logs_imported: number }
 export type Card = { id: string; deck_id: string; hanzi: string; pinyin_accepted: string[]; meaning: string; example_sentences: ExampleSentence[]; synonyms: string[]; antonyms: string[]; tags: string[]; ai_notes: string | null; user_notes: string; audio_path: string | null; created_at: string; updated_at: string }
 export type CardFilter = { search_text: string | null; tags: string[] | null; srs_state: string | null }
 /**

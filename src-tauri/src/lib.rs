@@ -107,6 +107,8 @@ fn make_builder() -> Builder<tauri::Wry> {
         commands::import_cards_zip,
         commands::import_deck_zip_bytes,
         commands::import_cards_zip_bytes,
+        commands::export_backup,
+        commands::import_backup,
         commands::get_session_queue,
         commands::preview_review,
         commands::submit_review,

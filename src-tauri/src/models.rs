@@ -110,7 +110,7 @@ pub struct CardFilter {
 // SRS
 // ============================================================
 
-#[derive(Debug, Clone, Serialize, Type)]
+#[derive(Debug, Clone, Serialize, Deserialize, Type)]
 pub struct SrsRecord {
     pub card_id: String,
     pub deck_id: String,
@@ -166,6 +166,31 @@ pub struct ImportResult {
 }
 
 // ============================================================
+// バックアップ（学習データ エクスポート/インポート）
+// ============================================================
+
+/// review_logs テーブル 1 行に対応（バックアップで往復させる）。
+#[derive(Debug, Clone, Serialize, Deserialize, Type)]
+pub struct ReviewLog {
+    pub id: String,
+    pub card_id: String,
+    pub deck_id: String,
+    pub mode: String,
+    pub rating: String,
+    pub reviewed_at: String,
+}
+
+/// バックアップ取り込み結果の集計。
+#[derive(Debug, Clone, Default, Serialize, Type)]
+pub struct BackupImportResult {
+    pub decks: u32,
+    pub cards_created: u32,
+    pub cards_updated: u32,
+    pub srs_imported: u32,
+    pub logs_imported: u32,
+}
+
+// ============================================================
 // 統計・アプリ状態
 // ============================================================
 
@@ -208,7 +233,7 @@ pub struct AppStateData {
 // JSON ファイル (deck.json / batch_NNN.json) のパース用
 // ============================================================
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct DeckJson {
     pub schema_version: String,
     pub deck_id: String,
@@ -224,7 +249,7 @@ fn default_language() -> String {
     "zh".to_string()
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct DeckJsonSettings {
     pub test_modes: Vec<String>,
     #[serde(default = "default_new_limit")]
@@ -242,7 +267,7 @@ fn default_review_limit() -> i64 {
     100
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Serialize, Deserialize)]
 pub struct DeckJsonFsrs {
     #[serde(default = "default_retention")]
     pub target_retention: f64,

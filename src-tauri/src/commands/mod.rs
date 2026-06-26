@@ -1,3 +1,4 @@
+pub mod backup;
 pub mod cards;
 pub mod decks;
 pub mod import;
@@ -5,6 +6,7 @@ pub mod session;
 pub mod state;
 pub mod stats;
 
+pub use backup::*;
 pub use cards::*;
 pub use decks::*;
 pub use import::*;
