@@ -1,13 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { invoke, addPluginListener, type PluginListener } from "@tauri-apps/api/core";
+import { isAndroid } from "@/lib/platform";
 
 export type SpeechLang = "zh-CN" | "ja-JP" | "en-US";
+
+// 実行プラットフォームはアプリ起動中に変化しないため、モジュールロード時に確定。
+// これにより useSpeech 内の分岐は常に同じ経路を通り、Hooks のルールを満たす。
+const ANDROID = isAndroid();
 
 export function useSpeech() {
   const [supported, setSupported] = useState(false);
   const [speakingText, setSpeakingText] = useState<string | null>(null);
   const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
 
+  // --- デスクトップ: Web Speech API（従来実装のまま・挙動不変） ---
   useEffect(() => {
+    if (ANDROID) return;
     if (!("speechSynthesis" in window)) return;
     setSupported(true);
 
@@ -24,7 +32,46 @@ export function useSpeech() {
     };
   }, []);
 
+  // --- Android: ネイティブ TTS プラグイン (plugin:tts) ---
+  useEffect(() => {
+    if (!ANDROID) return;
+    // TextToSpeech は実機でほぼ常に利用可能。エンジン初期化は非同期で
+    // わずかに遅れるため、可否確認を待たず楽観的にボタンを表示する。
+    setSupported(true);
+
+    let listener: PluginListener | undefined;
+    let cancelled = false;
+    void (async () => {
+      try {
+        // 発話完了イベントで話中表示（パルス）を解除する
+        const l = await addPluginListener<{ id: string }>(
+          "tts",
+          "speakEnd",
+          (payload) => {
+            setSpeakingText((cur) => (cur !== null && cur === payload.id ? null : cur));
+          },
+        );
+        if (cancelled) l.unregister();
+        else listener = l;
+      } catch {
+        // リスナー登録に失敗しても発話自体は可能なので握りつぶす
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      listener?.unregister();
+      void invoke("plugin:tts|stop").catch(() => {});
+    };
+  }, []);
+
   const speak = useCallback((text: string, lang: SpeechLang) => {
+    if (ANDROID) {
+      setSpeakingText(text);
+      void invoke("plugin:tts|speak", { text, lang }).catch(() => setSpeakingText(null));
+      return;
+    }
+
     if (!("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
 
@@ -50,6 +97,12 @@ export function useSpeech() {
   }, []);
 
   const stop = useCallback(() => {
+    if (ANDROID) {
+      setSpeakingText(null);
+      void invoke("plugin:tts|stop").catch(() => {});
+      return;
+    }
+
     if (!("speechSynthesis" in window)) return;
     window.speechSynthesis.cancel();
     setSpeakingText(null);

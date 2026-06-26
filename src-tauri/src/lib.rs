@@ -177,6 +177,12 @@ pub fn run() {
             Ok(())
         });
 
+    // ネイティブ TTS は Android のみ（デスクトップはフロントの Web Speech API を使用）
+    #[cfg(target_os = "android")]
+    {
+        tauri_builder = tauri_builder.plugin(tauri_plugin_tts::init());
+    }
+
     // ウィンドウ状態の保存はデスクトップのみ（Android にはウィンドウのクローズ概念がない）
     #[cfg(desktop)]
     {

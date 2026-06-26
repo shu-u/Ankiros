@@ -1,0 +1,17 @@
+[package]
+name = "tauri-plugin-tts"
+version = "0.1.0"
+edition = "2021"
+description = "Ankiros 用ネイティブ TTS プラグイン (Android = android.speech.tts)"
+authors = ["Kazuki Arima"]
+# links は build script のメタデータ（android パス・権限）を
+# 依存元アプリのビルドへ伝播させるために必須。
+links = "tauri-plugin-tts"
+
+[dependencies]
+tauri = { version = "2" }
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+
+[build-dependencies]
+tauri-plugin = { version = "2", features = ["build"] }

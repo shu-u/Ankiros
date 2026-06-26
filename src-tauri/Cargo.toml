@@ -49,3 +49,7 @@ zip = { version = "2", default-features = false, features = ["deflate"] }
 specta = { version = "=2.0.0-rc.22", features = ["derive"] }
 tauri-specta = { version = "=2.0.0-rc.21", features = ["derive", "typescript"] }
 specta-typescript = "0.0.9"
+
+# ネイティブ TTS（Android 専用）。Windows ビルドには一切含まれない。
+[target.'cfg(target_os = "android")'.dependencies]
+tauri-plugin-tts = { path = "../tauri-plugin-tts" }

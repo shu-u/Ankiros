@@ -387,3 +387,47 @@ npm run tauri android dev
 - APK は `src-tauri/gen/android/app/build/outputs/apk/...` に出力される。
 - 端末へ: USB 接続で `adb install <path>.apk`、またはファイルを端末へ転送して
   「提供元不明のアプリ」を許可してインストール。
+
+---
+
+## 11. 実機フィードバック対応（2026-06-26）
+
+初回 APK を実機で確認して判明した 3 点の UI/機能改善。**いずれも Windows 版へ影響しない**
+方針で実装（`md:` ブレークポイント分岐／`env(safe-area-*)`／プラットフォーム判定で出し分け）。
+
+### 11.3 TTS（読み上げ）の Android 対応（実装済み／実機ビルド・検証は要実施）
+
+- 原因: 既存 [useSpeech.ts](../src/lib/useSpeech.ts) は Web Speech API (`speechSynthesis`) 依存。
+  **Android System WebView は音声合成を実装しておらず** `supported=false` となり
+  [SpeakButton](../src/components/SpeakButton.tsx) が非表示になっていた。
+- 方針: `useSpeech` のインターフェース (`{ supported, speakingText, speak, stop }`) は維持し、
+  中身をプラットフォームで出し分け。**デスクトップは Web Speech API のまま完全に不変**、
+  Android のみネイティブ TTS (`android.speech.tts.TextToSpeech`) を使用。
+- 実装した自作プラグイン: [tauri-plugin-tts/](../tauri-plugin-tts/)
+  - Rust: `speak` / `stop` / `is_available` コマンド。`desktop.rs` はスタブ、`mobile.rs` が
+    `register_android_plugin("com.plugin.tts", "TtsPlugin")` で Kotlin を呼ぶ。
+  - Kotlin: [TtsPlugin.kt](../tauri-plugin-tts/android/src/main/java/com/plugin/tts/TtsPlugin.kt)。
+    `OnInitListener` で初期化、`UtteranceProgressListener` の onDone で `trigger("speakEnd")` を
+    発火 → フロントが話中表示（パルス）を解除。言語タグ zh-CN / ja-JP / en-US を Locale へマップ。
+  - 配線:
+    - [src-tauri/Cargo.toml](../src-tauri/Cargo.toml): `[target.'cfg(target_os = "android")'.dependencies]`
+      で **Android 専用依存**（Windows ビルドには一切含まれない）。
+    - [src-tauri/src/lib.rs](../src-tauri/src/lib.rs): `#[cfg(target_os = "android")]` で
+      `.plugin(tauri_plugin_tts::init())` を登録。
+    - [src-tauri/capabilities/android.json](../src-tauri/capabilities/android.json): `platforms:["android"]`
+      の capability で `tts:default` を付与（デスクトップビルドでは無視される）。
+    - フロント [useSpeech.ts](../src/lib/useSpeech.ts): `isAndroid()` で分岐し
+      `invoke("plugin:tts|speak" / "stop")` を使用。`addPluginListener("tts","speakEnd")` で完了検知。
+
+- 検証済み（実機なし）:
+  - `cargo check`（プラグイン単体・本体デスクトップ）成功。本体の依存ツリーに
+    `tauri-plugin-tts` が出ないこと＝Windows 不変を確認。`generate_context!` の capability 検証も通過。
+  - `npm run build`（tsc + vite）成功。
+
+- **残作業（Android 実機・要 SDK 環境）**:
+  1. プラグインを Gradle に取り込むため一度 `npm run tauri android init` を再実行
+     （`gen/android/tauri.settings.gradle` に `:tauri-plugin-tts` が追加される）。
+     ※ `gen/android` 配下の手修正があるなら退避してから。基本は再生成で問題ない。
+  2. `npm run tauri android dev`（または `build --apk --debug`）でビルド。
+  3. 実機で学習画面の発話ボタン表示・中国語/日本語の読み上げ・パルス解除を確認。
+  4. 端末に対象言語の TTS 音声データが無い場合は「設定 → 言語と入力 → 音声合成」で導入が必要。

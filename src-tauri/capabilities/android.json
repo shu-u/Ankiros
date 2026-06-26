@@ -1,0 +1,8 @@
+{
+  "$schema": "../gen/schemas/android-schema.json",
+  "identifier": "android-tts",
+  "description": "Android ネイティブ TTS の権限（Android ビルドのみ適用）",
+  "platforms": ["android"],
+  "windows": ["main"],
+  "permissions": ["tts:default"]
+}
