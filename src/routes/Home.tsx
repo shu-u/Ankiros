@@ -33,8 +33,15 @@ export function HomePage() {
                 <div className="text-sm text-muted-foreground">最後に使ったデッキ</div>
                 <div className="truncate text-xl font-semibold">{lastDeck.deck_name}</div>
                 <div className="mt-1 text-sm text-muted-foreground">
-                  今日の予定 {lastDeck.due_count} 枚 ・ 完了 {lastDeck.completed_today} 枚
+                  今日の予定 {lastDeck.new_count + lastDeck.review_count} 枚
+                  <span className="text-xs">（新規 {lastDeck.new_count}・復習 {lastDeck.review_count}）</span>
+                  ・ 完了 {lastDeck.completed_today} 枚
                 </div>
+                {lastDeck.learning_count > 0 && (
+                  <div className="text-xs text-muted-foreground">
+                    学習中 {lastDeck.learning_count} 枚（同日中に再出題）
+                  </div>
+                )}
               </div>
               <Button
                 size="lg"
@@ -103,8 +110,11 @@ export function HomePage() {
                 className="flex items-center justify-between gap-3 rounded-md border px-3 py-2 text-sm"
               >
                 <span className="min-w-0 truncate font-medium">{d.deck_name}</span>
-                <span className="shrink-0 whitespace-nowrap text-muted-foreground">
-                  完了 {d.completed_today} / 予定 {d.due_count}
+                <span className="shrink-0 whitespace-nowrap text-right text-muted-foreground">
+                  完了 {d.completed_today} / 予定 {d.new_count + d.review_count}
+                  {d.learning_count > 0 && (
+                    <span className="ml-1 text-xs">・学習中 {d.learning_count}</span>
+                  )}
                 </span>
               </div>
             ))

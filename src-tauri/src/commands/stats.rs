@@ -2,20 +2,10 @@ use crate::db::Db;
 use crate::error::AppResult;
 use crate::log::LogLevel;
 use crate::models::*;
-use chrono::{DateTime, Duration, NaiveDate, Utc};
-use chrono_tz::Asia::Tokyo;
+use crate::util::{to_jst_date, today_jst};
+use chrono::{Duration, NaiveDate, Utc};
 use sqlx::Row;
 use std::collections::HashSet;
-
-fn today_jst() -> NaiveDate {
-    Utc::now().with_timezone(&Tokyo).date_naive()
-}
-
-fn to_jst_date(rfc3339: &str) -> Option<NaiveDate> {
-    DateTime::parse_from_rfc3339(rfc3339)
-        .ok()
-        .map(|d| d.with_timezone(&Tokyo).date_naive())
-}
 
 #[tauri::command]
 #[specta::specta]
@@ -68,10 +58,21 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         let new_limit: i64 = d.try_get("daily_new_limit").unwrap_or(20);
         let review_limit: i64 = d.try_get("daily_review_limit").unwrap_or(100);
 
-        // 復習で期日到来
+        // 復習（state='review' かつ期日到来）
         let due_reviews: i64 = sqlx::query(
             "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state != 'new' AND due_date <= ?",
+             WHERE deck_id = ? AND state = 'review' AND due_date <= ?",
+        )
+        .bind(&deck_id)
+        .bind(&now)
+        .fetch_one(pool)
+        .await?
+        .get("c");
+
+        // 学習中（learning / relearning かつ期日到来、同日再出題対象）— 予定とは別カウント
+        let learning_count: i64 = sqlx::query(
+            "SELECT COUNT(*) AS c FROM srs_records \
+             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date <= ?",
         )
         .bind(&deck_id)
         .bind(&now)
@@ -91,7 +92,11 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         .await?
         .get("c");
 
-        let planned = due_reviews.min(review_limit) + new_available.min(new_limit);
+        // 新規は「今日導入済み」を差し引いた実効上限で頭打ち (日次の新規上限)
+        let introduced = crate::db::new_introduced_today(pool, &deck_id, today).await?;
+        let effective_new_limit = (new_limit - introduced).max(0);
+        let new_count = new_available.min(effective_new_limit);
+        let review_count = due_reviews.min(review_limit);
 
         // 今日の完了数（デッキ別）
         let completed_today_rows = sqlx::query(
@@ -109,7 +114,9 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         deck_due_counts.push(DeckDueCount {
             deck_id,
             deck_name,
-            due_count: planned,
+            new_count,
+            review_count,
+            learning_count,
             completed_today,
         });
     }

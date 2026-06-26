@@ -11,11 +11,26 @@ export interface SessionResults {
   easyCount: number;
 }
 
+/** 学習中に表示する進捗（再出題で水増ししない、ユニット単位の到達度）。 */
+export interface SessionProgress {
+  /** セッション開始時の新規ユニット総数 */
+  newTotal: number;
+  /** セッション開始時の復習ユニット総数（learning/relearning/review を含む） */
+  reviewTotal: number;
+  /** 同日再出題が確定せず「今日ぶんが完了」した新規ユニット数 */
+  newDone: number;
+  /** 同上の復習ユニット数 */
+  reviewDone: number;
+}
+
 interface SessionStore {
   deckId: string | null;
   queue: SessionCard[];
   currentCard: SessionCard | null;
   results: SessionResults;
+  progress: SessionProgress;
+  /** ユニットキー → 開始時が新規だったか（進捗の分類用） */
+  initialIsNew: Record<string, boolean>;
   isComplete: boolean;
   /** セッション中に編集したユーザーメモ (cardId → notes)。
    * 同日再出題でキューの古いカードオブジェクトが再表示されても最新メモを反映するため。 */
@@ -38,25 +53,43 @@ function emptyResults(): SessionResults {
   return { total: 0, againCards: [], hardCount: 0, goodCount: 0, easyCount: 0 };
 }
 
+function emptyProgress(): SessionProgress {
+  return { newTotal: 0, reviewTotal: 0, newDone: 0, reviewDone: 0 };
+}
+
 const key = (c: SessionCard) => `${c.card.id}__${c.mode}`;
+const isNewState = (c: SessionCard) => c.srs_state === "new";
 
 export const useSessionStore = create<SessionStore>((set) => ({
   deckId: null,
   queue: [],
   currentCard: null,
   results: emptyResults(),
+  progress: emptyProgress(),
+  initialIsNew: {},
   isComplete: false,
   noteEdits: {},
 
-  initSession: (deckId, queue) =>
+  initSession: (deckId, queue) => {
+    const newTotal = queue.filter(isNewState).length;
+    const initialIsNew: Record<string, boolean> = {};
+    for (const c of queue) initialIsNew[key(c)] = isNewState(c);
     set({
       deckId,
       queue,
       currentCard: queue.length > 0 ? queue[0] : null,
       results: emptyResults(),
+      progress: {
+        newTotal,
+        reviewTotal: queue.length - newTotal,
+        newDone: 0,
+        reviewDone: 0,
+      },
+      initialIsNew,
       isComplete: queue.length === 0,
       noteEdits: {},
-    }),
+    });
+  },
 
   recordAnswer: (card, rating, shouldRequeue) =>
     set((s) => {
@@ -74,6 +107,15 @@ export const useSessionStore = create<SessionStore>((set) => ({
         }
       }
 
+      // 進捗: 同日再出題が無い（＝今日ぶんが完了した）ユニットだけ加算する。
+      // 再出題されるユニットはまだ「学習中」なので加算しない＝分母も水増しされない。
+      const wasNew = s.initialIsNew[key(card)] ?? false;
+      const progress: SessionProgress = {
+        ...s.progress,
+        newDone: s.progress.newDone + (!shouldRequeue && wasNew ? 1 : 0),
+        reviewDone: s.progress.reviewDone + (!shouldRequeue && !wasNew ? 1 : 0),
+      };
+
       // キューの先頭（現在のカード）を取り除く
       const rest = s.queue.slice(1);
       // 同日再出題の場合は末尾へ再追加 (spec §6.2)。
@@ -87,6 +129,7 @@ export const useSessionStore = create<SessionStore>((set) => ({
 
       return {
         results,
+        progress,
         queue: nextQueue,
         currentCard: nextQueue.length > 0 ? nextQueue[0] : null,
         isComplete: nextQueue.length === 0,
@@ -102,6 +145,8 @@ export const useSessionStore = create<SessionStore>((set) => ({
       queue: [],
       currentCard: null,
       results: emptyResults(),
+      progress: emptyProgress(),
+      initialIsNew: {},
       isComplete: false,
       noteEdits: {},
     }),

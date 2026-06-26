@@ -165,9 +165,10 @@ export function DecksPage() {
                       {d.description}
                     </div>
                   )}
-                  <div className="mt-3 flex gap-4 text-sm text-muted-foreground">
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
                     <span>カード {d.card_count} 枚</span>
-                    <span>今日の復習 {d.due_today} 枚</span>
+                    <span>新規 {d.new_today} ・ 復習 {d.review_today}</span>
+                    {d.learning_today > 0 && <span>学習中 {d.learning_today}</span>}
                   </div>
                 </CardContent>
               </Card>

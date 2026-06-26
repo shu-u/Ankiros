@@ -264,10 +264,30 @@ export type Deck = { id: string; name: string; description: string | null; langu
  */
 card_count: number; 
 /**
- * 今日の復習予定数（一覧表示用に算出）
+ * 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み を反映）
  */
-due_today: number }
-export type DeckDueCount = { deck_id: string; deck_name: string; due_count: number; completed_today: number }
+new_today: number; 
+/**
+ * 今日の復習予定数（state='review' かつ期日到来）
+ */
+review_today: number; 
+/**
+ * 学習中カード数（learning/relearning かつ期日到来、同日再出題対象）
+ */
+learning_today: number }
+export type DeckDueCount = { deck_id: string; deck_name: string; 
+/**
+ * 今日の新規予定（実効上限を反映）
+ */
+new_count: number; 
+/**
+ * 今日の復習予定（state='review' かつ期日到来、上限適用後）
+ */
+review_count: number; 
+/**
+ * 学習中カード（learning/relearning かつ期日到来、同日再出題対象）
+ */
+learning_count: number; completed_today: number }
 export type ExampleSentence = { text: string; pinyin?: string; translation?: string }
 export type HomeStats = { streak_days: number; today_reviewed: number; deck_due_counts: DeckDueCount[]; seven_day_forecast: DayForecast[] }
 export type ImportResult = { created: number; updated: number }

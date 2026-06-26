@@ -83,12 +83,20 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
         }
     }
 
+    // 実効新規上限 = daily_new_limit - 今日すでに導入した新規ユニット数。
+    // これにより「学習を開始」を1日に何度押しても新規が無制限に増えない (日次の新規上限)。
+    let introduced_today =
+        crate::db::new_introduced_today(pool, &deck_id, crate::util::today_jst()).await?;
+    let effective_new_limit = (new_limit - introduced_today).max(0);
+
     crate::log!(
         LogLevel::DEBUG,
-        "session candidates: new={}, review={} (limits new={}, review={})",
+        "session candidates: new={}, review={} (limits new={} (effective {}, introduced today {}), review={})",
         new_pool.len(),
         review_pool.len(),
         new_limit,
+        effective_new_limit,
+        introduced_today,
         review_limit
     );
 
@@ -98,7 +106,7 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
         let mut rng = rand::thread_rng();
         new_pool.shuffle(&mut rng);
         review_pool.shuffle(&mut rng);
-        new_pool.truncate(new_limit.max(0) as usize);
+        new_pool.truncate(effective_new_limit as usize);
         review_pool.truncate(review_limit.max(0) as usize);
 
         let mut queue = new_pool;

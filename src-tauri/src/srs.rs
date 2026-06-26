@@ -1,7 +1,7 @@
 use crate::error::{AppError, AppResult};
 use crate::models::{IntervalPreview, SrsRecord};
+use crate::util::logical_date;
 use chrono::{DateTime, Duration, Utc};
-use chrono_tz::Asia::Tokyo;
 use rs_fsrs::{Card as FsrsCard, Parameters, Rating, State, FSRS};
 
 // ------------------------------------------------------------
@@ -40,9 +40,9 @@ fn parse_dt(s: &str) -> AppResult<DateTime<Utc>> {
     Ok(DateTime::parse_from_rfc3339(s)?.with_timezone(&Utc))
 }
 
-/// JST 基準で「今日」の年月日が等しいか (spec §14)
+/// アプリ内の論理日付 (JST, リセット時刻考慮) で「同じ日」か (spec §14)
 pub fn same_jst_day(a: DateTime<Utc>, b: DateTime<Utc>) -> bool {
-    a.with_timezone(&Tokyo).date_naive() == b.with_timezone(&Tokyo).date_naive()
+    logical_date(a) == logical_date(b)
 }
 
 // ------------------------------------------------------------
@@ -115,8 +115,8 @@ fn fsrs_card_to_record(
 /// 各評価ボタンに表示する次回間隔ラベルを生成する (spec §6.4)。
 /// Again など同日再出題は「今日中」、それ以外は「N日後」。
 fn interval_label(due: DateTime<Utc>, now: DateTime<Utc>, is_again: bool) -> String {
-    let due_jst = due.with_timezone(&Tokyo).date_naive();
-    let now_jst = now.with_timezone(&Tokyo).date_naive();
+    let due_jst = logical_date(due);
+    let now_jst = logical_date(now);
     let days = (due_jst - now_jst).num_days();
     if days <= 0 {
         if is_again {

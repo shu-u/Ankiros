@@ -31,6 +31,7 @@ export function StudyPage() {
 
   const { currentCard, isComplete, initSession, recordAnswer, setNoteEdit } =
     useSessionStore();
+  const progress = useSessionStore((s) => s.progress);
 
   const { supported: speechSupported, speakingText, speak, stop: stopSpeech } = useSpeech();
 
@@ -170,6 +171,10 @@ export function StudyPage() {
 
   if (!currentCard) return <Loading />;
 
+  const doneTotal = progress.newDone + progress.reviewDone;
+  const grandTotal = progress.newTotal + progress.reviewTotal;
+  const progressPct = grandTotal > 0 ? Math.round((doneTotal / grandTotal) * 100) : 0;
+
   const card = currentCard.card;
   const mode = currentCard.mode;
   const problem = mode === "production" ? card.meaning : card.hanzi;
@@ -188,6 +193,28 @@ export function StudyPage() {
           中断<span className="hidden md:inline">（Esc）</span>
         </button>
       </div>
+
+      {/* 進捗（新規 / 復習）。同日再出題が残っている間は分母に含めず、完了したぶんだけ進む */}
+      {grandTotal > 0 && (
+        <div className="space-y-1">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-0.5 text-xs text-muted-foreground">
+            <span className="whitespace-nowrap">
+              新規 {progress.newDone}/{progress.newTotal}
+              <span className="mx-1.5">・</span>
+              復習 {progress.reviewDone}/{progress.reviewTotal}
+            </span>
+            <span className="whitespace-nowrap tabular-nums">
+              {doneTotal}/{grandTotal}（{progressPct}%）
+            </span>
+          </div>
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+            <div
+              className="h-full rounded-full bg-primary transition-all"
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
+        </div>
+      )}
 
       {/* 問題 */}
       <div className="rounded-lg border bg-card p-6 text-center md:p-8">

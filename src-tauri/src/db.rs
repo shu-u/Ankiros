@@ -49,6 +49,43 @@ pub fn json_to_vec<T: serde::de::DeserializeOwned + Default>(s: Option<String>) 
 }
 
 // ------------------------------------------------------------
+// 今日導入した新規ユニット数（日次の新規上限を効かせるため）
+// ------------------------------------------------------------
+
+/// デッキ内で「今日(JST) 初めて学習した (card_id, mode) ユニット数」を返す。
+/// review_logs における各 (card_id, mode) の最初の reviewed_at が今日のものを数える。
+/// daily_new_limit から差し引くことで、1日あたりの新規導入を正しく上限化する。
+pub async fn new_introduced_today(
+    pool: &Db,
+    deck_id: &str,
+    today: chrono::NaiveDate,
+) -> AppResult<i64> {
+    use std::collections::HashMap;
+    let rows = sqlx::query("SELECT card_id, mode, reviewed_at FROM review_logs WHERE deck_id = ?")
+        .bind(deck_id)
+        .fetch_all(pool)
+        .await?;
+    // (card_id, mode) ごとの最初の学習日(JST)を求める
+    let mut earliest: HashMap<(String, String), chrono::NaiveDate> = HashMap::new();
+    for r in &rows {
+        let cid: String = r.get("card_id");
+        let mode: String = r.get("mode");
+        let at: String = r.get("reviewed_at");
+        if let Some(d) = crate::util::to_jst_date(&at) {
+            earliest
+                .entry((cid, mode))
+                .and_modify(|cur| {
+                    if d < *cur {
+                        *cur = d;
+                    }
+                })
+                .or_insert(d);
+        }
+    }
+    Ok(earliest.values().filter(|d| **d == today).count() as i64)
+}
+
+// ------------------------------------------------------------
 // 行 → モデル 変換
 // ------------------------------------------------------------
 

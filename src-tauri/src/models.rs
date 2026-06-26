@@ -20,8 +20,12 @@ pub struct Deck {
     pub updated_at: String,
     /// カード総数（一覧表示用に算出）
     pub card_count: i64,
-    /// 今日の復習予定数（一覧表示用に算出）
-    pub due_today: i64,
+    /// 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み を反映）
+    pub new_today: i64,
+    /// 今日の復習予定数（state='review' かつ期日到来）
+    pub review_today: i64,
+    /// 学習中カード数（learning/relearning かつ期日到来、同日再出題対象）
+    pub learning_today: i64,
 }
 
 #[derive(Debug, Clone, Deserialize, Type)]
@@ -206,7 +210,12 @@ pub struct HomeStats {
 pub struct DeckDueCount {
     pub deck_id: String,
     pub deck_name: String,
-    pub due_count: i64,
+    /// 今日の新規予定（実効上限を反映）
+    pub new_count: i64,
+    /// 今日の復習予定（state='review' かつ期日到来、上限適用後）
+    pub review_count: i64,
+    /// 学習中カード（learning/relearning かつ期日到来、同日再出題対象）
+    pub learning_count: i64,
     pub completed_today: i64,
 }
 
