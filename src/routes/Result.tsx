@@ -24,7 +24,9 @@ export function ResultPage() {
 
   const againCount =
     results.total - results.hardCount - results.goodCount - results.easyCount;
-  const tomorrowCount = tomorrow.data?.seven_day_forecast?.[1]?.count ?? null;
+  // seven_day_forecast[0]=今日, [1]=明日。明日の予定枚数 = 復習 + 新規。
+  const tmrw = tomorrow.data?.seven_day_forecast?.[1];
+  const tomorrowCount = tmrw ? tmrw.reviews + tmrw.new_cards + tmrw.overdue : null;
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">

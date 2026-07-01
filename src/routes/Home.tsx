@@ -18,7 +18,12 @@ export function HomePage() {
 
   const { streak_days, today_reviewed, deck_due_counts, seven_day_forecast } = stats.data;
   const lastDeck = deck_due_counts.find((d) => d.deck_id === lastUsedDeckId);
-  const maxForecast = Math.max(1, ...seven_day_forecast.map((d) => d.count));
+  const forecast = seven_day_forecast.map((d) => ({
+    ...d,
+    total: d.reviews + d.new_cards + d.overdue,
+  }));
+  const maxForecast = Math.max(1, ...forecast.map((d) => d.total));
+  const hasOverdue = forecast.some((d) => d.overdue > 0);
 
   return (
     <div className="space-y-8">
@@ -122,26 +127,62 @@ export function HomePage() {
         </CardContent>
       </Card>
 
-      {/* 7日間の予定枚数 */}
+      {/* 今後7日間の予定（先読み負荷）*/}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">7日間の予定枚数</CardTitle>
+          <CardTitle className="text-base">今後7日間の予定</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex items-end gap-2" style={{ height: 140 }}>
-            {seven_day_forecast.map((d, i) => (
+          <div className="flex gap-2" style={{ height: 160 }}>
+            {forecast.map((d, i) => (
               <div key={d.date} className="flex flex-1 flex-col items-center gap-1">
-                <div className="text-xs text-muted-foreground">{d.count}</div>
-                <div
-                  className={`w-full rounded-t ${d.is_past ? "bg-muted-foreground/40" : "bg-primary/80"}`}
-                  style={{ height: `${(d.count / maxForecast) * 100}%`, minHeight: 2 }}
-                />
+                <div className="text-xs tabular-nums text-muted-foreground">{d.total}</div>
+                {/* バー描画領域: flex-1 で確定高さを持たせ、% 指定の各セグメントを解決させる */}
+                <div className="flex w-full flex-1 flex-col-reverse overflow-hidden rounded-t">
+                  {d.overdue > 0 && (
+                    <div
+                      className="w-full shrink-0 bg-amber-500/80"
+                      style={{ height: `${(d.overdue / maxForecast) * 100}%`, minHeight: 2 }}
+                      title={`延滞 ${d.overdue}`}
+                    />
+                  )}
+                  {d.reviews > 0 && (
+                    <div
+                      className="w-full shrink-0 bg-primary/80"
+                      style={{ height: `${(d.reviews / maxForecast) * 100}%`, minHeight: 2 }}
+                      title={`復習 ${d.reviews}`}
+                    />
+                  )}
+                  {d.new_cards > 0 && (
+                    <div
+                      className="w-full shrink-0 bg-emerald-500/80"
+                      style={{ height: `${(d.new_cards / maxForecast) * 100}%`, minHeight: 2 }}
+                      title={`新規 ${d.new_cards}`}
+                    />
+                  )}
+                </div>
                 <div className="whitespace-nowrap text-xs text-muted-foreground">
-                  {d.is_past ? "昨日" : i === 1 ? "今日" : d.date.slice(5)}
+                  {i === 0 ? "今日" : d.date.slice(5)}
                 </div>
               </div>
             ))}
           </div>
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block h-2 w-2 rounded-sm bg-primary/80" />復習
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="inline-block h-2 w-2 rounded-sm bg-emerald-500/80" />新規
+            </span>
+            {hasOverdue && (
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block h-2 w-2 rounded-sm bg-amber-500/80" />延滞
+              </span>
+            )}
+          </div>
+          <p className="mt-1 text-xs text-muted-foreground">
+            ※ 先の予定は現時点の下限です（復習後に再設定される期日は未反映）
+          </p>
         </CardContent>
       </Card>
     </div>

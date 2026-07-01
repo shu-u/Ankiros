@@ -253,11 +253,19 @@ export type DayForecast = {
 /**
  * JST の日付 (YYYY-MM-DD)
  */
-date: string; count: number; 
+date: string; 
 /**
- * 過去の実績（review_logs 由来）なら true、未来の予定なら false
+ * その日に期日が来る復習の件数（learning/relearning/review、上限未適用の生件数）
  */
-is_past: boolean }
+reviews: number; 
+/**
+ * その日に新規導入される見込み枚数（日次新規上限と残数からシミュレート）
+ */
+new_cards: number; 
+/**
+ * 延滞（期限切れ）件数。先読みなので今日のバーのみ非ゼロ。
+ */
+overdue: number }
 export type Deck = { id: string; name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; fsrs_target_retention: number; fsrs_max_interval_days: number; created_at: string; updated_at: string; 
 /**
  * カード総数（一覧表示用に算出）

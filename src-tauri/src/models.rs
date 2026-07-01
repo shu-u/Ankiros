@@ -223,9 +223,12 @@ pub struct DeckDueCount {
 pub struct DayForecast {
     /// JST の日付 (YYYY-MM-DD)
     pub date: String,
-    pub count: i64,
-    /// 過去の実績（review_logs 由来）なら true、未来の予定なら false
-    pub is_past: bool,
+    /// その日に期日が来る復習の件数（learning/relearning/review、上限未適用の生件数）
+    pub reviews: i64,
+    /// その日に新規導入される見込み枚数（日次新規上限と残数からシミュレート）
+    pub new_cards: i64,
+    /// 延滞（期限切れ）件数。先読みなので今日のバーのみ非ゼロ。
+    pub overdue: i64,
 }
 
 #[derive(Debug, Clone, Serialize, Type)]

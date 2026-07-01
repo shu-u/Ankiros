@@ -19,17 +19,13 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     let log_rows = sqlx::query("SELECT reviewed_at FROM review_logs")
         .fetch_all(pool)
         .await?;
-    let yesterday = today - Duration::days(1);
     let mut log_dates: HashSet<NaiveDate> = HashSet::new();
     let mut today_reviewed = 0u32;
-    let mut yesterday_reviewed = 0i64;
     for r in &log_rows {
         let at: String = r.get("reviewed_at");
         if let Some(d) = to_jst_date(&at) {
             if d == today {
                 today_reviewed += 1;
-            } else if d == yesterday {
-                yesterday_reviewed += 1;
             }
             log_dates.insert(d);
         }
@@ -52,6 +48,8 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         .fetch_all(pool)
         .await?;
     let mut deck_due_counts = Vec::new();
+    // 今後7日間に新規導入される見込み枚数（デッキ横断で積み上げ）
+    let mut new_buckets = [0i64; 7];
     for d in &deck_rows {
         let deck_id: String = d.get("id");
         let deck_name: String = d.get("name");
@@ -98,6 +96,15 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         let new_count = new_available.min(effective_new_limit);
         let review_count = due_reviews.min(review_limit);
 
+        // 7日先までの新規導入をシミュレート: 今日は実効上限、以降は日次上限ぶんずつ残数から導入
+        let mut remaining_new = new_available;
+        for (day, bucket) in new_buckets.iter_mut().enumerate() {
+            let limit = if day == 0 { effective_new_limit } else { new_limit };
+            let intro = remaining_new.min(limit);
+            *bucket += intro;
+            remaining_new -= intro;
+        }
+
         // 今日の完了数（デッキ別）
         let completed_today_rows = sqlx::query(
             "SELECT reviewed_at FROM review_logs WHERE deck_id = ?",
@@ -121,34 +128,33 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         });
     }
 
-    // ---- 7日間の予定枚数 ----
+    // ---- 今後7日間の予定（先読み負荷）----
+    // 復習: その日に期日が来る件数（learning/relearning/review）。期限切れは overdue として今日に分離計上。
     let srs_rows = sqlx::query("SELECT due_date FROM srs_records WHERE state != 'new'")
         .fetch_all(pool)
         .await?;
-    let mut buckets: Vec<i64> = vec![0; 7];
+    let mut review_buckets = [0i64; 7];
+    let mut overdue = 0i64;
     for r in &srs_rows {
         let dd: String = r.get("due_date");
         if let Some(date) = to_jst_date(&dd) {
             let offset = (date - today).num_days();
             if offset < 0 {
-                buckets[0] += 1; // 期限切れは今日に計上
+                overdue += 1; // 期限切れ（延滞）は今日のバーに別セグメントで表示
             } else if offset < 7 {
-                buckets[offset as usize] += 1;
+                review_buckets[offset as usize] += 1;
             }
         }
     }
-    // 先頭に昨日の実績（review_logs 由来）、続けて今日〜6日後の予定
-    let mut seven_day_forecast: Vec<DayForecast> = Vec::with_capacity(8);
-    seven_day_forecast.push(DayForecast {
-        date: yesterday.format("%Y-%m-%d").to_string(),
-        count: yesterday_reviewed,
-        is_past: true,
-    });
-    seven_day_forecast.extend((0..7).map(|i| DayForecast {
-        date: (today + Duration::days(i)).format("%Y-%m-%d").to_string(),
-        count: buckets[i as usize],
-        is_past: false,
-    }));
+    // 今日〜6日後。未来の reviews はレビュー後の再スケジュール分を含まないため下限値。
+    let seven_day_forecast: Vec<DayForecast> = (0..7i64)
+        .map(|i| DayForecast {
+            date: (today + Duration::days(i)).format("%Y-%m-%d").to_string(),
+            reviews: review_buckets[i as usize],
+            new_cards: new_buckets[i as usize],
+            overdue: if i == 0 { overdue } else { 0 },
+        })
+        .collect();
 
     crate::log!(
         LogLevel::DEBUG,
