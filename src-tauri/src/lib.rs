@@ -17,6 +17,11 @@ use tauri_specta::{collect_commands, Builder};
 #[cfg(desktop)]
 fn save_window_state(pool: &Db, win: &tauri::WebviewWindow) {
     log!(LogLevel::DEBUG, "Saving window state (close requested)");
+    // 最小化中はサイズ 0×0・位置 (-32000,-32000) が返るため保存しない
+    // （前回の正常なジオメトリを温存し、次回起動時の画面外復元を防ぐ）
+    if win.is_minimized().unwrap_or(false) {
+        return;
+    }
     let scale = win.scale_factor().unwrap_or(1.0);
     if let Ok(size) = win.inner_size() {
         let logical = size.to_logical::<i32>(scale);
@@ -82,11 +87,38 @@ fn restore_window_state(pool: &Db, win: &tauri::WebviewWindow) {
             _ => {}
         }
     }
-    let _ = win.set_size(tauri::LogicalSize::new(width as f64, height as f64));
-    // window_x / window_y のキーが無い場合は set_position を呼ばず OS に任せる (spec §3.3)
-    if let (Some(x), Some(y)) = (x, y) {
-        let _ = win.set_position(tauri::LogicalPosition::new(x as f64, y as f64));
+    // 異常なサイズ（最小化中に保存された 0×0 など）は既定値へフォールバック
+    if width <= 0 {
+        width = 1200;
     }
+    if height <= 0 {
+        height = 800;
+    }
+    let _ = win.set_size(tauri::LogicalSize::new(width as f64, height as f64));
+    // 位置は可視モニタ内にあるときだけ復元する。キーが無い場合や
+    // 画面外（最小化時の -32000,-32000 やモニタ構成変更後）は OS 既定に任せる (spec §3.3)
+    if let (Some(x), Some(y)) = (x, y) {
+        if position_visible(win, x, y) {
+            let _ = win.set_position(tauri::LogicalPosition::new(x as f64, y as f64));
+        }
+    }
+}
+
+/// 保存された論理座標 (x, y) がいずれかの接続モニタの表示領域内にあるか。
+/// モニタ構成変更や最小化センチネル (-32000) による画面外復元を防ぐ。
+#[cfg(desktop)]
+fn position_visible(win: &tauri::WebviewWindow, x: i64, y: i64) -> bool {
+    let (x, y) = (x as f64, y as f64);
+    let monitors = match win.available_monitors() {
+        Ok(m) => m,
+        Err(_) => return false,
+    };
+    monitors.iter().any(|m| {
+        let sf = m.scale_factor();
+        let pos = m.position().to_logical::<f64>(sf);
+        let size = m.size().to_logical::<f64>(sf);
+        x >= pos.x && x < pos.x + size.width && y >= pos.y && y < pos.y + size.height
+    })
 }
 
 /// 全 IPC コマンドを登録した tauri-specta Builder を構築する。
