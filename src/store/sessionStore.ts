@@ -1,7 +1,10 @@
 import { create } from "zustand";
-import type { SessionCard } from "@/bindings";
+import type { SessionCard, IntervalPreview } from "@/bindings";
 
 export type Rating = "again" | "hard" | "good" | "easy";
+
+/** 学習画面の表示フェーズ（問題入力中 / 解答表示中）。 */
+export type StudyPhase = "question" | "answer";
 
 export interface SessionResults {
   total: number;
@@ -36,8 +39,17 @@ interface SessionStore {
    * 同日再出題でキューの古いカードオブジェクトが再表示されても最新メモを反映するため。 */
   noteEdits: Record<string, string>;
 
+  /** 現在カードの表示フェーズ。タブ切替でアンマウントしても復元できるようストアで保持する。 */
+  studyPhase: StudyPhase;
+  /** 解答フェーズで入力したテキスト（正誤比較の再描画に必要なため保持する）。 */
+  studyInput: string;
+  /** 解答フェーズで取得済みの次回間隔プレビュー。 */
+  studyPreview: IntervalPreview | null;
+
   /** 新しいセッションを開始する（get_session_queue 呼び出し直後に使用） */
   initSession: (deckId: string, queue: SessionCard[]) => void;
+  /** 学習画面の表示状態（フェーズ/入力/プレビュー）を部分更新する */
+  setStudyUi: (patch: Partial<{ phase: StudyPhase; input: string; preview: IntervalPreview | null }>) => void;
   /** 回答を記録し、キューを進める (spec §6.2) */
   recordAnswer: (
     card: SessionCard,
@@ -69,6 +81,9 @@ export const useSessionStore = create<SessionStore>((set) => ({
   initialIsNew: {},
   isComplete: false,
   noteEdits: {},
+  studyPhase: "question",
+  studyInput: "",
+  studyPreview: null,
 
   initSession: (deckId, queue) => {
     const newTotal = queue.filter(isNewState).length;
@@ -88,8 +103,18 @@ export const useSessionStore = create<SessionStore>((set) => ({
       initialIsNew,
       isComplete: queue.length === 0,
       noteEdits: {},
+      studyPhase: "question",
+      studyInput: "",
+      studyPreview: null,
     });
   },
+
+  setStudyUi: (patch) =>
+    set((s) => ({
+      studyPhase: patch.phase ?? s.studyPhase,
+      studyInput: patch.input ?? s.studyInput,
+      studyPreview: patch.preview !== undefined ? patch.preview : s.studyPreview,
+    })),
 
   recordAnswer: (card, rating, shouldRequeue) =>
     set((s) => {
@@ -133,6 +158,10 @@ export const useSessionStore = create<SessionStore>((set) => ({
         queue: nextQueue,
         currentCard: nextQueue.length > 0 ? nextQueue[0] : null,
         isComplete: nextQueue.length === 0,
+        // 次のカードは問題フェーズから開始する（入力/プレビューもクリア）
+        studyPhase: "question",
+        studyInput: "",
+        studyPreview: null,
       };
     }),
 
@@ -149,5 +178,8 @@ export const useSessionStore = create<SessionStore>((set) => ({
       initialIsNew: {},
       isComplete: false,
       noteEdits: {},
+      studyPhase: "question",
+      studyInput: "",
+      studyPreview: null,
     }),
 }));

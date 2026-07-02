@@ -1,5 +1,6 @@
-import { createRootRoute, createRoute, createRouter } from "@tanstack/react-router";
+import { createRootRoute, createRoute, createRouter, redirect } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
+import { useSessionStore } from "@/store/sessionStore";
 import { HomePage } from "@/routes/Home";
 import { DecksPage } from "@/routes/Decks";
 import { DeckDetailPage } from "@/routes/DeckDetail";
@@ -20,6 +21,17 @@ const indexRoute = createRoute({
 const decksRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/decks",
+  // 学習中（未完了セッション）なら、デッキ一覧タブを開いたとき学習画面へ戻す。
+  // 明示的な中断（reset）でセッションが消えるまで学習中の状態を保持する。
+  beforeLoad: () => {
+    const s = useSessionStore.getState();
+    if (s.deckId !== null && s.currentCard !== null && !s.isComplete) {
+      throw redirect({
+        to: "/decks/$deckId/study",
+        params: { deckId: s.deckId },
+      });
+    }
+  },
   component: DecksPage,
 });
 

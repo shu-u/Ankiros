@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "@tanstack/react-router";
-import type { IntervalPreview } from "@/bindings";
 import { call, commands } from "@/lib/api";
 import { useSessionStore, type Rating } from "@/store/sessionStore";
 import { useAppStore } from "@/store/appStore";
@@ -15,8 +14,6 @@ import { Loading, ErrorBox, modeLabel } from "@/components/common";
 import { useSpeech } from "@/lib/useSpeech";
 import { SpeakButton } from "@/components/SpeakButton";
 
-type Phase = "question" | "answer";
-
 const RATINGS: { rating: Rating; label: string; key: string }[] = [
   { rating: "again", label: "Again", key: "1" },
   { rating: "hard", label: "Hard", key: "2" },
@@ -29,9 +26,14 @@ export function StudyPage() {
   const navigate = useNavigate();
   const setLastUsedDeckId = useAppStore((s) => s.setLastUsedDeckId);
 
-  const { currentCard, isComplete, initSession, recordAnswer, setNoteEdit } =
+  const { currentCard, isComplete, initSession, recordAnswer, reset, setNoteEdit } =
     useSessionStore();
   const progress = useSessionStore((s) => s.progress);
+  // 表示フェーズ/入力/プレビューはストア管理（タブ切替でアンマウントしても復元するため）
+  const phase = useSessionStore((s) => s.studyPhase);
+  const input = useSessionStore((s) => s.studyInput);
+  const preview = useSessionStore((s) => s.studyPreview);
+  const setStudyUi = useSessionStore((s) => s.setStudyUi);
 
   const { supported: speechSupported, speakingText, speak, stop: stopSpeech } = useSpeech();
 
@@ -39,17 +41,27 @@ export function StudyPage() {
   const [hadCards, setHadCards] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const [phase, setPhase] = useState<Phase>("question");
-  const [input, setInput] = useState("");
-  const [preview, setPreview] = useState<IntervalPreview | null>(null);
   const [userNotes, setUserNotes] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // セッション開始（マウント時に1回）
+  // セッション開始（マウント時に1回）。
+  // 同一デッキの未完了セッションがストアに残っていれば再取得せず復元する
+  // （タブ切替で本画面がアンマウントされても学習中の状態を保持するため）。
   useEffect(() => {
     let cancelled = false;
     setLastUsedDeckId(deckId);
+
+    const s = useSessionStore.getState();
+    const resumable =
+      s.deckId === deckId && s.currentCard !== null && !s.isComplete;
+    if (resumable) {
+      setHadCards(true);
+      setReady(true);
+      void logger.info(`Study session resumed: deck=${deckId}`);
+      return;
+    }
+
     call(commands.getSessionQueue(deckId))
       .then((queue) => {
         if (cancelled) return;
@@ -65,12 +77,10 @@ export function StudyPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [deckId]);
 
-  // カードが変わったら問題フェーズへリセット
+  // カードが変わったら読み上げを止め、メモを最新化してフォーカスする。
+  // フェーズ/入力/プレビューのリセットは recordAnswer 側（ストア）で行う。
   useEffect(() => {
     stopSpeech();
-    setPhase("question");
-    setInput("");
-    setPreview(null);
     // セッション中に編集済みのメモがあればそれを優先する
     const edits = useSessionStore.getState().noteEdits;
     setUserNotes(
@@ -94,16 +104,16 @@ export function StudyPage() {
     void logger.debug(
       `Flip: card=${currentCard.card.id} mode=${currentCard.mode} input="${input}"`,
     );
-    setPhase("answer");
+    setStudyUi({ phase: "answer" });
     try {
       const p = await call(
         commands.previewReview(currentCard.card.id, deckId, currentCard.mode),
       );
-      setPreview(p);
+      setStudyUi({ preview: p });
     } catch {
       /* プレビュー失敗時はラベルなしで継続 */
     }
-  }, [currentCard, input, deckId]);
+  }, [currentCard, input, deckId, setStudyUi]);
 
   const rate = useCallback(
     async (rating: Rating) => {
@@ -132,6 +142,7 @@ export function StudyPage() {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         void logger.info("Study session aborted (Esc)");
+        reset();
         navigate({ to: "/" });
         return;
       }
@@ -150,7 +161,7 @@ export function StudyPage() {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [phase, flip, rate, navigate]);
+  }, [phase, flip, rate, navigate, reset]);
 
   if (loadError) return <ErrorBox message={loadError} />;
   if (!ready) return <Loading label="セッションを準備中…" />;
@@ -187,7 +198,11 @@ export function StudyPage() {
       <div className="flex items-center justify-between">
         <Badge variant="secondary">{modeLabel(mode)}モード</Badge>
         <button
-          onClick={() => navigate({ to: "/" })}
+          onClick={() => {
+            void logger.info("Study session aborted (button)");
+            reset();
+            navigate({ to: "/" });
+          }}
           className="text-sm text-muted-foreground hover:underline"
         >
           中断<span className="hidden md:inline">（Esc）</span>
@@ -238,7 +253,7 @@ export function StudyPage() {
           <Input
             ref={inputRef}
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => setStudyUi({ input: e.target.value })}
             placeholder={
               mode === "recognition" ? "意味を入力…" : "ピンインを入力…"
             }

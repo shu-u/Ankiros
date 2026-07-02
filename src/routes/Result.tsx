@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export function ResultPage() {
   const { deckId } = useParams({ strict: false }) as { deckId: string };
   const navigate = useNavigate();
-  const { isComplete, deckId: storeDeckId, results } = useSessionStore();
+  const { isComplete, deckId: storeDeckId, results, reset } = useSessionStore();
 
   // ページリロード等で store が消えた場合はデッキ詳細へリダイレクト (spec §11)
   useEffect(() => {
@@ -81,7 +81,13 @@ export function ResultPage() {
       )}
 
       <div className="flex justify-center">
-        <Button size="lg" onClick={() => navigate({ to: "/" })}>
+        <Button
+          size="lg"
+          onClick={() => {
+            reset();
+            navigate({ to: "/" });
+          }}
+        >
           ホームへ戻る
         </Button>
       </div>
