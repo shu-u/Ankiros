@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { invoke, addPluginListener, type PluginListener } from "@tauri-apps/api/core";
 import { isAndroid } from "@/lib/platform";
+import { useAppStore } from "@/store/appStore";
 
 export type SpeechLang = "zh-CN" | "ja-JP" | "en-US";
 
@@ -12,6 +13,14 @@ export function useSpeech() {
   const [supported, setSupported] = useState(false);
   const [speakingText, setSpeakingText] = useState<string | null>(null);
   const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
+
+  // 発話ごとに最新の音量を参照する。speak/stop の参照を安定させるため
+  // state を直接読まず ref 経由にする（voicesRef と同じ方針）。
+  const volume = useAppStore((s) => s.volume);
+  const volumeRef = useRef(volume);
+  useEffect(() => {
+    volumeRef.current = volume;
+  }, [volume]);
 
   // --- デスクトップ: Web Speech API（従来実装のまま・挙動不変） ---
   useEffect(() => {
@@ -68,7 +77,9 @@ export function useSpeech() {
   const speak = useCallback((text: string, lang: SpeechLang) => {
     if (ANDROID) {
       setSpeakingText(text);
-      void invoke("plugin:tts|speak", { text, lang }).catch(() => setSpeakingText(null));
+      void invoke("plugin:tts|speak", { text, lang, volume: volumeRef.current }).catch(() =>
+        setSpeakingText(null),
+      );
       return;
     }
 
@@ -77,6 +88,7 @@ export function useSpeech() {
 
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = lang;
+    utter.volume = volumeRef.current;
 
     const voices =
       voicesRef.current.length > 0

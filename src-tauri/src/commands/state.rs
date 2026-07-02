@@ -37,6 +37,10 @@ pub async fn get_app_state(db: tauri::State<'_, Db>) -> AppResult<AppStateData> 
             .unwrap_or(800),
         window_x: map.get("window_x").and_then(|v| v.parse().ok()),
         window_y: map.get("window_y").and_then(|v| v.parse().ok()),
+        tts_volume: map
+            .get("tts_volume")
+            .and_then(|v| v.parse().ok())
+            .unwrap_or(1.0),
     })
 }
 

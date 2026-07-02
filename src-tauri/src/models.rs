@@ -239,6 +239,8 @@ pub struct AppStateData {
     pub window_height: i64,
     pub window_x: Option<i64>,
     pub window_y: Option<i64>,
+    /// TTS 読み上げ音量 (0.0〜1.0)。未設定なら 1.0。
+    pub tts_volume: f64,
 }
 
 // ============================================================

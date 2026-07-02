@@ -1,6 +1,7 @@
 package com.plugin.tts
 
 import android.app.Activity
+import android.os.Bundle
 import android.speech.tts.TextToSpeech
 import android.speech.tts.UtteranceProgressListener
 import android.webkit.WebView
@@ -16,6 +17,7 @@ import java.util.Locale
 class SpeakArgs {
     lateinit var text: String
     var lang: String? = null
+    var volume: Float? = null
 }
 
 @TauriPlugin
@@ -60,8 +62,12 @@ class TtsPlugin(private val activity: Activity) : Plugin(activity), TextToSpeech
             return
         }
         engine.language = localeFromTag(args.lang)
+        // 音量は発話ごとに Bundle で指定（未指定なら端末既定の 1.0）
+        val params = Bundle().apply {
+            args.volume?.let { putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, it) }
+        }
         // utteranceId にテキストを使い、speakEnd で照合して話中状態を解除する
-        engine.speak(args.text, TextToSpeech.QUEUE_FLUSH, null, args.text)
+        engine.speak(args.text, TextToSpeech.QUEUE_FLUSH, params, args.text)
         invoke.resolve()
     }
 

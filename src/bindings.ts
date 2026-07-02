@@ -233,7 +233,11 @@ async log(logLevel: LogLevel, log: string) : Promise<void> {
  * アプリ全体のエラー型 (spec §12 共通型定義)
  */
 export type AppError = { Database: string } | { NotFound: string } | { Validation: string } | { Io: string }
-export type AppStateData = { theme: string; last_used_deck_id: string | null; window_width: number; window_height: number; window_x: number | null; window_y: number | null }
+export type AppStateData = { theme: string; last_used_deck_id: string | null; window_width: number; window_height: number; window_x: number | null; window_y: number | null; 
+/**
+ * TTS 読み上げ音量 (0.0〜1.0)。未設定なら 1.0。
+ */
+tts_volume: number }
 /**
  * バックアップ取り込み結果の集計。
  */
