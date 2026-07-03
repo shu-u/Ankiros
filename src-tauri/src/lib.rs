@@ -145,6 +145,7 @@ fn make_builder() -> Builder<tauri::Wry> {
         commands::preview_review,
         commands::submit_review,
         commands::get_home_stats,
+        commands::get_deck_progress,
         commands::get_app_state,
         commands::update_app_state,
         log::log,

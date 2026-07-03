@@ -206,6 +206,36 @@ pub struct HomeStats {
     pub seven_day_forecast: Vec<DayForecast>,
 }
 
+/// デッキ全体の習得度内訳（デッキ詳細画面の「学習進捗」表示用）。
+/// 学習の単位は (カード × テストモード)。未学習はレコードが無いユニット。
+#[derive(Debug, Clone, Serialize, Type)]
+pub struct DeckProgress {
+    /// 総ユニット数 = カード数 × テストモード数
+    pub total_units: i64,
+    /// 未学習（srs_record が無い、または state='new'）
+    pub new_count: i64,
+    /// 学習中（state が learning / relearning）
+    pub learning_count: i64,
+    /// 習得中（state='review' かつ 復習間隔 < 21日）
+    pub young_count: i64,
+    /// 定着（state='review' かつ 復習間隔 >= 21日）
+    pub mature_count: i64,
+    /// モード別の内訳
+    pub modes: Vec<ModeProgress>,
+    /// 今日の完了数（review_logs より、JST 論理日付ベース）
+    pub completed_today: i64,
+}
+
+/// テストモード1つ分の習得度内訳。
+#[derive(Debug, Clone, Serialize, Type)]
+pub struct ModeProgress {
+    pub mode: String,
+    pub new_count: i64,
+    pub learning_count: i64,
+    pub young_count: i64,
+    pub mature_count: i64,
+}
+
 #[derive(Debug, Clone, Serialize, Type)]
 pub struct DeckDueCount {
     pub deck_id: String,

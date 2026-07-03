@@ -3,10 +3,11 @@ import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { open } from "@tauri-apps/plugin-dialog";
 import { readFile } from "@tauri-apps/plugin-fs";
 import { FileArchive, FolderInput, List, PlayCircle, Trash2 } from "lucide-react";
-import type { ImportResult } from "@/bindings";
+import type { Deck, DeckProgress, ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
 import { useAsync } from "@/lib/useAsync";
 import { isAndroid } from "@/lib/platform";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,6 +18,7 @@ export function DeckDetailPage() {
   const { deckId } = useParams({ strict: false }) as { deckId: string };
   const navigate = useNavigate();
   const deck = useAsync(() => call(commands.getDeck(deckId)), [deckId]);
+  const progress = useAsync(() => call(commands.getDeckProgress(deckId)), [deckId]);
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
 
@@ -27,6 +29,7 @@ export function DeckDetailPage() {
       const res: ImportResult = await call(commands.importCardsFolder(deckId, folder));
       setImportMsg(`インポート完了：新規 ${res.created} 件、更新 ${res.updated} 件`);
       deck.reload();
+      progress.reload();
     } catch (e) {
       setImportMsg(e instanceof Error ? e.message : String(e));
     }
@@ -46,6 +49,7 @@ export function DeckDetailPage() {
       const res: ImportResult = await call(commands.importCardsZipBytes(deckId, Array.from(bytes)));
       setImportMsg(`インポート完了：新規 ${res.created} 件、更新 ${res.updated} 件`);
       deck.reload();
+      progress.reload();
     } catch (e) {
       setImportMsg(e instanceof Error ? e.message : String(e));
     }
@@ -112,6 +116,8 @@ export function DeckDetailPage() {
         <div className="rounded-md border bg-accent/40 px-4 py-2 text-sm">{importMsg}</div>
       )}
 
+      {progress.data && <StudyProgress deck={d} progress={progress.data} />}
+
       <Card>
         <CardHeader>
           <CardTitle className="text-base">デッキ設定</CardTitle>
@@ -153,5 +159,114 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
       <span className="text-muted-foreground">{label}</span>
       <span className="font-medium">{children}</span>
     </div>
+  );
+}
+
+/** デッキ全体の習得度を、積み上げバー＋凡例＋モード別バーで表示する。 */
+function StudyProgress({ deck, progress }: { deck: Deck; progress: DeckProgress }) {
+  // カード0枚など学習単位が無いデッキでは表示しない
+  if (progress.total_units === 0) return null;
+
+  const { new_count, learning_count, young_count, mature_count, total_units, modes, completed_today } = progress;
+  // 習得率 = review フェーズ（習得中＋定着）に到達したユニットの割合
+  const learnedPct = Math.round(((young_count + mature_count) / total_units) * 100);
+  const dueToday = deck.new_today + deck.review_today;
+  // モードが複数あるときだけモード別の内訳を出す（単一モードでは全体バーと同じため）
+  const showModes = modes.length >= 2;
+
+  return (
+    <Card>
+      <CardHeader className="flex-row items-center justify-between space-y-0">
+        <CardTitle className="text-base">学習進捗</CardTitle>
+        <div className="text-sm text-muted-foreground">
+          習得率 <span className="text-lg font-bold text-foreground">{learnedPct}%</span>
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        <SegBar
+          className="h-3"
+          total={total_units}
+          mature={mature_count}
+          young={young_count}
+          learning={learning_count}
+        />
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+          <LegendDot className="bg-green-600" label="定着" count={mature_count} />
+          <LegendDot className="bg-green-400" label="習得中" count={young_count} />
+          <LegendDot className="bg-amber-400" label="学習中" count={learning_count} />
+          <LegendDot className="bg-slate-300 dark:bg-slate-600" label="未学習" count={new_count} />
+        </div>
+
+        {showModes && (
+          <div className="space-y-2 border-t pt-3">
+            {modes.map((m) => {
+              const mTotal = m.new_count + m.learning_count + m.young_count + m.mature_count;
+              const mPct =
+                mTotal > 0 ? Math.round(((m.young_count + m.mature_count) / mTotal) * 100) : 0;
+              return (
+                <div key={m.mode} className="flex items-center gap-3 text-xs">
+                  <span className="w-16 shrink-0 truncate text-muted-foreground">
+                    {modeLabel(m.mode)}
+                  </span>
+                  <SegBar
+                    className="h-1.5 flex-1 min-w-0"
+                    total={mTotal}
+                    mature={m.mature_count}
+                    young={m.young_count}
+                    learning={m.learning_count}
+                  />
+                  <span className="w-9 shrink-0 text-right tabular-nums text-muted-foreground">
+                    {mPct}%
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <div className="border-t pt-3 text-sm text-muted-foreground">
+          今日：完了 {completed_today} / 予定 {dueToday}
+          {deck.learning_today > 0 && (
+            <span className="ml-1 text-xs">・学習中 {deck.learning_today}</span>
+          )}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
+/** 定着→習得中→学習中の順に左から積み上げる進捗バー。残り（未学習）はトラック色で表現する。 */
+function SegBar({
+  total,
+  mature,
+  young,
+  learning,
+  className,
+}: {
+  total: number;
+  mature: number;
+  young: number;
+  learning: number;
+  className?: string;
+}) {
+  const seg = (n: number, cls: string) =>
+    n > 0 ? (
+      <div className={cls} style={{ width: `${(n / total) * 100}%`, minWidth: 2 }} />
+    ) : null;
+  return (
+    <div className={cn("flex overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700", className)}>
+      {seg(mature, "bg-green-600")}
+      {seg(young, "bg-green-400")}
+      {seg(learning, "bg-amber-400")}
+    </div>
+  );
+}
+
+function LegendDot({ className, label, count }: { className: string; label: string; count: number }) {
+  return (
+    <span className="flex items-center gap-1.5">
+      <span className={cn("inline-block h-2 w-2 rounded-sm", className)} />
+      {label} {count}
+    </span>
   );
 }

@@ -1,11 +1,14 @@
 use crate::db::Db;
-use crate::error::AppResult;
+use crate::error::{AppError, AppResult};
 use crate::log::LogLevel;
 use crate::models::*;
 use crate::util::{to_jst_date, today_jst};
 use chrono::{Duration, NaiveDate, Utc};
 use sqlx::Row;
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
+
+/// 「定着（成熟）」とみなす復習間隔のしきい値（日）。Anki 慣例の 21 日。
+const MATURE_INTERVAL_DAYS: i64 = 21;
 
 #[tauri::command]
 #[specta::specta]
@@ -168,5 +171,92 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         today_reviewed,
         deck_due_counts,
         seven_day_forecast,
+    })
+}
+
+/// デッキ全体の習得度内訳を算出する（デッキ詳細画面の「学習進捗」表示用）。
+/// 学習単位は (カード × テストモード)。未学習はレコードが無いユニットなので、
+/// カード数から学習済み（learning/review 等）を差し引いて算出する。
+#[tauri::command]
+#[specta::specta]
+pub async fn get_deck_progress(db: tauri::State<'_, Db>, deck_id: String) -> AppResult<DeckProgress> {
+    crate::log!(LogLevel::DEBUG, "get_deck_progress: {}", deck_id);
+    let pool = db.inner();
+
+    // デッキのテストモード一覧（総ユニット数と未学習の算出に使用）
+    let deck_row = sqlx::query("SELECT test_modes FROM decks WHERE id = ?")
+        .bind(&deck_id)
+        .fetch_optional(pool)
+        .await?
+        .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
+    let modes_json: String = deck_row.get("test_modes");
+    let deck_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
+
+    let card_count: i64 = sqlx::query("SELECT COUNT(*) AS c FROM cards WHERE deck_id = ?")
+        .bind(&deck_id)
+        .fetch_one(pool)
+        .await?
+        .get("c");
+
+    // モード別に 学習中 / 習得中(若い) / 定着(成熟) を集計。
+    // MATURE_INTERVAL_DAYS は const i64 なので format! で埋め込んでも安全。
+    let sql = format!(
+        "SELECT mode, \
+         SUM(CASE WHEN state IN ('learning','relearning') THEN 1 ELSE 0 END) AS learning, \
+         SUM(CASE WHEN state = 'review' AND scheduled_days <  {t} THEN 1 ELSE 0 END) AS young, \
+         SUM(CASE WHEN state = 'review' AND scheduled_days >= {t} THEN 1 ELSE 0 END) AS mature \
+         FROM srs_records WHERE deck_id = ? GROUP BY mode",
+        t = MATURE_INTERVAL_DAYS
+    );
+    let rows = sqlx::query(&sql).bind(&deck_id).fetch_all(pool).await?;
+    // mode -> (learning, young, mature)
+    let mut agg: HashMap<String, (i64, i64, i64)> = HashMap::new();
+    for r in &rows {
+        let mode: String = r.get("mode");
+        let learning: i64 = r.try_get("learning").unwrap_or(0);
+        let young: i64 = r.try_get("young").unwrap_or(0);
+        let mature: i64 = r.try_get("mature").unwrap_or(0);
+        agg.insert(mode, (learning, young, mature));
+    }
+
+    let mut modes = Vec::with_capacity(deck_modes.len());
+    let (mut t_new, mut t_learning, mut t_young, mut t_mature) = (0i64, 0i64, 0i64, 0i64);
+    for m in &deck_modes {
+        let (learning, young, mature) = agg.get(m).copied().unwrap_or((0, 0, 0));
+        // 未学習 = カード数 − 学習済みユニット（負にはしない）
+        let new_count = (card_count - learning - young - mature).max(0);
+        t_new += new_count;
+        t_learning += learning;
+        t_young += young;
+        t_mature += mature;
+        modes.push(ModeProgress {
+            mode: m.clone(),
+            new_count,
+            learning_count: learning,
+            young_count: young,
+            mature_count: mature,
+        });
+    }
+
+    // 今日の完了数（デッキ別、JST 論理日付ベース）
+    let today = today_jst();
+    let log_rows = sqlx::query("SELECT reviewed_at FROM review_logs WHERE deck_id = ?")
+        .bind(&deck_id)
+        .fetch_all(pool)
+        .await?;
+    let completed_today = log_rows
+        .iter()
+        .filter_map(|r| to_jst_date(&r.get::<String, _>("reviewed_at")))
+        .filter(|d| *d == today)
+        .count() as i64;
+
+    Ok(DeckProgress {
+        total_units: card_count * deck_modes.len() as i64,
+        new_count: t_new,
+        learning_count: t_learning,
+        young_count: t_young,
+        mature_count: t_mature,
+        modes,
+        completed_today,
     })
 }

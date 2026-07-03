@@ -198,6 +198,19 @@ async getHomeStats() : Promise<Result<HomeStats, AppError>> {
     else return { status: "error", error: e  as any };
 }
 },
+/**
+ * デッキ全体の習得度内訳を算出する（デッキ詳細画面の「学習進捗」表示用）。
+ * 学習単位は (カード × テストモード)。未学習はレコードが無いユニットなので、
+ * カード数から学習済み（learning/review 等）を差し引いて算出する。
+ */
+async getDeckProgress(deckId: string) : Promise<Result<DeckProgress, AppError>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("get_deck_progress", { deckId }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async getAppState() : Promise<Result<AppStateData, AppError>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("get_app_state") };
@@ -300,6 +313,39 @@ review_count: number;
  * 学習中カード（learning/relearning かつ期日到来、同日再出題対象）
  */
 learning_count: number; completed_today: number }
+/**
+ * デッキ全体の習得度内訳（デッキ詳細画面の「学習進捗」表示用）。
+ * 学習の単位は (カード × テストモード)。未学習はレコードが無いユニット。
+ */
+export type DeckProgress = { 
+/**
+ * 総ユニット数 = カード数 × テストモード数
+ */
+total_units: number; 
+/**
+ * 未学習（srs_record が無い、または state='new'）
+ */
+new_count: number; 
+/**
+ * 学習中（state が learning / relearning）
+ */
+learning_count: number; 
+/**
+ * 習得中（state='review' かつ 復習間隔 < 21日）
+ */
+young_count: number; 
+/**
+ * 定着（state='review' かつ 復習間隔 >= 21日）
+ */
+mature_count: number; 
+/**
+ * モード別の内訳
+ */
+modes: ModeProgress[]; 
+/**
+ * 今日の完了数（review_logs より、JST 論理日付ベース）
+ */
+completed_today: number }
 export type ExampleSentence = { text: string; pinyin?: string; translation?: string }
 export type HomeStats = { streak_days: number; today_reviewed: number; deck_due_counts: DeckDueCount[]; seven_day_forecast: DayForecast[] }
 export type ImportResult = { created: number; updated: number }
@@ -308,6 +354,10 @@ export type ImportResult = { created: number; updated: number }
  */
 export type IntervalPreview = { again: string; hard: string; good: string; easy: string }
 export type LogLevel = "ERROR" | "WARN" | "INFO" | "DEBUG" | "VERBOSE"
+/**
+ * テストモード1つ分の習得度内訳。
+ */
+export type ModeProgress = { mode: string; new_count: number; learning_count: number; young_count: number; mature_count: number }
 export type ModeState = { mode: string; state: string }
 export type SessionCard = { card: Card; mode: string; srs_state: string }
 export type SrsRecord = { card_id: string; deck_id: string; mode: string; due_date: string; stability: number | null; difficulty: number | null; state: string; reps: number; lapses: number; last_review: string | null; scheduled_days: number; elapsed_days: number }
