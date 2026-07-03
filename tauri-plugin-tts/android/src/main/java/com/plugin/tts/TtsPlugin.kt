@@ -18,6 +18,7 @@ class SpeakArgs {
     lateinit var text: String
     var lang: String? = null
     var volume: Float? = null
+    var rate: Float? = null
 }
 
 @TauriPlugin
@@ -62,6 +63,8 @@ class TtsPlugin(private val activity: Activity) : Plugin(activity), TextToSpeech
             return
         }
         engine.language = localeFromTag(args.lang)
+        // 読み上げ速度（未指定なら等速 1.0）。リスニングモードの低速再生用。
+        engine.setSpeechRate(args.rate ?: 1.0f)
         // 音量は発話ごとに Bundle で指定（未指定なら端末既定の 1.0）
         val params = Bundle().apply {
             args.volume?.let { putFloat(TextToSpeech.Engine.KEY_PARAM_VOLUME, it) }

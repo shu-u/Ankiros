@@ -41,6 +41,10 @@ pub async fn get_app_state(db: tauri::State<'_, Db>) -> AppResult<AppStateData> 
             .get("tts_volume")
             .and_then(|v| v.parse().ok())
             .unwrap_or(1.0),
+        listening_enabled: map
+            .get("listening_enabled")
+            .map(|v| v != "false")
+            .unwrap_or(true),
     })
 }
 

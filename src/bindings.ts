@@ -250,7 +250,12 @@ export type AppStateData = { theme: string; last_used_deck_id: string | null; wi
 /**
  * TTS 読み上げ音量 (0.0〜1.0)。未設定なら 1.0。
  */
-tts_volume: number }
+tts_volume: number; 
+/**
+ * リスニング出題を含めるか。未設定なら true。
+ * false のとき listening モードを出題キュー・進捗分母から除外する（無音環境用）。
+ */
+listening_enabled: boolean }
 /**
  * バックアップ取り込み結果の集計。
  */

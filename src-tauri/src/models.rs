@@ -271,6 +271,9 @@ pub struct AppStateData {
     pub window_y: Option<i64>,
     /// TTS 読み上げ音量 (0.0〜1.0)。未設定なら 1.0。
     pub tts_volume: f64,
+    /// リスニング出題を含めるか。未設定なら true。
+    /// false のとき listening モードを出題キュー・進捗分母から除外する（無音環境用）。
+    pub listening_enabled: bool,
 }
 
 // ============================================================

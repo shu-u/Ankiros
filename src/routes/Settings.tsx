@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Moon, Sun, Download, Upload, Volume2 } from "lucide-react";
+import { Moon, Sun, Download, Upload, Volume2, Ear, EarOff } from "lucide-react";
 import { useAppStore, type Theme } from "@/store/appStore";
 import { useSpeech } from "@/lib/useSpeech";
 import { logger } from "@/lib/logger";
@@ -14,6 +14,8 @@ export function SettingsPage() {
   const volume = useAppStore((s) => s.volume);
   const setVolume = useAppStore((s) => s.setVolume);
   const saveVolume = useAppStore((s) => s.saveVolume);
+  const listeningEnabled = useAppStore((s) => s.listeningEnabled);
+  const setListeningEnabled = useAppStore((s) => s.setListeningEnabled);
   const { speak, supported: speechSupported } = useSpeech();
 
   const [busy, setBusy] = useState<null | "export" | "import">(null);
@@ -125,6 +127,36 @@ export function SettingsPage() {
               試聴
             </Button>
           )}
+        </CardContent>
+      </Card>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base">リスニング出題</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex gap-2">
+            <Button
+              variant={listeningEnabled ? "default" : "outline"}
+              onClick={() => void setListeningEnabled(true)}
+              className="gap-2"
+            >
+              <Ear className="h-4 w-4" />
+              含める
+            </Button>
+            <Button
+              variant={!listeningEnabled ? "default" : "outline"}
+              onClick={() => void setListeningEnabled(false)}
+              className="gap-2"
+            >
+              <EarOff className="h-4 w-4" />
+              含めない
+            </Button>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            オフにすると、音声を聞いて答えるリスニングモードの出題を停止します（マイク・スピーカーが使えない環境向け）。
+            学習進捗もリスニングぶんを分母から除いて表示し、オンに戻すと元の進捗に復帰します。
+          </p>
         </CardContent>
       </Card>
 

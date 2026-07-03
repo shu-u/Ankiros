@@ -5,7 +5,7 @@
   "description": "新基準（HSK 3.0、2021年〜）の HSK1（一級）レベルの頻出単語。旧基準（HSK 2.0）の hsk1 デッキとは別管理。",
   "language": "zh",
   "settings": {
-    "test_modes": ["recognition", "pronunciation"],
+    "test_modes": ["recognition", "pronunciation", "listening"],
     "daily_new_limit": 20,
     "daily_review_limit": 100,
     "fsrs": {

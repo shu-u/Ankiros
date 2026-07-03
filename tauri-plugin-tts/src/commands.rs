@@ -9,8 +9,9 @@ pub(crate) async fn speak<R: Runtime>(
     text: String,
     lang: Option<String>,
     volume: Option<f32>,
+    rate: Option<f32>,
 ) -> crate::Result<()> {
-    app.tts().speak(SpeakRequest { text, lang, volume })
+    app.tts().speak(SpeakRequest { text, lang, volume, rate })
 }
 
 #[command]

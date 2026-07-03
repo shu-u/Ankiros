@@ -7,6 +7,19 @@ use std::str::FromStr;
 
 pub type Db = SqlitePool;
 
+/// リスニング出題が有効か（app_state.listening_enabled, 既定 true）。
+/// 無音環境トグル用。false のとき listening モードをセッションキュー・
+/// 進捗の分母から動的に除外する（srs_records 自体は保持したまま）。
+pub async fn listening_enabled(pool: &Db) -> bool {
+    sqlx::query("SELECT value FROM app_state WHERE key = 'listening_enabled'")
+        .fetch_optional(pool)
+        .await
+        .ok()
+        .flatten()
+        .map(|r| r.get::<String, _>("value") != "false")
+        .unwrap_or(true)
+}
+
 /// SQLite プールを初期化する。
 /// - create_if_missing: 初回起動時に空DBを作成 (spec §3.1)
 /// - foreign_keys(true): 全プール接続で PRAGMA foreign_keys = ON (spec §3.3/§13)

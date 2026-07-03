@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useParams } from "@tanstack/react-router";
 import { call, commands } from "@/lib/api";
 import { useSessionStore, type Rating } from "@/store/sessionStore";
@@ -13,6 +13,7 @@ import { logger } from "@/lib/logger";
 import { Loading, ErrorBox, modeLabel } from "@/components/common";
 import { useSpeech } from "@/lib/useSpeech";
 import { SpeakButton } from "@/components/SpeakButton";
+import { ListeningPrompt } from "@/components/ListeningPrompt";
 
 const RATINGS: { rating: Rating; label: string; key: string }[] = [
   { rating: "again", label: "Again", key: "1" },
@@ -137,6 +138,13 @@ export function StudyPage() {
     [currentCard, deckId, recordAnswer, submitting],
   );
 
+  // リスニング用: 出題時にランダムな例文を1つ固定する。currentCard が変わったときだけ
+  // 抽選し直し、再描画や速度違いの複数回再生では同じ文を再生する。例文が無ければ -1。
+  const listeningExampleIndex = useMemo(() => {
+    const n = currentCard?.card.example_sentences.length ?? 0;
+    return n > 0 ? Math.floor(Math.random() * n) : -1;
+  }, [currentCard]);
+
   // キーボードショートカット (spec §10)
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -189,6 +197,9 @@ export function StudyPage() {
   const card = currentCard.card;
   const mode = currentCard.mode;
   const problem = mode === "production" ? card.meaning : card.hanzi;
+  const isListening = mode === "listening";
+  const listeningExample =
+    listeningExampleIndex >= 0 ? card.example_sentences[listeningExampleIndex] : null;
   const showDiff = mode === "pronunciation" || mode === "production";
   // 声調記号形式・数字形式を同一視して正誤判定する (pronunciation/production)
   const analysis = showDiff ? analyzePinyin(input, card.pinyin_accepted) : null;
@@ -231,21 +242,34 @@ export function StudyPage() {
         </div>
       )}
 
-      {/* 問題 */}
+      {/* 問題。リスニングは出題フェーズで漢字を隠し、音声ボタンのみ提示する
+          （めくった後は通常表示に切り替わり、漢字が答えとして開示される）。 */}
       <div className="rounded-lg border bg-card p-6 text-center md:p-8">
-        <div className="mb-2 text-sm text-muted-foreground">
-          {mode === "production" ? "意味" : "漢字"}
-        </div>
-        <div className={`${mode === "production" ? "text-3xl font-semibold" : "hanzi text-5xl font-bold"} flex items-center justify-center gap-2`}>
-          <span>{problem}</span>
-          <SpeakButton
-            text={problem}
-            lang={mode === "production" ? "ja-JP" : "zh-CN"}
+        {isListening && phase === "question" ? (
+          <ListeningPrompt
+            word={card.hanzi}
+            example={listeningExample}
             speak={speak}
             speakingText={speakingText}
             supported={speechSupported}
           />
-        </div>
+        ) : (
+          <>
+            <div className="mb-2 text-sm text-muted-foreground">
+              {mode === "production" ? "意味" : "漢字"}
+            </div>
+            <div className={`${mode === "production" ? "text-3xl font-semibold" : "hanzi text-5xl font-bold"} flex items-center justify-center gap-2`}>
+              <span>{problem}</span>
+              <SpeakButton
+                text={problem}
+                lang={mode === "production" ? "ja-JP" : "zh-CN"}
+                speak={speak}
+                speakingText={speakingText}
+                supported={speechSupported}
+              />
+            </div>
+          </>
+        )}
       </div>
 
       {phase === "question" ? (
@@ -255,7 +279,9 @@ export function StudyPage() {
             value={input}
             onChange={(e) => setStudyUi({ input: e.target.value })}
             placeholder={
-              mode === "recognition" ? "意味を入力…" : "ピンインを入力…"
+              mode === "recognition" || mode === "listening"
+                ? "意味を入力…"
+                : "ピンインを入力…"
             }
             autoFocus
           />

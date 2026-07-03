@@ -8,6 +8,8 @@ interface AppStore {
   lastUsedDeckId: string | null;
   /** TTS 読み上げ音量 (0.0〜1.0) */
   volume: number;
+  /** リスニング出題を含めるか（無音環境用トグル）。 */
+  listeningEnabled: boolean;
   hydrated: boolean;
   hydrate: () => Promise<void>;
   setTheme: (theme: Theme) => Promise<void>;
@@ -15,6 +17,8 @@ interface AppStore {
   setVolume: (volume: number) => void;
   /** 音量を DB に保存（操作確定時に使う）。 */
   saveVolume: (volume: number) => Promise<void>;
+  /** リスニング出題の有無を切り替えて DB に保存する。 */
+  setListeningEnabled: (enabled: boolean) => Promise<void>;
   setLastUsedDeckId: (id: string | null) => void;
 }
 
@@ -33,6 +37,7 @@ export const useAppStore = create<AppStore>((set) => ({
   theme: "light",
   lastUsedDeckId: null,
   volume: 1,
+  listeningEnabled: true,
   hydrated: false,
 
   hydrate: async () => {
@@ -44,6 +49,7 @@ export const useAppStore = create<AppStore>((set) => ({
         theme,
         lastUsedDeckId: state.last_used_deck_id,
         volume: clampVolume(state.tts_volume),
+        listeningEnabled: state.listening_enabled,
         hydrated: true,
       });
     } catch {
@@ -64,6 +70,11 @@ export const useAppStore = create<AppStore>((set) => ({
     const v = clampVolume(volume);
     set({ volume: v });
     await call(commands.updateAppState("tts_volume", String(v)));
+  },
+
+  setListeningEnabled: async (enabled) => {
+    set({ listeningEnabled: enabled });
+    await call(commands.updateAppState("listening_enabled", enabled ? "true" : "false"));
   },
 
   setLastUsedDeckId: (id) => set({ lastUsedDeckId: id }),

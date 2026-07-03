@@ -74,12 +74,16 @@ export function useSpeech() {
     };
   }, []);
 
-  const speak = useCallback((text: string, lang: SpeechLang) => {
+  // rate: 読み上げ速度 (1 = 等速)。リスニングモードの低速再生ボタンで 0.25〜1 を渡す。
+  const speak = useCallback((text: string, lang: SpeechLang, rate = 1) => {
     if (ANDROID) {
       setSpeakingText(text);
-      void invoke("plugin:tts|speak", { text, lang, volume: volumeRef.current }).catch(() =>
-        setSpeakingText(null),
-      );
+      void invoke("plugin:tts|speak", {
+        text,
+        lang,
+        volume: volumeRef.current,
+        rate,
+      }).catch(() => setSpeakingText(null));
       return;
     }
 
@@ -89,6 +93,7 @@ export function useSpeech() {
     const utter = new SpeechSynthesisUtterance(text);
     utter.lang = lang;
     utter.volume = volumeRef.current;
+    utter.rate = rate;
 
     const voices =
       voicesRef.current.length > 0

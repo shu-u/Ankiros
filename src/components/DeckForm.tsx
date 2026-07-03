@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { modeLabel } from "@/components/common";
 
-export const AVAILABLE_MODES = ["recognition", "pronunciation", "production"] as const;
+export const AVAILABLE_MODES = ["recognition", "pronunciation", "production", "listening"] as const;
 
 interface Props {
   onSubmit: (input: CreateDeckInput) => Promise<void> | void;

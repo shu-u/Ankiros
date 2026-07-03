@@ -23,9 +23,15 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
         .await?
         .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
     let modes_json: String = deck_row.get("test_modes");
-    let test_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
+    let mut test_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
     let new_limit: i64 = deck_row.try_get("daily_new_limit").unwrap_or(20);
     let review_limit: i64 = deck_row.try_get("daily_review_limit").unwrap_or(100);
+
+    // 無音環境トグルが OFF ならリスニング出題をキューから除外する。
+    // （rng は後段の同期ブロックで確保するため、この await はそれより前で完結する）
+    if !crate::db::listening_enabled(pool).await {
+        test_modes.retain(|m| m != "listening");
+    }
 
     // 最後に使ったデッキを記録 (spec §3.3 app_state)。
     // ※ シャッフル用 rng (!Send) を await をまたいで保持しないよう、先に実行しておく。

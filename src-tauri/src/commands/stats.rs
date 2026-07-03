@@ -18,6 +18,14 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     let today = today_jst();
     let now = Utc::now().to_rfc3339();
 
+    // 無音環境トグルが OFF なら、ホームの期限カウント・先読みからも listening を除外し、
+    // セッションで実際に出題されるユニット数と一致させる。
+    let mode_clause = if crate::db::listening_enabled(pool).await {
+        ""
+    } else {
+        " AND mode != 'listening'"
+    };
+
     // ---- review_logs から ストリーク / 今日の完了数 ----
     let log_rows = sqlx::query("SELECT reviewed_at FROM review_logs")
         .fetch_all(pool)
@@ -60,10 +68,10 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         let review_limit: i64 = d.try_get("daily_review_limit").unwrap_or(100);
 
         // 復習（state='review' かつ期日到来）
-        let due_reviews: i64 = sqlx::query(
+        let due_reviews: i64 = sqlx::query(&format!(
             "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state = 'review' AND due_date <= ?",
-        )
+             WHERE deck_id = ? AND state = 'review' AND due_date <= ?{mode_clause}"
+        ))
         .bind(&deck_id)
         .bind(&now)
         .fetch_one(pool)
@@ -71,10 +79,10 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         .get("c");
 
         // 学習中（learning / relearning かつ期日到来、同日再出題対象）— 予定とは別カウント
-        let learning_count: i64 = sqlx::query(
+        let learning_count: i64 = sqlx::query(&format!(
             "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date <= ?",
-        )
+             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date <= ?{mode_clause}"
+        ))
         .bind(&deck_id)
         .bind(&now)
         .fetch_one(pool)
@@ -133,9 +141,11 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
 
     // ---- 今後7日間の予定（先読み負荷）----
     // 復習: その日に期日が来る件数（learning/relearning/review）。期限切れは overdue として今日に分離計上。
-    let srs_rows = sqlx::query("SELECT due_date FROM srs_records WHERE state != 'new'")
-        .fetch_all(pool)
-        .await?;
+    let srs_rows = sqlx::query(&format!(
+        "SELECT due_date FROM srs_records WHERE state != 'new'{mode_clause}"
+    ))
+    .fetch_all(pool)
+    .await?;
     let mut review_buckets = [0i64; 7];
     let mut overdue = 0i64;
     for r in &srs_rows {
@@ -190,7 +200,13 @@ pub async fn get_deck_progress(db: tauri::State<'_, Db>, deck_id: String) -> App
         .await?
         .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
     let modes_json: String = deck_row.get("test_modes");
-    let deck_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
+    let mut deck_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
+
+    // 無音環境トグルが OFF なら listening を進捗の分母・内訳から動的に除外する。
+    // srs_records は保持したままなので、ON に戻せば元の進捗に復帰する。
+    if !crate::db::listening_enabled(pool).await {
+        deck_modes.retain(|m| m != "listening");
+    }
 
     let card_count: i64 = sqlx::query("SELECT COUNT(*) AS c FROM cards WHERE deck_id = ?")
         .bind(&deck_id)
