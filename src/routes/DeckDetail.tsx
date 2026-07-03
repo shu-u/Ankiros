@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
 import { open } from "@tauri-apps/plugin-dialog";
 import { readFile } from "@tauri-apps/plugin-fs";
-import { FileArchive, FolderInput, List, PlayCircle, Trash2 } from "lucide-react";
+import { FileArchive, FolderInput, List, Pencil, PlayCircle, Trash2 } from "lucide-react";
 import type { Deck, DeckProgress, ImportResult } from "@/bindings";
 import { call, commands } from "@/lib/api";
 import { useAsync } from "@/lib/useAsync";
@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ConfirmDialog } from "@/components/ui/modal";
+import { DeckSettingsForm } from "@/components/DeckSettingsForm";
 import { Loading, ErrorBox, modeLabel } from "@/components/common";
 
 export function DeckDetailPage() {
@@ -21,6 +22,7 @@ export function DeckDetailPage() {
   const progress = useAsync(() => call(commands.getDeckProgress(deckId)), [deckId]);
   const [importMsg, setImportMsg] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
+  const [editingSettings, setEditingSettings] = useState(false);
 
   const handleImportCards = async () => {
     const folder = await open({ directory: true, title: "カードフォルダを選択" });
@@ -119,24 +121,49 @@ export function DeckDetailPage() {
       {progress.data && <StudyProgress deck={d} progress={progress.data} />}
 
       <Card>
-        <CardHeader>
+        <CardHeader className="flex-row items-center justify-between space-y-0">
           <CardTitle className="text-base">デッキ設定</CardTitle>
+          {!editingSettings && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="gap-1.5"
+              onClick={() => setEditingSettings(true)}
+            >
+              <Pencil className="h-4 w-4" />
+              編集
+            </Button>
+          )}
         </CardHeader>
-        <CardContent className="space-y-3 text-sm">
-          <Row label="言語">{d.language}</Row>
-          <Row label="テストモード">
-            <div className="flex gap-1.5">
-              {d.test_modes.map((m) => (
-                <Badge key={m} variant="secondary">
-                  {modeLabel(m)}
-                </Badge>
-              ))}
+        <CardContent>
+          {editingSettings ? (
+            <DeckSettingsForm
+              deck={d}
+              onCancel={() => setEditingSettings(false)}
+              onSaved={() => {
+                setEditingSettings(false);
+                deck.reload();
+                progress.reload();
+              }}
+            />
+          ) : (
+            <div className="space-y-3 text-sm">
+              <Row label="言語">{d.language}</Row>
+              <Row label="テストモード">
+                <div className="flex gap-1.5">
+                  {d.test_modes.map((m) => (
+                    <Badge key={m} variant="secondary">
+                      {modeLabel(m)}
+                    </Badge>
+                  ))}
+                </div>
+              </Row>
+              <Row label="1日の新規上限">{d.daily_new_limit} 枚</Row>
+              <Row label="1日の復習上限">{d.daily_review_limit} 枚</Row>
+              <Row label="目標定着率">{(d.fsrs_target_retention * 100).toFixed(0)}%</Row>
+              <Row label="最大復習間隔">{d.fsrs_max_interval_days} 日</Row>
             </div>
-          </Row>
-          <Row label="1日の新規上限">{d.daily_new_limit} 枚</Row>
-          <Row label="1日の復習上限">{d.daily_review_limit} 枚</Row>
-          <Row label="目標定着率">{(d.fsrs_target_retention * 100).toFixed(0)}%</Row>
-          <Row label="最大復習間隔">{d.fsrs_max_interval_days} 日</Row>
+          )}
         </CardContent>
       </Card>
 
