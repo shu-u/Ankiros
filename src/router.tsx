@@ -62,6 +62,10 @@ const cardsRoute = createRoute({
 const cardDetailRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/decks/$deckId/cards/$cardId",
+  // from=result のときはリザルトから遷移。戻り先をカード一覧ではなくリザルトにする。
+  validateSearch: (search: Record<string, unknown>): { from?: "result" } => ({
+    from: search.from === "result" ? "result" : undefined,
+  }),
   component: CardDetailPage,
 });
 

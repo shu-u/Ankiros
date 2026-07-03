@@ -70,6 +70,7 @@ export function ResultPage() {
                 <Link
                   to="/decks/$deckId/cards/$cardId"
                   params={{ deckId, cardId: c.card.id }}
+                  search={{ from: "result" }}
                   className="text-primary hover:underline"
                 >
                   詳細を見る

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "@tanstack/react-router";
+import { Link, useParams, useSearch } from "@tanstack/react-router";
 import { call, commands } from "@/lib/api";
 import { useAsync } from "@/lib/useAsync";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,7 @@ export function CardDetailPage() {
     deckId: string;
     cardId: string;
   };
+  const { from } = useSearch({ strict: false }) as { from?: string };
   const card = useAsync(() => call(commands.getCard(cardId, deckId)), [cardId, deckId]);
 
   const [notes, setNotes] = useState("");
@@ -34,9 +35,23 @@ export function CardDetailPage() {
 
   return (
     <div className="mx-auto max-w-2xl space-y-5">
-      <Link to="/decks/$deckId/cards" params={{ deckId }} className="text-sm text-muted-foreground hover:underline">
-        ← カード一覧
-      </Link>
+      {from === "result" ? (
+        <Link
+          to="/decks/$deckId/study/result"
+          params={{ deckId }}
+          className="text-sm text-muted-foreground hover:underline"
+        >
+          ← リザルトへ戻る
+        </Link>
+      ) : (
+        <Link
+          to="/decks/$deckId/cards"
+          params={{ deckId }}
+          className="text-sm text-muted-foreground hover:underline"
+        >
+          ← カード一覧
+        </Link>
+      )}
 
       <div className="rounded-lg border bg-card p-6 text-center md:p-8">
         <div className="hanzi text-5xl font-bold">{c.hanzi}</div>
