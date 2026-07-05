@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/tauri-plugin-tts/android/.tauri/tauri-api/build/
+/tauri-plugin-tts/android/build/
+/src-tauri/gen/
