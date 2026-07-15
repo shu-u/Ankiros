@@ -23,6 +23,9 @@ export function DeckForm({ onSubmit, onCancel, submitting }: Props) {
   const [testModes, setTestModes] = useState<string[]>(["recognition", "pronunciation"]);
   const [dailyNew, setDailyNew] = useState(20);
   const [dailyReview, setDailyReview] = useState(100);
+  // 1日の学習量の目安（新規カードの自動調整）。既定はオフ＝従来どおり新規は上限どおり出題。
+  const [studyTargetOn, setStudyTargetOn] = useState(false);
+  const [studyTarget, setStudyTarget] = useState(100);
   const [retention, setRetention] = useState(0.9);
   const [maxInterval, setMaxInterval] = useState(365);
   const [error, setError] = useState<string | null>(null);
@@ -45,6 +48,10 @@ export function DeckForm({ onSubmit, onCancel, submitting }: Props) {
       setError("テストモードを1つ以上選択してください。");
       return;
     }
+    if (studyTargetOn && studyTarget < 0) {
+      setError("1日の学習量の目安は0以上で入力してください。");
+      return;
+    }
     await onSubmit({
       id,
       name,
@@ -53,6 +60,7 @@ export function DeckForm({ onSubmit, onCancel, submitting }: Props) {
       test_modes: testModes,
       daily_new_limit: dailyNew,
       daily_review_limit: dailyReview,
+      daily_study_target: studyTargetOn ? studyTarget : null,
       fsrs_target_retention: retention,
       fsrs_max_interval_days: maxInterval,
     });
@@ -112,6 +120,34 @@ export function DeckForm({ onSubmit, onCancel, submitting }: Props) {
           <Label htmlFor="deck-max">最大復習間隔（日）</Label>
           <Input id="deck-max" type="number" value={maxInterval} onChange={(e) => setMaxInterval(Number(e.target.value))} />
         </div>
+      </div>
+      <div className="space-y-2 rounded-md border p-3">
+        <label className="flex cursor-pointer items-center gap-2 text-sm font-medium">
+          <input
+            type="checkbox"
+            checked={studyTargetOn}
+            onChange={(e) => setStudyTargetOn(e.target.checked)}
+            className="h-4 w-4"
+          />
+          1日の学習量の目安で新規を自動調整する
+        </label>
+        {studyTargetOn && (
+          <div className="space-y-1">
+            <Label htmlFor="deck-study">目安の枚数（新規＋復習）</Label>
+            <Input
+              id="deck-study"
+              type="number"
+              inputMode="numeric"
+              min="0"
+              value={studyTarget}
+              onChange={(e) => setStudyTarget(Number(e.target.value))}
+            />
+          </div>
+        )}
+        <p className="text-xs text-muted-foreground">
+          復習が多い日は、新規＋復習がこの枚数を超えないよう新規カードを自動で減らします。
+          復習は常に表示されます（絞られるのは新規のみ）。オフの場合、新規は新規上限どおり出題されます。
+        </p>
       </div>
       <div className="flex justify-end gap-2 pt-2">
         <Button type="button" variant="outline" onClick={onCancel}>

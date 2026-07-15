@@ -14,18 +14,23 @@ pub struct Deck {
     pub test_modes: Vec<String>,
     pub daily_new_limit: i64,
     pub daily_review_limit: i64,
+    /// 1日の学習量の目安（新規カードの自動調整用）。None なら無効。
+    /// 有効時は「新規＋復習」がこの枚数を超えないよう新規のみを絞る（復習は絞らない）。
+    pub daily_study_target: Option<i64>,
     pub fsrs_target_retention: f64,
     pub fsrs_max_interval_days: i64,
     pub created_at: String,
     pub updated_at: String,
     /// カード総数（一覧表示用に算出）
     pub card_count: i64,
-    /// 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み を反映）
+    /// 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み、学習量の目安によるスロットルを反映）
     pub new_today: i64,
     /// 今日の復習予定数（state='review' かつ期日到来）
     pub review_today: i64,
     /// 学習中カード数（learning/relearning かつ期日到来、同日再出題対象）
     pub learning_today: i64,
+    /// daily_study_target により今日の新規が絞られている場合 true（UI で「調整中」を示す用）
+    pub new_limited_by_study: bool,
 }
 
 #[derive(Debug, Clone, Deserialize, Type)]
@@ -37,6 +42,8 @@ pub struct CreateDeckInput {
     pub test_modes: Vec<String>,
     pub daily_new_limit: i64,
     pub daily_review_limit: i64,
+    /// 1日の学習量の目安（None なら無効）。詳細は Deck::daily_study_target を参照。
+    pub daily_study_target: Option<i64>,
     pub fsrs_target_retention: f64,
     pub fsrs_max_interval_days: i64,
 }
@@ -49,6 +56,8 @@ pub struct UpdateDeckInput {
     pub test_modes: Vec<String>,
     pub daily_new_limit: i64,
     pub daily_review_limit: i64,
+    /// 1日の学習量の目安（None なら無効）。詳細は Deck::daily_study_target を参照。
+    pub daily_study_target: Option<i64>,
     pub fsrs_target_retention: f64,
     pub fsrs_max_interval_days: i64,
 }
@@ -303,6 +312,9 @@ pub struct DeckJsonSettings {
     pub daily_new_limit: i64,
     #[serde(default = "default_review_limit")]
     pub daily_review_limit: i64,
+    /// 1日の学習量の目安（None なら無効）。旧 deck.json には無いので default = None。
+    #[serde(default)]
+    pub daily_study_target: Option<i64>,
     #[serde(default)]
     pub fsrs: DeckJsonFsrs,
 }

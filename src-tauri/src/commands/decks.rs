@@ -5,29 +5,51 @@ use crate::models::*;
 use crate::util::{now_rfc3339, validate_id};
 use sqlx::Row;
 
+/// 学習量の目安の入力検証。壊れ値（負値）のみ弾く。
+/// 上限側は new/review と独立に変更できるよう相互チェックはしない
+/// （過大値は「実質無効」として `effective_new_limit` 側で安全に吸収される）。
+fn validate_study_target(study_target: Option<i64>) -> AppResult<()> {
+    if let Some(t) = study_target {
+        if t < 0 {
+            return Err(AppError::Validation(
+                "1日の学習量の目安は0以上で入力してください".into(),
+            ));
+        }
+    }
+    Ok(())
+}
+
 /// 1デッキ分の派生カウントを算出。
-/// 戻り値: (カード総数, 新規予定, 復習予定, 学習中)。
-/// 新規予定は「今日導入済み」を差し引いた実効上限を反映する (日次の新規上限)。
+/// 戻り値: (カード総数, 新規予定, 復習予定, 学習中, 学習量の目安で新規が絞られたか)。
+/// 新規予定は「今日導入済み」を差し引いた実効上限＋学習量の目安によるスロットルを反映する。
 /// 復習/学習中はセッションが出題する「出題対象モード（`modes`）」のみを対象にする。
 async fn deck_counts(
     pool: &Db,
     deck_id: &str,
     modes: &[String],
     due_cutoff: &str,
-) -> AppResult<(i64, i64, i64, i64)> {
+) -> AppResult<(i64, i64, i64, i64, bool)> {
     let card_count: i64 = sqlx::query("SELECT COUNT(*) AS c FROM cards WHERE deck_id = ?")
         .bind(deck_id)
         .fetch_one(pool)
         .await?
         .get("c");
 
-    // デッキの新規上限
-    let new_limit: i64 = sqlx::query("SELECT daily_new_limit FROM decks WHERE id = ?")
-        .bind(deck_id)
-        .fetch_optional(pool)
-        .await?
-        .and_then(|r| r.try_get("daily_new_limit").ok())
-        .unwrap_or(20);
+    // デッキの上限一式（新規・復習・学習量の目安）
+    let limits = sqlx::query(
+        "SELECT daily_new_limit, daily_review_limit, daily_study_target FROM decks WHERE id = ?",
+    )
+    .bind(deck_id)
+    .fetch_optional(pool)
+    .await?;
+    let (new_limit, review_limit, study_target) = match &limits {
+        Some(r) => (
+            r.try_get("daily_new_limit").unwrap_or(20),
+            r.try_get("daily_review_limit").unwrap_or(100),
+            r.try_get::<Option<i64>, _>("daily_study_target").ok().flatten(),
+        ),
+        None => (20, 100, None),
+    };
 
     // 復習（state='review' かつ期日到来 = 今日中に期日が来る、出題対象モードのみ）
     let review_today =
@@ -43,7 +65,7 @@ async fn deck_counts(
     )
     .await?;
 
-    // 新規（未導入カード数を、実効上限 = new_limit - 今日導入済み で頭打ち）
+    // 新規（未導入カード数を、実効上限 = new_limit - 今日導入済み ＋学習量の目安 で頭打ち）
     let new_available: i64 = sqlx::query(
         "SELECT COUNT(*) AS c FROM cards c \
          WHERE c.deck_id = ? AND NOT EXISTS \
@@ -53,11 +75,23 @@ async fn deck_counts(
     .fetch_one(pool)
     .await?
     .get("c");
-    let introduced = crate::db::new_introduced_today(pool, deck_id, crate::util::today_jst()).await?;
-    let effective_new_limit = (new_limit - introduced).max(0);
-    let new_today = new_available.min(effective_new_limit);
+    let calc = crate::db::effective_new_limit(
+        pool,
+        deck_id,
+        modes,
+        due_cutoff,
+        crate::util::today_jst(),
+        new_limit,
+        review_limit,
+        study_target,
+    )
+    .await?;
+    let new_today = new_available.min(calc.effective);
+    // 学習量の目安が有効で、かつ従来の日次新規上限(base)より実効値が小さい＝スロットルが効いている。
+    let base = (new_limit - calc.introduced_today).max(0);
+    let new_limited_by_study = calc.review_load.is_some() && calc.effective < base;
 
-    Ok((card_count, new_today, review_today, learning_today))
+    Ok((card_count, new_today, review_today, learning_today, new_limited_by_study))
 }
 
 fn deck_from_row(
@@ -66,6 +100,7 @@ fn deck_from_row(
     new_today: i64,
     review_today: i64,
     learning_today: i64,
+    new_limited_by_study: bool,
 ) -> Deck {
     let test_modes: String = row.get("test_modes");
     Deck {
@@ -80,6 +115,10 @@ fn deck_from_row(
         test_modes: serde_json::from_str(&test_modes).unwrap_or_default(),
         daily_new_limit: row.try_get("daily_new_limit").unwrap_or(20),
         daily_review_limit: row.try_get("daily_review_limit").unwrap_or(100),
+        daily_study_target: row
+            .try_get::<Option<i64>, _>("daily_study_target")
+            .ok()
+            .flatten(),
         fsrs_target_retention: row.try_get("fsrs_target_retention").unwrap_or(0.90),
         fsrs_max_interval_days: row.try_get("fsrs_max_interval_days").unwrap_or(365),
         created_at: row.get("created_at"),
@@ -88,6 +127,7 @@ fn deck_from_row(
         new_today,
         review_today,
         learning_today,
+        new_limited_by_study,
     }
 }
 
@@ -105,8 +145,8 @@ pub async fn get_decks(db: tauri::State<'_, Db>) -> AppResult<Vec<Deck>> {
     for row in &rows {
         let id: String = row.get("id");
         let modes = crate::db::effective_modes(&row.get::<String, _>("test_modes"), listening_on);
-        let (cc, nt, rt, lt) = deck_counts(pool, &id, &modes, &due_cutoff).await?;
-        out.push(deck_from_row(row, cc, nt, rt, lt));
+        let (cc, nt, rt, lt, lim) = deck_counts(pool, &id, &modes, &due_cutoff).await?;
+        out.push(deck_from_row(row, cc, nt, rt, lt, lim));
     }
     Ok(out)
 }
@@ -124,8 +164,8 @@ pub async fn get_deck(db: tauri::State<'_, Db>, deck_id: String) -> AppResult<De
         .await?
         .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
     let modes = crate::db::effective_modes(&row.get::<String, _>("test_modes"), listening_on);
-    let (cc, nt, rt, lt) = deck_counts(pool, &deck_id, &modes, &due_cutoff).await?;
-    Ok(deck_from_row(&row, cc, nt, rt, lt))
+    let (cc, nt, rt, lt, lim) = deck_counts(pool, &deck_id, &modes, &due_cutoff).await?;
+    Ok(deck_from_row(&row, cc, nt, rt, lt, lim))
 }
 
 #[tauri::command]
@@ -149,13 +189,14 @@ pub async fn create_deck(db: tauri::State<'_, Db>, input: CreateDeckInput) -> Ap
             "テストモードを1つ以上選択してください".into(),
         ));
     }
+    validate_study_target(input.daily_study_target)?;
 
     let now = now_rfc3339();
     sqlx::query(
         "INSERT INTO decks \
          (id, name, description, language, test_modes, daily_new_limit, daily_review_limit, \
-          fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+          daily_study_target, fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
     )
     .bind(&input.id)
     .bind(&input.name)
@@ -164,6 +205,7 @@ pub async fn create_deck(db: tauri::State<'_, Db>, input: CreateDeckInput) -> Ap
     .bind(vec_to_json(&input.test_modes))
     .bind(input.daily_new_limit)
     .bind(input.daily_review_limit)
+    .bind(input.daily_study_target)
     .bind(input.fsrs_target_retention)
     .bind(input.fsrs_max_interval_days)
     .bind(&now)
@@ -188,11 +230,12 @@ pub async fn update_deck(
             "テストモードを1つ以上選択してください".into(),
         ));
     }
+    validate_study_target(input.daily_study_target)?;
     let now = now_rfc3339();
     let res = sqlx::query(
         "UPDATE decks SET \
          name = ?, description = ?, language = ?, test_modes = ?, \
-         daily_new_limit = ?, daily_review_limit = ?, \
+         daily_new_limit = ?, daily_review_limit = ?, daily_study_target = ?, \
          fsrs_target_retention = ?, fsrs_max_interval_days = ?, updated_at = ? \
          WHERE id = ?",
     )
@@ -202,6 +245,7 @@ pub async fn update_deck(
     .bind(vec_to_json(&input.test_modes))
     .bind(input.daily_new_limit)
     .bind(input.daily_review_limit)
+    .bind(input.daily_study_target)
     .bind(input.fsrs_target_retention)
     .bind(input.fsrs_max_interval_days)
     .bind(&now)

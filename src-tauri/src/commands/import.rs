@@ -180,8 +180,8 @@ async fn upsert_deck(pool: &Db, dj: &DeckJson) -> AppResult<()> {
     if let Some((created_at,)) = existing_created {
         sqlx::query(
             "UPDATE decks SET name = ?, description = ?, language = ?, test_modes = ?, \
-             daily_new_limit = ?, daily_review_limit = ?, fsrs_target_retention = ?, \
-             fsrs_max_interval_days = ?, updated_at = ? WHERE id = ?",
+             daily_new_limit = ?, daily_review_limit = ?, daily_study_target = ?, \
+             fsrs_target_retention = ?, fsrs_max_interval_days = ?, updated_at = ? WHERE id = ?",
         )
         .bind(&dj.name)
         .bind(&dj.description)
@@ -189,6 +189,7 @@ async fn upsert_deck(pool: &Db, dj: &DeckJson) -> AppResult<()> {
         .bind(&test_modes)
         .bind(dj.settings.daily_new_limit)
         .bind(dj.settings.daily_review_limit)
+        .bind(dj.settings.daily_study_target)
         .bind(dj.settings.fsrs.target_retention)
         .bind(dj.settings.fsrs.max_interval_days)
         .bind(&now)
@@ -200,8 +201,8 @@ async fn upsert_deck(pool: &Db, dj: &DeckJson) -> AppResult<()> {
         sqlx::query(
             "INSERT INTO decks \
              (id, name, description, language, test_modes, daily_new_limit, daily_review_limit, \
-              fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+              daily_study_target, fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         )
         .bind(&dj.deck_id)
         .bind(&dj.name)
@@ -210,6 +211,7 @@ async fn upsert_deck(pool: &Db, dj: &DeckJson) -> AppResult<()> {
         .bind(&test_modes)
         .bind(dj.settings.daily_new_limit)
         .bind(dj.settings.daily_review_limit)
+        .bind(dj.settings.daily_study_target)
         .bind(dj.settings.fsrs.target_retention)
         .bind(dj.settings.fsrs.max_interval_days)
         .bind(&now)

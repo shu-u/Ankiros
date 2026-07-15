@@ -20,15 +20,21 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
     // forecast には出るのにセッションに出題されない不一致になる。
     let due_cutoff = crate::util::logical_day_end_rfc3339();
 
-    let deck_row = sqlx::query("SELECT test_modes, daily_new_limit, daily_review_limit FROM decks WHERE id = ?")
-        .bind(&deck_id)
-        .fetch_optional(pool)
-        .await?
-        .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
+    let deck_row = sqlx::query(
+        "SELECT test_modes, daily_new_limit, daily_review_limit, daily_study_target FROM decks WHERE id = ?",
+    )
+    .bind(&deck_id)
+    .fetch_optional(pool)
+    .await?
+    .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
     let modes_json: String = deck_row.get("test_modes");
     let mut test_modes: Vec<String> = serde_json::from_str(&modes_json).unwrap_or_default();
     let new_limit: i64 = deck_row.try_get("daily_new_limit").unwrap_or(20);
     let review_limit: i64 = deck_row.try_get("daily_review_limit").unwrap_or(100);
+    let study_target: Option<i64> = deck_row
+        .try_get::<Option<i64>, _>("daily_study_target")
+        .ok()
+        .flatten();
 
     // 無音環境トグルが OFF ならリスニング出題をキューから除外する。
     // （rng は後段の同期ブロックで確保するため、この await はそれより前で完結する）
@@ -92,21 +98,33 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
         }
     }
 
-    // 実効新規上限 = daily_new_limit - 今日すでに導入した新規ユニット数。
-    // これにより「学習を開始」を1日に何度押しても新規が無制限に増えない (日次の新規上限)。
-    let introduced_today =
-        crate::db::new_introduced_today(pool, &deck_id, crate::util::today_jst()).await?;
-    let effective_new_limit = (new_limit - introduced_today).max(0);
+    // 実効新規上限（学習量の目安によるスロットル込み）。
+    // - daily_new_limit − 今日導入済み で日次の新規上限を効かせる（何度開いても増えない）。
+    // - study_target が有効なら、当日の復習負荷に応じて新規のみをさらに絞る（復習は絞らない）。
+    let calc = crate::db::effective_new_limit(
+        pool,
+        &deck_id,
+        &test_modes,
+        &due_cutoff,
+        crate::util::today_jst(),
+        new_limit,
+        review_limit,
+        study_target,
+    )
+    .await?;
+    let effective_new_limit = calc.effective;
 
     crate::log!(
         LogLevel::DEBUG,
-        "session candidates: new={}, review={} (limits new={} (effective {}, introduced today {}), review={})",
+        "session candidates: new={}, review={} (new_limit={} effective={} introduced_today={} review_limit={} study_target={:?} review_load={:?})",
         new_pool.len(),
         review_pool.len(),
         new_limit,
         effective_new_limit,
-        introduced_today,
-        review_limit
+        calc.introduced_today,
+        review_limit,
+        study_target,
+        calc.review_load
     );
 
     // 5-8. シャッフル → 上限適用 → 結合 → 再シャッフル

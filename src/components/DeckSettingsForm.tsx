@@ -33,6 +33,9 @@ export function DeckSettingsForm({ deck, onSaved, onCancel }: Props) {
   const [testModes, setTestModes] = useState<string[]>(deck.test_modes);
   const [dailyNew, setDailyNew] = useState(deck.daily_new_limit);
   const [dailyReview, setDailyReview] = useState(deck.daily_review_limit);
+  // 1日の学習量の目安（null なら無効）。有効時の初期値は現在値、無ければ復習上限を仮置き。
+  const [studyTargetOn, setStudyTargetOn] = useState(deck.daily_study_target != null);
+  const [studyTarget, setStudyTarget] = useState(deck.daily_study_target ?? deck.daily_review_limit);
   const [retention, setRetention] = useState(deck.fsrs_target_retention);
   const [maxInterval, setMaxInterval] = useState(deck.fsrs_max_interval_days);
   const [error, setError] = useState<string | null>(null);
@@ -61,6 +64,10 @@ export function DeckSettingsForm({ deck, onSaved, onCancel }: Props) {
       setError("1日の上限は0以上で入力してください。");
       return false;
     }
+    if (studyTargetOn && studyTarget < 0) {
+      setError("1日の学習量の目安は0以上で入力してください。");
+      return false;
+    }
     if (maxInterval < 1) {
       setError("最大復習間隔は1日以上で入力してください。");
       return false;
@@ -86,6 +93,7 @@ export function DeckSettingsForm({ deck, onSaved, onCancel }: Props) {
         test_modes: testModes,
         daily_new_limit: dailyNew,
         daily_review_limit: dailyReview,
+        daily_study_target: studyTargetOn ? studyTarget : null,
         fsrs_target_retention: retention,
         fsrs_max_interval_days: maxInterval,
       };
@@ -197,6 +205,35 @@ export function DeckSettingsForm({ deck, onSaved, onCancel }: Props) {
             onChange={(e) => setMaxInterval(Number(e.target.value))}
           />
         </div>
+      </div>
+
+      <div className="space-y-2 rounded-md border p-3">
+        <label className="flex cursor-pointer items-center gap-2 text-sm font-medium">
+          <input
+            type="checkbox"
+            checked={studyTargetOn}
+            onChange={(e) => setStudyTargetOn(e.target.checked)}
+            className="h-4 w-4"
+          />
+          1日の学習量の目安で新規を自動調整する
+        </label>
+        {studyTargetOn && (
+          <div className="space-y-1">
+            <Label htmlFor="edit-study">目安の枚数（新規＋復習）</Label>
+            <Input
+              id="edit-study"
+              type="number"
+              inputMode="numeric"
+              min="0"
+              value={studyTarget}
+              onChange={(e) => setStudyTarget(Number(e.target.value))}
+            />
+          </div>
+        )}
+        <p className="text-xs text-muted-foreground">
+          復習が多い日は、新規＋復習がこの枚数を超えないよう新規カードを自動で減らします。
+          復習は常に表示されます（絞られるのは新規のみ）。オフの場合、新規は新規上限どおり出題されます。
+        </p>
       </div>
 
       <div className="flex justify-end gap-2 pt-1">

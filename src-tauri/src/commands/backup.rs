@@ -64,6 +64,10 @@ fn deck_json_from_row(row: &sqlx::sqlite::SqliteRow) -> DeckJson {
             test_modes: serde_json::from_str(&test_modes).unwrap_or_default(),
             daily_new_limit: row.try_get("daily_new_limit").unwrap_or(20),
             daily_review_limit: row.try_get("daily_review_limit").unwrap_or(100),
+            daily_study_target: row
+                .try_get::<Option<i64>, _>("daily_study_target")
+                .ok()
+                .flatten(),
             fsrs: DeckJsonFsrs {
                 target_retention: row.try_get("fsrs_target_retention").unwrap_or(0.90),
                 max_interval_days: row.try_get("fsrs_max_interval_days").unwrap_or(365),
@@ -223,12 +227,13 @@ async fn upsert_deck_tx(
     sqlx::query(
         "INSERT INTO decks \
          (id, name, description, language, test_modes, daily_new_limit, daily_review_limit, \
-          fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) \
+          daily_study_target, fsrs_target_retention, fsrs_max_interval_days, created_at, updated_at) \
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) \
          ON CONFLICT(id) DO UPDATE SET \
            name = excluded.name, description = excluded.description, language = excluded.language, \
            test_modes = excluded.test_modes, daily_new_limit = excluded.daily_new_limit, \
            daily_review_limit = excluded.daily_review_limit, \
+           daily_study_target = excluded.daily_study_target, \
            fsrs_target_retention = excluded.fsrs_target_retention, \
            fsrs_max_interval_days = excluded.fsrs_max_interval_days, updated_at = excluded.updated_at",
     )
@@ -239,6 +244,7 @@ async fn upsert_deck_tx(
     .bind(&test_modes)
     .bind(dj.settings.daily_new_limit)
     .bind(dj.settings.daily_review_limit)
+    .bind(dj.settings.daily_study_target)
     .bind(dj.settings.fsrs.target_retention)
     .bind(dj.settings.fsrs.max_interval_days)
     .bind(now)

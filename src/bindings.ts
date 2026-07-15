@@ -270,7 +270,11 @@ export type CardSummary = { id: string; deck_id: string; hanzi: string; meaning:
  * デッキの各テストモードに対する状態 ('new'|'learning'|'review'|'relearning')
  */
 srs_states: ModeState[] }
-export type CreateDeckInput = { id: string; name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; fsrs_target_retention: number; fsrs_max_interval_days: number }
+export type CreateDeckInput = { id: string; name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; 
+/**
+ * 1日の学習量の目安（None なら無効）。詳細は Deck::daily_study_target を参照。
+ */
+daily_study_target: number | null; fsrs_target_retention: number; fsrs_max_interval_days: number }
 export type DayForecast = { 
 /**
  * JST の日付 (YYYY-MM-DD)
@@ -288,13 +292,18 @@ new_cards: number;
  * 延滞（期限切れ）件数。先読みなので今日のバーのみ非ゼロ。
  */
 overdue: number }
-export type Deck = { id: string; name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; fsrs_target_retention: number; fsrs_max_interval_days: number; created_at: string; updated_at: string; 
+export type Deck = { id: string; name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; 
+/**
+ * 1日の学習量の目安（新規カードの自動調整用）。None なら無効。
+ * 有効時は「新規＋復習」がこの枚数を超えないよう新規のみを絞る（復習は絞らない）。
+ */
+daily_study_target: number | null; fsrs_target_retention: number; fsrs_max_interval_days: number; created_at: string; updated_at: string; 
 /**
  * カード総数（一覧表示用に算出）
  */
 card_count: number; 
 /**
- * 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み を反映）
+ * 今日の新規予定数（実効上限 = daily_new_limit - 今日導入済み、学習量の目安によるスロットルを反映）
  */
 new_today: number; 
 /**
@@ -304,7 +313,11 @@ review_today: number;
 /**
  * 学習中カード数（learning/relearning かつ期日到来、同日再出題対象）
  */
-learning_today: number }
+learning_today: number; 
+/**
+ * daily_study_target により今日の新規が絞られている場合 true（UI で「調整中」を示す用）
+ */
+new_limited_by_study: boolean }
 export type DeckDueCount = { deck_id: string; deck_name: string; 
 /**
  * 今日の新規予定（実効上限を反映）
@@ -375,7 +388,11 @@ should_requeue: boolean;
  * 各評価ボタンに表示する次回予定（"今日中" / "N日後"）
  */
 interval_preview: IntervalPreview }
-export type UpdateDeckInput = { name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; fsrs_target_retention: number; fsrs_max_interval_days: number }
+export type UpdateDeckInput = { name: string; description: string | null; language: string; test_modes: string[]; daily_new_limit: number; daily_review_limit: number; 
+/**
+ * 1日の学習量の目安（None なら無効）。詳細は Deck::daily_study_target を参照。
+ */
+daily_study_target: number | null; fsrs_target_retention: number; fsrs_max_interval_days: number }
 
 /** tauri-specta globals **/
 

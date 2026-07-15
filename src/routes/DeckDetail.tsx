@@ -160,6 +160,14 @@ export function DeckDetailPage() {
               </Row>
               <Row label="1日の新規上限">{d.daily_new_limit} 枚</Row>
               <Row label="1日の復習上限">{d.daily_review_limit} 枚</Row>
+              <Row label="1日の学習量の目安">
+                {d.daily_study_target != null ? `${d.daily_study_target} 枚` : "無効"}
+                {d.new_limited_by_study && (
+                  <span className="ml-2 text-xs font-normal text-amber-600">
+                    復習が多いため新規を調整中
+                  </span>
+                )}
+              </Row>
               <Row label="目標定着率">{(d.fsrs_target_retention * 100).toFixed(0)}%</Row>
               <Row label="最大復習間隔">{d.fsrs_max_interval_days} 日</Row>
             </div>

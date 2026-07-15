@@ -53,9 +53,11 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     }
 
     // ---- デッキ別 予定数 / 完了数 ----
-    let deck_rows = sqlx::query("SELECT id, name, test_modes, daily_new_limit, daily_review_limit FROM decks")
-        .fetch_all(pool)
-        .await?;
+    let deck_rows = sqlx::query(
+        "SELECT id, name, test_modes, daily_new_limit, daily_review_limit, daily_study_target FROM decks",
+    )
+    .fetch_all(pool)
+    .await?;
     let mut deck_due_counts = Vec::new();
     // 今後7日間に新規導入される見込み枚数（デッキ横断で積み上げ）
     let mut new_buckets = [0i64; 7];
@@ -69,6 +71,8 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         let modes = crate::db::effective_modes(&test_modes_json, listening_on);
         let new_limit: i64 = d.try_get("daily_new_limit").unwrap_or(20);
         let review_limit: i64 = d.try_get("daily_review_limit").unwrap_or(100);
+        let study_target: Option<i64> =
+            d.try_get::<Option<i64>, _>("daily_study_target").ok().flatten();
 
         // 復習（state='review' かつ期日到来、出題対象モードのみ）
         let due_reviews =
@@ -125,13 +129,26 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         .await?
         .get("c");
 
-        // 新規は「今日導入済み」を差し引いた実効上限で頭打ち (日次の新規上限)
-        let introduced = crate::db::new_introduced_today(pool, &deck_id, today).await?;
-        let effective_new_limit = (new_limit - introduced).max(0);
+        // 新規は「今日導入済み」を差し引いた実効上限で頭打ち (日次の新規上限)。
+        // study_target が有効なら当日の復習負荷に応じて新規をさらに絞る（復習は絞らない）。
+        let calc = crate::db::effective_new_limit(
+            pool,
+            &deck_id,
+            &modes,
+            &due_cutoff,
+            today,
+            new_limit,
+            review_limit,
+            study_target,
+        )
+        .await?;
+        let effective_new_limit = calc.effective;
         let new_count = new_available.min(effective_new_limit);
         let review_count = due_reviews.min(review_limit);
 
-        // 7日先までの新規導入をシミュレート: 今日は実効上限、以降は日次上限ぶんずつ残数から導入
+        // 7日先までの新規導入をシミュレート: 今日は実効上限（スロットル込み）、以降は日次上限ぶんずつ導入。
+        // 未来日の復習負荷は正確に見積もれないため、study_target のスロットルは今日(day 0)のみ反映し、
+        // 未来日は楽観値（新規上限どおり）とする（先読みは元々「再スケジュール分を含まない下限」の近似）。
         let mut remaining_new = new_available;
         for (day, bucket) in new_buckets.iter_mut().enumerate() {
             let limit = if day == 0 { effective_new_limit } else { new_limit };
