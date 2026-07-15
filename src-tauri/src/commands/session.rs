@@ -15,7 +15,10 @@ use uuid::Uuid;
 pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> AppResult<Vec<SessionCard>> {
     crate::log!(LogLevel::DEBUG, "get_session_queue: deck={}", deck_id);
     let pool = db.inner();
-    let now = now_rfc3339();
+    // 期日判定は forecast（論理日ベース）と揃える: 「今日(論理日)中に期日が来る」= due < 明日の論理日開始。
+    // 生の now と比較すると、今日の遅い時刻が期日のカード（FSRS は due の時刻を保持する）が
+    // forecast には出るのにセッションに出題されない不一致になる。
+    let due_cutoff = crate::util::logical_day_end_rfc3339();
 
     let deck_row = sqlx::query("SELECT test_modes, daily_new_limit, daily_review_limit FROM decks WHERE id = ?")
         .bind(&deck_id)
@@ -72,11 +75,11 @@ pub async fn get_session_queue(db: tauri::State<'_, Db>, deck_id: String) -> App
             "SELECT c.*, sr.state AS srs_state FROM cards c \
              JOIN srs_records sr \
                ON c.id = sr.card_id AND c.deck_id = sr.deck_id AND sr.mode = ? \
-             WHERE c.deck_id = ? AND sr.state != 'new' AND sr.due_date <= ?",
+             WHERE c.deck_id = ? AND sr.state != 'new' AND sr.due_date < ?",
         )
         .bind(mode)
         .bind(&deck_id)
-        .bind(&now)
+        .bind(&due_cutoff)
         .fetch_all(pool)
         .await?;
         for row in &rows {

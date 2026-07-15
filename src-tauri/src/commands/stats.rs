@@ -3,7 +3,7 @@ use crate::error::{AppError, AppResult};
 use crate::log::LogLevel;
 use crate::models::*;
 use crate::util::{to_jst_date, today_jst};
-use chrono::{Duration, NaiveDate, Utc};
+use chrono::{Duration, NaiveDate};
 use sqlx::Row;
 use std::collections::{HashMap, HashSet};
 
@@ -16,7 +16,8 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     crate::log!(LogLevel::DEBUG, "get_home_stats");
     let pool = db.inner();
     let today = today_jst();
-    let now = Utc::now().to_rfc3339();
+    // 期日カウントは forecast（論理日ベース）と揃える: due < 明日の論理日開始 = 今日中に期日到来。
+    let due_cutoff = crate::util::logical_day_end_rfc3339();
 
     // 無音環境トグルが OFF なら、ホームの期限カウント・先読みからも listening を除外し、
     // セッションで実際に出題されるユニット数と一致させる。
@@ -70,10 +71,10 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         // 復習（state='review' かつ期日到来）
         let due_reviews: i64 = sqlx::query(&format!(
             "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state = 'review' AND due_date <= ?{mode_clause}"
+             WHERE deck_id = ? AND state = 'review' AND due_date < ?{mode_clause}"
         ))
         .bind(&deck_id)
-        .bind(&now)
+        .bind(&due_cutoff)
         .fetch_one(pool)
         .await?
         .get("c");
@@ -81,10 +82,10 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
         // 学習中（learning / relearning かつ期日到来、同日再出題対象）— 予定とは別カウント
         let learning_count: i64 = sqlx::query(&format!(
             "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date <= ?{mode_clause}"
+             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date < ?{mode_clause}"
         ))
         .bind(&deck_id)
-        .bind(&now)
+        .bind(&due_cutoff)
         .fetch_one(pool)
         .await?
         .get("c");

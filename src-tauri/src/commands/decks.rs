@@ -8,7 +8,7 @@ use sqlx::Row;
 /// 1デッキ分の派生カウントを算出。
 /// 戻り値: (カード総数, 新規予定, 復習予定, 学習中)。
 /// 新規予定は「今日導入済み」を差し引いた実効上限を反映する (日次の新規上限)。
-async fn deck_counts(pool: &Db, deck_id: &str, now: &str) -> AppResult<(i64, i64, i64, i64)> {
+async fn deck_counts(pool: &Db, deck_id: &str, due_cutoff: &str) -> AppResult<(i64, i64, i64, i64)> {
     let card_count: i64 = sqlx::query("SELECT COUNT(*) AS c FROM cards WHERE deck_id = ?")
         .bind(deck_id)
         .fetch_one(pool)
@@ -23,13 +23,13 @@ async fn deck_counts(pool: &Db, deck_id: &str, now: &str) -> AppResult<(i64, i64
         .and_then(|r| r.try_get("daily_new_limit").ok())
         .unwrap_or(20);
 
-    // 復習（state='review' かつ期日到来）
+    // 復習（state='review' かつ期日到来 = 今日中に期日が来る）
     let review_today: i64 = sqlx::query(
         "SELECT COUNT(*) AS c FROM srs_records \
-         WHERE deck_id = ? AND state = 'review' AND due_date <= ?",
+         WHERE deck_id = ? AND state = 'review' AND due_date < ?",
     )
     .bind(deck_id)
-    .bind(now)
+    .bind(due_cutoff)
     .fetch_one(pool)
     .await?
     .get("c");
@@ -37,10 +37,10 @@ async fn deck_counts(pool: &Db, deck_id: &str, now: &str) -> AppResult<(i64, i64
     // 学習中（learning / relearning かつ期日到来）
     let learning_today: i64 = sqlx::query(
         "SELECT COUNT(*) AS c FROM srs_records \
-         WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date <= ?",
+         WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date < ?",
     )
     .bind(deck_id)
-    .bind(now)
+    .bind(due_cutoff)
     .fetch_one(pool)
     .await?
     .get("c");
@@ -98,14 +98,14 @@ fn deck_from_row(
 pub async fn get_decks(db: tauri::State<'_, Db>) -> AppResult<Vec<Deck>> {
     crate::log!(LogLevel::DEBUG, "get_decks");
     let pool = db.inner();
-    let now = now_rfc3339();
+    let due_cutoff = crate::util::logical_day_end_rfc3339();
     let rows = sqlx::query("SELECT * FROM decks ORDER BY created_at DESC")
         .fetch_all(pool)
         .await?;
     let mut out = Vec::with_capacity(rows.len());
     for row in &rows {
         let id: String = row.get("id");
-        let (cc, nt, rt, lt) = deck_counts(pool, &id, &now).await?;
+        let (cc, nt, rt, lt) = deck_counts(pool, &id, &due_cutoff).await?;
         out.push(deck_from_row(row, cc, nt, rt, lt));
     }
     Ok(out)
@@ -116,13 +116,13 @@ pub async fn get_decks(db: tauri::State<'_, Db>) -> AppResult<Vec<Deck>> {
 pub async fn get_deck(db: tauri::State<'_, Db>, deck_id: String) -> AppResult<Deck> {
     crate::log!(LogLevel::DEBUG, "get_deck: {}", deck_id);
     let pool = db.inner();
-    let now = now_rfc3339();
+    let due_cutoff = crate::util::logical_day_end_rfc3339();
     let row = sqlx::query("SELECT * FROM decks WHERE id = ?")
         .bind(&deck_id)
         .fetch_optional(pool)
         .await?
         .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
-    let (cc, nt, rt, lt) = deck_counts(pool, &deck_id, &now).await?;
+    let (cc, nt, rt, lt) = deck_counts(pool, &deck_id, &due_cutoff).await?;
     Ok(deck_from_row(&row, cc, nt, rt, lt))
 }
 
