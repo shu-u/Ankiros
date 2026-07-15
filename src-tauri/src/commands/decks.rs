@@ -8,7 +8,13 @@ use sqlx::Row;
 /// 1デッキ分の派生カウントを算出。
 /// 戻り値: (カード総数, 新規予定, 復習予定, 学習中)。
 /// 新規予定は「今日導入済み」を差し引いた実効上限を反映する (日次の新規上限)。
-async fn deck_counts(pool: &Db, deck_id: &str, due_cutoff: &str) -> AppResult<(i64, i64, i64, i64)> {
+/// 復習/学習中はセッションが出題する「出題対象モード（`modes`）」のみを対象にする。
+async fn deck_counts(
+    pool: &Db,
+    deck_id: &str,
+    modes: &[String],
+    due_cutoff: &str,
+) -> AppResult<(i64, i64, i64, i64)> {
     let card_count: i64 = sqlx::query("SELECT COUNT(*) AS c FROM cards WHERE deck_id = ?")
         .bind(deck_id)
         .fetch_one(pool)
@@ -23,27 +29,19 @@ async fn deck_counts(pool: &Db, deck_id: &str, due_cutoff: &str) -> AppResult<(i
         .and_then(|r| r.try_get("daily_new_limit").ok())
         .unwrap_or(20);
 
-    // 復習（state='review' かつ期日到来 = 今日中に期日が来る）
-    let review_today: i64 = sqlx::query(
-        "SELECT COUNT(*) AS c FROM srs_records \
-         WHERE deck_id = ? AND state = 'review' AND due_date < ?",
-    )
-    .bind(deck_id)
-    .bind(due_cutoff)
-    .fetch_one(pool)
-    .await?
-    .get("c");
+    // 復習（state='review' かつ期日到来 = 今日中に期日が来る、出題対象モードのみ）
+    let review_today =
+        crate::db::count_due_by_modes(pool, deck_id, "state = 'review'", modes, due_cutoff).await?;
 
-    // 学習中（learning / relearning かつ期日到来）
-    let learning_today: i64 = sqlx::query(
-        "SELECT COUNT(*) AS c FROM srs_records \
-         WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date < ?",
+    // 学習中（learning / relearning かつ期日到来、出題対象モードのみ）
+    let learning_today = crate::db::count_due_by_modes(
+        pool,
+        deck_id,
+        "state IN ('learning','relearning')",
+        modes,
+        due_cutoff,
     )
-    .bind(deck_id)
-    .bind(due_cutoff)
-    .fetch_one(pool)
-    .await?
-    .get("c");
+    .await?;
 
     // 新規（未導入カード数を、実効上限 = new_limit - 今日導入済み で頭打ち）
     let new_available: i64 = sqlx::query(
@@ -99,13 +97,15 @@ pub async fn get_decks(db: tauri::State<'_, Db>) -> AppResult<Vec<Deck>> {
     crate::log!(LogLevel::DEBUG, "get_decks");
     let pool = db.inner();
     let due_cutoff = crate::util::logical_day_end_rfc3339();
+    let listening_on = crate::db::listening_enabled(pool).await;
     let rows = sqlx::query("SELECT * FROM decks ORDER BY created_at DESC")
         .fetch_all(pool)
         .await?;
     let mut out = Vec::with_capacity(rows.len());
     for row in &rows {
         let id: String = row.get("id");
-        let (cc, nt, rt, lt) = deck_counts(pool, &id, &due_cutoff).await?;
+        let modes = crate::db::effective_modes(&row.get::<String, _>("test_modes"), listening_on);
+        let (cc, nt, rt, lt) = deck_counts(pool, &id, &modes, &due_cutoff).await?;
         out.push(deck_from_row(row, cc, nt, rt, lt));
     }
     Ok(out)
@@ -117,12 +117,14 @@ pub async fn get_deck(db: tauri::State<'_, Db>, deck_id: String) -> AppResult<De
     crate::log!(LogLevel::DEBUG, "get_deck: {}", deck_id);
     let pool = db.inner();
     let due_cutoff = crate::util::logical_day_end_rfc3339();
+    let listening_on = crate::db::listening_enabled(pool).await;
     let row = sqlx::query("SELECT * FROM decks WHERE id = ?")
         .bind(&deck_id)
         .fetch_optional(pool)
         .await?
         .ok_or_else(|| AppError::NotFound(format!("デッキが見つかりません: {deck_id}")))?;
-    let (cc, nt, rt, lt) = deck_counts(pool, &deck_id, &due_cutoff).await?;
+    let modes = crate::db::effective_modes(&row.get::<String, _>("test_modes"), listening_on);
+    let (cc, nt, rt, lt) = deck_counts(pool, &deck_id, &modes, &due_cutoff).await?;
     Ok(deck_from_row(&row, cc, nt, rt, lt))
 }
 

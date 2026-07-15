@@ -19,13 +19,10 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     // 期日カウントは forecast（論理日ベース）と揃える: due < 明日の論理日開始 = 今日中に期日到来。
     let due_cutoff = crate::util::logical_day_end_rfc3339();
 
-    // 無音環境トグルが OFF なら、ホームの期限カウント・先読みからも listening を除外し、
-    // セッションで実際に出題されるユニット数と一致させる。
-    let mode_clause = if crate::db::listening_enabled(pool).await {
-        ""
-    } else {
-        " AND mode != 'listening'"
-    };
+    // 期日カウント・先読みは「デッキの出題対象モード（test_modes、無音環境なら listening 除外）」
+    // のみを対象にする。セッションキューが出題するモードと一致させ、test_modes 外の
+    // srs_records（過去モードの残骸など）をホームが数えてしまう不一致を防ぐ。
+    let listening_on = crate::db::listening_enabled(pool).await;
 
     // ---- review_logs から ストリーク / 今日の完了数 ----
     let log_rows = sqlx::query("SELECT reviewed_at FROM review_logs")
@@ -56,39 +53,65 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     }
 
     // ---- デッキ別 予定数 / 完了数 ----
-    let deck_rows = sqlx::query("SELECT id, name, daily_new_limit, daily_review_limit FROM decks")
+    let deck_rows = sqlx::query("SELECT id, name, test_modes, daily_new_limit, daily_review_limit FROM decks")
         .fetch_all(pool)
         .await?;
     let mut deck_due_counts = Vec::new();
     // 今後7日間に新規導入される見込み枚数（デッキ横断で積み上げ）
     let mut new_buckets = [0i64; 7];
+    // 今後7日間の復習見込み（デッキ横断）。期限切れは overdue として今日に分離計上。
+    let mut review_buckets = [0i64; 7];
+    let mut overdue = 0i64;
     for d in &deck_rows {
         let deck_id: String = d.get("id");
         let deck_name: String = d.get("name");
+        let test_modes_json: String = d.get("test_modes");
+        let modes = crate::db::effective_modes(&test_modes_json, listening_on);
         let new_limit: i64 = d.try_get("daily_new_limit").unwrap_or(20);
         let review_limit: i64 = d.try_get("daily_review_limit").unwrap_or(100);
 
-        // 復習（state='review' かつ期日到来）
-        let due_reviews: i64 = sqlx::query(&format!(
-            "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state = 'review' AND due_date < ?{mode_clause}"
-        ))
-        .bind(&deck_id)
-        .bind(&due_cutoff)
-        .fetch_one(pool)
-        .await?
-        .get("c");
+        // 復習（state='review' かつ期日到来、出題対象モードのみ）
+        let due_reviews =
+            crate::db::count_due_by_modes(pool, &deck_id, "state = 'review'", &modes, &due_cutoff)
+                .await?;
 
         // 学習中（learning / relearning かつ期日到来、同日再出題対象）— 予定とは別カウント
-        let learning_count: i64 = sqlx::query(&format!(
-            "SELECT COUNT(*) AS c FROM srs_records \
-             WHERE deck_id = ? AND state IN ('learning','relearning') AND due_date < ?{mode_clause}"
-        ))
-        .bind(&deck_id)
-        .bind(&due_cutoff)
-        .fetch_one(pool)
-        .await?
-        .get("c");
+        let learning_count = crate::db::count_due_by_modes(
+            pool,
+            &deck_id,
+            "state IN ('learning','relearning')",
+            &modes,
+            &due_cutoff,
+        )
+        .await?;
+
+        // 先読み（今後7日間）の復習バケットへ、このデッキの出題対象モードの due を積む。
+        if !modes.is_empty() {
+            let placeholders = std::iter::repeat("?")
+                .take(modes.len())
+                .collect::<Vec<_>>()
+                .join(",");
+            let sql = format!(
+                "SELECT due_date FROM srs_records \
+                 WHERE deck_id = ? AND state != 'new' AND mode IN ({placeholders})"
+            );
+            let mut q = sqlx::query(&sql).bind(&deck_id);
+            for m in &modes {
+                q = q.bind(m);
+            }
+            let srs_rows = q.fetch_all(pool).await?;
+            for r in &srs_rows {
+                let dd: String = r.get("due_date");
+                if let Some(date) = to_jst_date(&dd) {
+                    let offset = (date - today).num_days();
+                    if offset < 0 {
+                        overdue += 1;
+                    } else if offset < 7 {
+                        review_buckets[offset as usize] += 1;
+                    }
+                }
+            }
+        }
 
         // 新規利用可能（いずれかのモードで srs_record が無いカード × モード数の概算）
         // ここでは「srs_record が1つも無いカード数」を新規予定の近似とする
@@ -141,26 +164,8 @@ pub async fn get_home_stats(db: tauri::State<'_, Db>) -> AppResult<HomeStats> {
     }
 
     // ---- 今後7日間の予定（先読み負荷）----
-    // 復習: その日に期日が来る件数（learning/relearning/review）。期限切れは overdue として今日に分離計上。
-    let srs_rows = sqlx::query(&format!(
-        "SELECT due_date FROM srs_records WHERE state != 'new'{mode_clause}"
-    ))
-    .fetch_all(pool)
-    .await?;
-    let mut review_buckets = [0i64; 7];
-    let mut overdue = 0i64;
-    for r in &srs_rows {
-        let dd: String = r.get("due_date");
-        if let Some(date) = to_jst_date(&dd) {
-            let offset = (date - today).num_days();
-            if offset < 0 {
-                overdue += 1; // 期限切れ（延滞）は今日のバーに別セグメントで表示
-            } else if offset < 7 {
-                review_buckets[offset as usize] += 1;
-            }
-        }
-    }
-    // 今日〜6日後。未来の reviews はレビュー後の再スケジュール分を含まないため下限値。
+    // 復習バケット（review_buckets）・overdue は上のデッキ別ループで、各デッキの出題対象モードに
+    // 限定して積み上げ済み。未来の reviews はレビュー後の再スケジュール分を含まないため下限値。
     let seven_day_forecast: Vec<DayForecast> = (0..7i64)
         .map(|i| DayForecast {
             date: (today + Duration::days(i)).format("%Y-%m-%d").to_string(),

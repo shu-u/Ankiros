@@ -99,6 +99,49 @@ pub async fn new_introduced_today(
 }
 
 // ------------------------------------------------------------
+// 出題対象モード（統計とセッションの集計対象を一致させる）
+// ------------------------------------------------------------
+
+/// デッキの「出題対象モード」を返す。test_modes(JSON) から、リスニング無効時の
+/// 'listening' を除外したもの。セッションキューが実際に出題するモード集合と同じで、
+/// 統計（ホーム/デッキ詳細/先読み）の集計対象をこれに揃えることで件数の不一致を防ぐ。
+pub fn effective_modes(test_modes_json: &str, listening_on: bool) -> Vec<String> {
+    let mut modes: Vec<String> = serde_json::from_str(test_modes_json).unwrap_or_default();
+    if !listening_on {
+        modes.retain(|m| m != "listening");
+    }
+    modes
+}
+
+/// デッキ内で「state 条件・期日到来(due < cutoff)・出題対象モード」に合致する srs_records 件数。
+/// `modes` が空（出題対象モード無し）なら 0。`state_clause` はコード内の固定リテラルのみ渡すこと
+/// （SQL に直接埋め込むため、外部入力を渡してはならない）。
+pub async fn count_due_by_modes(
+    pool: &Db,
+    deck_id: &str,
+    state_clause: &str,
+    modes: &[String],
+    due_cutoff: &str,
+) -> AppResult<i64> {
+    if modes.is_empty() {
+        return Ok(0);
+    }
+    let placeholders = std::iter::repeat("?")
+        .take(modes.len())
+        .collect::<Vec<_>>()
+        .join(",");
+    let sql = format!(
+        "SELECT COUNT(*) AS c FROM srs_records \
+         WHERE deck_id = ? AND {state_clause} AND due_date < ? AND mode IN ({placeholders})"
+    );
+    let mut q = sqlx::query(&sql).bind(deck_id).bind(due_cutoff);
+    for m in modes {
+        q = q.bind(m);
+    }
+    Ok(q.fetch_one(pool).await?.get("c"))
+}
+
+// ------------------------------------------------------------
 // 行 → モデル 変換
 // ------------------------------------------------------------
 
